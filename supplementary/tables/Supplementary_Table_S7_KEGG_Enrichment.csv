@@ -1,0 +1,30 @@
+"KEGG_ID","Pathway","Direction","GeneRatio","BackgroundRatio","GeneCount","Pvalue","FDR"
+"hsa04382","Cornified envelope formation","Downregulated","86/663","217/9410",86,9.92450257948175e-44,3.49342490797757e-41
+"hsa04519","Cadherin signaling","Downregulated","69/663","404/9410",69,2.44760062232799e-12,4.30777709529727e-10
+"hsa05340","Primary immunodeficiency","Upregulated","16/511","38/9410",16,3.32206578783261e-11,1.16936715731708e-08
+"hsa04974","Protein digestion and absorption","Downregulated","26/663","103/9410",26,6.51033470517441e-09,7.63879272073797e-07
+"hsa04512","ECM-receptor interaction","Downregulated","22/663","89/9410",22,1.42903160417841e-07,1.257547811677e-05
+"hsa04080","Neuroactive ligand-receptor interaction","Downregulated","53/663","371/9410",53,4.8510720575999e-07,3.41515472855033e-05
+"hsa04820","Cytoskeleton in muscle cells","Downregulated","38/663","233/9410",38,8.37980399926839e-07,4.91615167957079e-05
+"hsa04518","Integrin signaling","Downregulated","28/663","154/9410",28,2.75992881949988e-06,0.00013878499206628
+"hsa04080","Neuroactive ligand-receptor interaction","Upregulated","43/511","371/9410",43,1.73232368066843e-06,0.000217042940633362
+"hsa04060","Cytokine-cytokine receptor interaction","Upregulated","37/511","298/9410",37,1.84979778948888e-06,0.000217042940633362
+"hsa04640","Hematopoietic cell lineage","Upregulated","18/511","100/9410",18,5.99399472977561e-06,0.000527471536220254
+"hsa05033","Nicotine addiction","Upregulated","10/511","41/9410",10,4.97273972331e-05,0.00350080876521024
+"hsa04510","Focal adhesion","Downregulated","30/663","203/9410",30,8.20054997022936e-05,0.00360824198690092
+"hsa04020","Calcium signaling pathway","Downregulated","35/663","254/9410",35,9.34719547863417e-05,0.00365579200942137
+"hsa04082","Neuroactive ligand signaling","Upregulated","25/511","199/9410",25,7.28674057595382e-05,0.00427488780455957
+"hsa04659","Th17 cell differentiation","Upregulated","16/511","109/9410",16,0.00024685168061817,0.0124131130825137
+"hsa04660","T cell receptor signaling pathway","Upregulated","17/511","122/9410",17,0.000301930449380212,0.0132849397727293
+"hsa04064","NF-kappa B signaling pathway","Upregulated","15/511","105/9410",15,0.000515139072570479,0.0201476615049787
+"hsa00140","Steroid hormone biosynthesis","Downregulated","13/663","66/9410",13,0.00058963144701127,0.0207550269347967
+"hsa04151","PI3K-Akt signaling pathway","Downregulated","42/663","362/9410",42,0.000883091360255387,0.0268915604173789
+"hsa00830","Retinol metabolism","Downregulated","13/663","69/9410",13,0.000916757741501552,0.0268915604173789
+"hsa00590","Arachidonic acid metabolism","Downregulated","12/663","63/9410",12,0.00129283919279471,0.0337033527525696
+"hsa05150","Staphylococcus aureus infection","Downregulated","16/663","99/9410",16,0.00141560569140962,0.0337033527525696
+"hsa04976","Bile secretion","Downregulated","15/663","90/9410",15,0.00143622241843336,0.0337033527525696
+"hsa00983","Drug metabolism - other enzymes","Downregulated","14/663","82/9410",14,0.00161391059347638,0.0355060330564803
+"hsa04672","Intestinal immune network for IgA production","Upregulated","9/511","50/9410",9,0.00130239976779852,0.0416767925695526
+"hsa05144","Malaria","Upregulated","9/511","50/9410",9,0.00130239976779852,0.0416767925695526
+"hsa04658","Th1 and Th2 cell differentiation","Upregulated","13/511","93/9410",13,0.00146589980347602,0.0429119013950665
+"hsa05207","Chemical carcinogenesis - receptor activation","Upregulated","23/511","217/9410",23,0.00158481454015871,0.0429119013950665

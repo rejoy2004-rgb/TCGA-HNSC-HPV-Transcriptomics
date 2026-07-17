@@ -1,0 +1,11 @@
+Gene,log2FoldChange,padj,Biological Function
+LINC02700,-5.78,1.06e-32,Long intergenic non-coding RNA (uncharacterized)
+DSC1,-5.2,1.7e-32,Desmosomal cell-to-cell adhesion glycoprotein
+FOLR3,-4.67,9.26e-32,Secreted GPI-anchored folate receptor
+AL033397.1,-7.59,2.4e-31,Long non-coding RNA (uncharacterized)
+MUCL1,-5.44,3.39e-31,Epithelial mucin-like glycoprotein (barrier function)
+RDH12,-4.41,3.53e-31,NADPH-dependent retinol dehydrogenase (retinoid metabolism)
+SLC3A2,-1.46,1.26e-30,Amino acid transporter heavy chain subunit (CD98)
+IGFL3,-5.44,1.52e-29,Insulin-like growth factor-like signaling ligand
+SLC35F3,-3.25,1.85e-28,Thiamine (Vitamin B1) solute transporter
+SPRR4,-4.49,5.89e-27,Cornified cell envelope protein (epithelial barrier)
