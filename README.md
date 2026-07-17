@@ -576,7 +576,7 @@ Running the pipeline should reproduce:
 
 If you use this repository, please cite:
 
-> Besra R. et al. Transcriptomic and Immune Profiling of HPV-Positive versus HPV-Negative Head and Neck Squamous Cell Carcinoma. IIT Kharagpur Research Internship Project, 2026.
+> Besra R. et al. Transcriptomic and Immune Profiling of HPV-Positive versus HPV-Negative Head and Neck Squamous Cell Carcinoma. Research Internship Project, 2026.
 
 ---
 
