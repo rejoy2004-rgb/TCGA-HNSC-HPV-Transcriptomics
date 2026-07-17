@@ -288,9 +288,7 @@ Contains manuscript and project documentation.
 
 Files include:
 
-- Immune_Landscape_HNSC.docx
-- HPV_Transcriptomics_Project.docx
-- Response_to_Reviewers.docx
+- final-report.docx
 - Supplementary_Materials.docx
 
 ---
