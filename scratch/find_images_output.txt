@@ -1,0 +1,168 @@
+Line 6: from docx.enum.table import WD_ALIGN_VERTICAL, WD_TABLE_ALIGNMENT
+Line 86: def add_figure(doc, image_name, caption_text, width_inches=4.5):
+Line 95: r_img.add_picture(image_name, width=Inches(width_inches))
+Line 97: # Create a professional placeholder table representing a space gap for the figure
+Line 99: placeholder_table = doc.add_table(rows=1, cols=1)
+Line 100: placeholder_table.alignment = WD_TABLE_ALIGNMENT.CENTER
+Line 101: cell = placeholder_table.cell(0, 0)
+Line 108: placeholder_table.rows[0].height = Inches(3.0)
+Line 114: r_fallback = p_fallback.add_run(f"[Placeholder for Figure: {os.path.basename(image_name)}]\n(A space gap of 3.0 inches is reserved here for figure attachment)")
+Line 121: # Add spacing paragraph after the table
+Line 161: # Configure Header & Footer
+Line 198: # 2. Configure Typography Styles
+Line 343: "(Table 1)."
+Line 400: "The overall workflow of this bioinformatics analysis pipeline is schematically represented in Figure 1. "
+Line 402: "The baseline clinical and demographic characteristics of the patients are summarized in Table 1."
+Line 405: # Insert Figure 1 (Workflow) - reserves space since file is not found
+Line 406: add_figure(
+Line 408: "figure_1_workflow.png",
+Line 409: "Figure 1. Schematic workflow of the bioinformatics analysis pipeline. TCGA-HNSC RNA-seq raw count data were stratified by HPV status and subjected to differential expression analysis (DESeq2), immune cell deconvolution (CIBERSORTx/LM22), pathway enrichment (GO/KEGG), GSEA, and survival analysis."
+Line 416: "variability (Figure 2). The broad distribution along PC2 within both groups likely reflects the heterogeneity in "
+Line 421: # Insert Table 1 (Clinical Demographics) here
+Line 426: r_t1_title = p_t1_title.add_run("Table 1. Baseline Clinical and Demographic Characteristics of HNSC Patients Stratified by HPV Status")
+Line 430: table_1_data = [
+Line 458: t1 = doc.add_table(rows=len(table_1_data), cols=4)
+Line 459: t1.alignment = WD_TABLE_ALIGNMENT.CENTER
+Line 464: cell.text = table_1_data[r_idx][c_idx]
+Line 481: val_text = table_1_data[r_idx][0]
+Line 498: # Insert PCA Plot (Figure 2)
+Line 499: add_figure(
+Line 501: "figure_2_pca.png",
+Line 502: "Figure 2. Principal component analysis of 279 TCGA-HNSC samples. HPV-positive (teal) and HPV-negative (salmon) samples demonstrate partial separation along PC1 (21% variance) and PC2 (14% variance)."
+Line 508: "comprising 3,436 upregulated and 2,852 downregulated genes in HPV-positive relative to HPV-negative tumours (Figure 3). "
+Line 513: # Insert Volcano Plot (Figure 3)
+Line 514: add_figure(
+Line 516: "figure_3_volcano.png",
+Line 517: "Figure 3. Volcano plot of DESeq2 differential expression results (HPV-positive vs. HPV-negative HNSC). Upregulated genes (blue) and downregulated genes (red) meeting significance thresholds (FDR < 0.05, |log2FC| > 1) are shown. Top-ranked genes are labelled."
+Line 538: # Insert Table 2 (Top 10 Upregulated Genes) here
+Line 543: r_t2_title = p_t2_title.add_run("Table 2. Top 10 Upregulated Genes Identified by DESeq2 in HPV-Positive versus HPV-Negative HNSC")
+Line 547: table_2_data = [
+Line 561: t2 = doc.add_table(rows=len(table_2_data), cols=4)
+Line 562: t2.alignment = WD_TABLE_ALIGNMENT.CENTER
+Line 567: cell.text = table_2_data[r_idx][c_idx]
+Line 595: # Insert Table 3 (Top 10 Downregulated Genes) here
+Line 600: r_t3_title = p_t3_title.add_run("Table 3. Top 10 Downregulated Genes Identified by DESeq2 in HPV-Positive versus HPV-Negative HNSC")
+Line 604: table_3_data = [
+Line 618: t3 = doc.add_table(rows=len(table_3_data), cols=4)
+Line 619: t3.alignment = WD_TABLE_ALIGNMENT.CENTER
+Line 623: cell.text = table_3_data[r_idx][c_idx]
+Line 654: "and HPV-negative tumours after FDR correction (Table 4). Plasma cells were the most prominently enriched population "
+Line 655: "in HPV-positive tumours (median fraction 0.44 vs. 0.14 in HPV-negative; FDR = 0.001; Figure 4). This approximately "
+Line 661: # Insert Plasma Cells Boxplot (Figure 4)
+Line 662: add_figure(
+Line 664: "figure_4_plasma_cells.png",
+Line 665: "Figure 4. Plasma cell infiltration in HPV-positive versus HPV-negative HNSC. Box-and-jitter plots showing CIBERSORTx-estimated plasma cell fractions, stratified by HPV status. HPV-positive tumours exhibit markedly elevated plasma cell fractions (Wilcoxon FDR = 0.001)."
+Line 670: "Figure 5). Although the absolute magnitude of this difference is modest, it is statistically robust and biologically "
+Line 673: "FDR = 0.002; Figure 6), as were resting NK cells (FDR = 0.009) and resting CD4 memory T cells (FDR = 0.013). "
+Line 678: # Insert CD8+ T cells Boxplot (Figure 5)
+Line 679: add_figure(
+Line 681: "figure_5_cd8_t_cells.png",
+Line 682: "Figure 5. CD8+ T-cell infiltration in HPV-positive versus HPV-negative HNSC. CIBERSORTx-estimated CD8+ T-cell fractions are significantly elevated in HPV-positive tumours (Wilcoxon FDR = 0.020)."
+Line 685: # Insert M0 Macrophages Boxplot (Figure 6)
+Line 686: add_figure(
+Line 688: "figure_6_m0_macrophages.png",
+Line 689: "Figure 6. M0 macrophage infiltration in HPV-positive versus HPV-negative HNSC. Box-and-jitter plots showing CIBERSORTx-estimated M0 macrophage fractions, stratified by HPV status. HPV-positive tumours exhibit significantly reduced M0 macrophage fractions (Wilcoxon FDR = 0.002), consistent with a less immunosuppressed or less undifferentiated myeloid microenvironment."
+Line 694: # Insert styled Table 4 (formerly Table 2) here
+Line 699: r_t4_title = p_t4_title.add_run("Table 4. Significantly Differentially Infiltrating Immune Cells in HPV-Positive vs. HPV-Negative HNSC")
+Line 703: table_4_data = [
+Line 712: t4 = doc.add_table(rows=6, cols=5)
+Line 713: t4.alignment = WD_TABLE_ALIGNMENT.CENTER
+Line 717: cell.text = table_4_data[r_idx][c_idx]
+Line 753: "plasma-cell and CD8 T-cell abundance together with reduced M0 macrophages and resting NK cells (Figure 7)."
+Line 756: # Insert Heatmap (Figure 7) - leave a space gap since it is not generated yet
+Line 757: add_figure(
+Line 759: "figure_7_heatmap.png",
+Line 760: "Figure 7. Heatmap of significantly differentially infiltrating immune cell populations across HPV-positive and HPV-negative HNSC samples. Clear clustering of HPV-positive tumors is characterized by increased plasma-cell and CD8+ T-cell abundance together with reduced M0 macrophages and resting NK cells."
+Line 768: "correlation with the CIBERSORT CD8 fraction (rho = 0.673, P < 2.2 ? 10?16; Figure 8), and CD8B showed a "
+Line 769: "similarly robust correlation (rho = 0.636, P < 2.2 ? 10?16; Figure 9). These correlations validate the "
+Line 774: # Insert Figure 8 (CD8A Correlation)
+Line 775: add_figure(
+Line 777: "figure_8_cd8a_corr.png",
+Line 778: "Figure 8. Validation of CIBERSORTx CD8+ T-cell estimates using CD8A gene expression. Spearman rho = 0.673, P < 2.2 ? 10???, confirming the reliability of deconvolution estimates."
+Line 781: # Insert Figure 9 (CD8B Correlation)
+Line 782: add_figure(
+Line 784: "figure_9_cd8b_corr.png",
+Line 785: "Figure 9. Validation of CIBERSORTx CD8+ T-cell estimates using CD8B gene expression. Spearman rho = 0.636, P < 2.2 ? 10???."
+Line 795: "Figure 10). This finding provides complementary evidence that HPV-positive HNSC harbours a more immune-activated "
+Line 801: # Insert Figure 10 (CD8/M2 Ratio)
+Line 802: add_figure(
+Line 804: "figure_10_cd8_m2_ratio.png",
+Line 805: "Figure 10. CD8/M2 macrophage ratio (log2-transformed) in HPV-positive versus HPV-negative HNSC. HPV-positive tumours demonstrate a significantly higher CD8/M2 ratio, indicating a more cytotoxic immune balance (Wilcoxon P = 7.46 ? 10??)."
+Line 846: "described in viral-associated malignancies (Figure 12)."
+Line 849: # Insert GO Upregulated Dotplot (Figure 12)
+Line 850: add_figure(
+Line 852: "HNSC_HPV_GO_Upregulated.png",
+Line 853: "Figure 12. Gene Ontology (GO) Biological Process enrichment analysis of genes upregulated in HPV-positive HNSC. The most significantly enriched biological processes were primarily related to immune activation, adaptive immune response, and B-cell/plasma-cell functions."
+Line 860: "FDR = 8.72 ? 10?39) forming the most significant clusters (Supplementary Figure S1). The complete GO enrichment results "
+Line 861: "are provided in Supplementary Tables S12 and S13."
+Line 868: "(hsa04510; FDR = 0.001) (Figure 13). The loss of cell adhesion and ECM interaction programs in HPV-positive tumours may reflect "
+Line 870: "Complete KEGG enrichment results are provided in Supplementary Table S11."
+Line 873: # Insert KEGG Downregulated Dotplot (Figure 13)
+Line 874: add_figure(
+Line 876: "HNSC_HPV_KEGG_Downregulated.png",
+Line 877: "Figure 13. KEGG pathway enrichment analysis of differentially expressed genes. The enriched pathways highlight biological processes altered between HPV-positive and HPV-negative HNSC."
+Line 885: "the molecular distinction between HPV-positive and HPV-negative disease (Figure 14 and Supplementary Figure S3)."
+Line 888: # Insert GSEA Dotplot (Figure 14)
+Line 889: add_figure(
+Line 891: "HNSC_HPV_GSEA_dotplot.png",
+Line 892: "Figure 14. Gene Set Enrichment Analysis (GSEA) of Hallmark pathways associated with HPV status."
+Line 901: "overall survival (Table 5). Among these, ZFR2 (HR = 0.999, P = 9.8 ? 10??), STAG3 (HR = 1.000, P = 0.0077), "
+Line 906: "(log-rank P = 0.024), with patients in the high-expression group demonstrating superior overall survival (Figure 11)."
+Line 909: # Insert Table 5 (Survival-associated genes) here
+Line 914: r_t5_title = p_t5_title.add_run("Table 5. Survival-Associated Genes Identified by Cox Proportional Hazards Analysis")
+Line 918: table_5_data = [
+Line 926: t5 = doc.add_table(rows=len(table_5_data), cols=4)
+Line 927: t5.alignment = WD_TABLE_ALIGNMENT.CENTER
+Line 932: cell.text = table_5_data[r_idx][c_idx]
+Line 960: # Insert Figure 11 (Survival Curves)
+Line 961: add_figure(
+Line 963: "figure_11_survival.png",
+Line 964: "Figure 11. Kaplan-Meier overall survival curves stratified by expression of the top prognostic gene. High-expression group (pink) versus low-expression group (teal); log-rank P = 0.024. Risk table below shows number at risk at each time point."
+Line 1132: p_sup_intro = doc.add_paragraph("The following supplementary data files and figures accompany this manuscript:")
+Line 1135: # Update supplementary table indices since we added Table 1 and renamed the previous Table 1 to Table 2
+Line 1137: ("Supplementary Table S1", "Complete DESeq2 differential expression results for all analysed genes (HNSC_DESeq2_All_Results.csv). Columns: Gene symbol, baseMean, log2FoldChange, lfcSE, Wald statistic, P-value, FDR-adjusted P-value."),
+Line 1138: ("Supplementary Table S2", "Significant differentially expressed genes (FDR < 0.05, |log2FC| > 1) in HPV-positive versus HPV-negative HNSC (HNSC_DESeq2_Significant_Genes.csv; n = 6,288)."),
+Line 1139: ("Supplementary Table S3", "Top 20 upregulated genes in HPV-positive HNSC, ranked by Wald statistic (Top20_Upregulated_Genes.csv)."),
+Line 1140: ("Supplementary Table S4", "Top 20 downregulated genes in HPV-positive HNSC, ranked by Wald statistic (Top20_Downregulated_Genes.csv)."),
+Line 1141: ("Supplementary Table S5", "Differential expression results for immunoglobulin-related genes (Immunoglobulin_Genes_DESeq2.csv)."),
+Line 1142: ("Supplementary Table S6", "Differential expression results for keratinisation-associated genes (Keratinization_Genes_DESeq2.csv)."),
+Line 1143: ("Supplementary Table S7", "CIBERSORTx immune cell fraction estimates across 22 immune cell populations for all 279 samples (CIBERSORTx_Job14_Results.csv)."),
+Line 1144: ("Supplementary Table S8", "Wilcoxon rank-sum test results for all 22 CIBERSORTx immune cell populations comparing HPV-positive versus HPV-negative HNSC, with Benjamini-Hochberg FDR correction (HNSC_HPV_Immune_Comparison.csv)."),
+Line 1145: ("Supplementary Table S9", "Univariate Cox proportional-hazards survival analysis results for top differentially expressed genes (HNSC_Survival_Results.csv)."),
+Line 1146: ("Supplementary Table S10", "GSEA results using MSigDB Hallmark gene sets (HNSC_HPV_GSEA.csv)."),
+Line 1147: ("Supplementary Table S11", "KEGG pathway enrichment results for downregulated genes (HNSC_HPV_KEGG_Downregulated.csv)."),
+Line 1148: ("Supplementary Table S12", "GO biological process enrichment results for upregulated genes (HNSC_HPV_GO_Upregulated.csv)."),
+Line 1149: ("Supplementary Table S13", "GO biological process enrichment results for downregulated genes (HNSC_HPV_GO_Downregulated.csv)."),
+Line 1150: ("Supplementary Figure S1", "Gene Ontology (GO) biological process enrichment dot plot for downregulated genes in HPV-positive versus HPV-negative HNSC (HNSC_HPV_GO_Downregulated.png)."),
+Line 1151: ("Supplementary Figure S2", "KEGG pathway enrichment dot plot for upregulated genes in HPV-positive versus HPV-negative HNSC (HNSC_HPV_KEGG_Upregulated.png)."),
+Line 1152: ("Supplementary Figure S3", "GSEA ridgeplot of enriched Hallmark gene sets in HPV-positive versus HPV-negative HNSC (HNSC_HPV_GSEA_ridgeplot.png)."),
+Line 1164: # FIGURE LEGENDS
+Line 1166: doc.add_heading("Figure Legends", level=1)
+Line 1169: ("Figure 1", "Schematic workflow of the bioinformatics analysis pipeline. TCGA-HNSC RNA-seq raw count data were stratified by HPV status and subjected to differential expression analysis (DESeq2), immune cell deconvolution (CIBERSORTx/LM22), pathway enrichment (GO/KEGG), GSEA, and survival analysis."),
+Line 1170: ("Figure 2", "Principal component analysis of 279 TCGA-HNSC samples. HPV-positive (teal) and HPV-negative (salmon) samples demonstrate partial separation along PC1 (21% variance) and PC2 (14% variance)."),
+Line 1171: ("Figure 3", "Volcano plot of DESeq2 differential expression results (HPV-positive vs. HPV-negative HNSC). Upregulated genes (blue) and downregulated genes (red) meeting significance thresholds (FDR < 0.05, |log2FC| > 1) are shown. Top-ranked genes are labelled."),
+Line 1172: ("Figure 4", "Plasma cell infiltration in HPV-positive versus HPV-negative HNSC. Box-and-jitter plots showing CIBERSORTx-estimated plasma cell fractions, stratified by HPV status. HPV-positive tumours exhibit markedly elevated plasma cell fractions (Wilcoxon FDR = 0.001)."),
+Line 1173: ("Figure 5", "CD8+ T-cell infiltration in HPV-positive versus HPV-negative HNSC. CIBERSORTx-estimated CD8+ T-cell fractions are significantly elevated in HPV-positive tumours (Wilcoxon FDR = 0.020)."),
+Line 1174: ("Figure 6", "M0 macrophage infiltration in HPV-positive versus HPV-negative HNSC. Box-and-jitter plots showing CIBERSORTx-estimated M0 macrophage fractions, stratified by HPV status. HPV-positive tumours exhibit significantly reduced M0 macrophage fractions (Wilcoxon FDR = 0.002), consistent with a less immunosuppressed or less undifferentiated myeloid microenvironment."),
+Line 1175: ("Figure 7", "Heatmap of significantly differentially infiltrating immune cell populations across HPV-positive and HPV-negative HNSC samples. Clear clustering of HPV-positive tumors is characterized by increased plasma-cell and CD8+ T-cell abundance together with reduced M0 macrophages and resting NK cells."),
+Line 1176: ("Figure 8", "Validation of CIBERSORTx CD8+ T-cell estimates using CD8A gene expression. Spearman rho = 0.673, P < 2.2 ? 10???, confirming the reliability of deconvolution estimates."),
+Line 1177: ("Figure 9", "Validation of CIBERSORTx CD8+ T-cell estimates using CD8B gene expression. Spearman rho = 0.636, P < 2.2 ? 10???."),
+Line 1178: ("Figure 10", "CD8/M2 macrophage ratio (log2-transformed) in HPV-positive versus HPV-negative HNSC. HPV-positive tumours demonstrate a significantly higher CD8/M2 ratio, indicating a more cytotoxic immune balance (Wilcoxon P = 7.46 ? 10??)."),
+Line 1179: ("Figure 11", "Kaplan-Meier overall survival curves stratified by expression of the top prognostic gene. High-expression group (pink) versus low-expression group (teal); log-rank P = 0.024. Risk table below shows number at risk at each time point."),
+Line 1180: ("Figure 12", "Gene Ontology (GO) Biological Process enrichment analysis of genes upregulated in HPV-positive HNSC. The most significantly enriched biological processes were primarily related to immune activation, adaptive immune response, and B-cell/plasma-cell functions."),
+Line 1181: ("Figure 13", "KEGG pathway enrichment analysis of differentially expressed genes. The enriched pathways highlight biological processes altered between HPV-positive and HPV-negative HNSC."),
+Line 1182: ("Figure 14", "Gene Set Enrichment Analysis (GSEA) of Hallmark pathways associated with HPV status.")
+Line 1193: # SUPPLEMENTARY FIGURES SECTION (Embedding the actual supplementary images at the end)
+Line 1195: doc.add_heading("Supplementary Figures", level=1)
+Line 1197: # Supplementary Figure S1
+Line 1198: add_figure(
+Line 1200: "HNSC_HPV_GO_Downregulated.png",
+Line 1201: "Supplementary Figure S1. Gene Ontology (GO) biological process enrichment dot plot for downregulated genes in HPV-positive versus HPV-negative HNSC. Terms are ranked by gene ratio, with bubble size indicating gene count and color showing the FDR-adjusted P-value."
+Line 1204: # Supplementary Figure S2
+Line 1205: add_figure(
+Line 1207: "HNSC_HPV_KEGG_Upregulated.png",
+Line 1208: "Supplementary Figure S2. KEGG pathway enrichment dot plot for upregulated genes in HPV-positive versus HPV-negative HNSC. Pathways are ranked by gene ratio, with bubble size indicating gene count and color showing the FDR-adjusted P-value."
+Line 1211: # Supplementary Figure S3
+Line 1212: add_figure(
+Line 1214: "HNSC_HPV_GSEA_ridgeplot.png",
+Line 1215: "Supplementary Figure S3. GSEA ridgeplot of enriched Hallmark gene sets in HPV-positive versus HPV-negative HNSC. The plot displays the distribution of fold changes for genes within each pathway, ranked by normalized enrichment score (NES) and colored by FDR-adjusted P-value."

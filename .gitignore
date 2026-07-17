@@ -1,0 +1,14 @@
+# R history and temp data
+.Rhistory
+.RData
+.RDataTmp*
+.Rproj.user/
+
+# Large binary datasets (raw genomic counts and complete workspaces)
+*.rds
+*.RData
+data_raw/GDCdata/
+
+# Temporary scripts
+scratch/organize.py
+scratch/make_docs.py
