@@ -1,139 +1,595 @@
 # Transcriptomic and Immune Profiling of HPV-Positive vs. HPV-Negative HNSC
 
-This repository contains the complete bioinformatics analysis pipeline, results, figures, and manuscript generation scripts for the study: **"Immune Microenvironment Remodeling and Transcriptomic Divergence in HPV-Positive versus HPV-Negative Head and Neck Squamous Cell Carcinoma: A TCGA-Based Bioinformatics Analysis"**.
+## Immune Microenvironment Remodeling and Transcriptomic Divergence in HPV-Positive versus HPV-Negative Head and Neck Squamous Cell Carcinoma: A TCGA-Based Bioinformatics Analysis
 
 ---
 
-## Project Overview
+## Overview
 
-This study investigates the molecular differences between Human Papillomavirus (HPV)-positive and HPV-negative Head and Neck Squamous Cell Carcinoma (HNSC) using data from The Cancer Genome Atlas (TCGA). By integrating differential gene expression analysis (DESeq2), immune cell deconvolution (CIBERSORTx), functional pathway enrichment (GO/KEGG/GSEA), and survival analysis, we characterize how HPV status shapes the tumor microenvironment (TME) and patient prognosis.
+This repository contains the complete bioinformatics workflow, processed datasets, analysis scripts, result tables, figures, supplementary materials, and manuscript files for the study:
 
-### Key Findings
-1. **Adaptive Immune Activation**: HPV-positive tumors show marked enrichment of plasma cells and CD8+ T cells, corroborated by elevated expression of B-cell/immunoglobulin markers (`MS4A1`, `CD79A`, `IGKC`, `IGHA1`).
-2. **Myeloid Microenvironment Remodeling**: HPV-negative tumors are characterized by significantly elevated fractions of immunosuppressive M0 macrophages.
-3. **Epithelial Barrier Suppression**: Keratinization and cornification pathway genes (`S100A7`, `SPRR4`, `DSC1`) are strongly suppressed in HPV-positive HNSC.
-4. **Prognostic Biomarkers**: Meiotic and cell-cycle transcripts (such as `ZFR2`) correlate with overall survival in HNSC patients.
+**"Immune Microenvironment Remodeling and Transcriptomic Divergence in HPV-Positive versus HPV-Negative Head and Neck Squamous Cell Carcinoma: A TCGA-Based Bioinformatics Analysis."**
+
+The study investigates transcriptomic and immune microenvironment differences between HPV-positive and HPV-negative Head and Neck Squamous Cell Carcinoma (HNSC) using publicly available data from The Cancer Genome Atlas (TCGA).
+
+The analyses include:
+
+- Differential gene expression analysis (DESeq2)
+- Immune-cell deconvolution (CIBERSORTx)
+- Gene Ontology (GO) enrichment analysis
+- KEGG pathway enrichment analysis
+- Gene Set Enrichment Analysis (GSEA)
+- Survival analysis using Kaplan–Meier and Cox proportional hazards models
+- Validation of immune-cell estimates using canonical marker genes
+
+This repository is organized to enable complete reproducibility and facilitate future extension of the work by other researchers and students.
 
 ---
 
-## Directory Structure
+# Key Findings
 
-The project has been organized into the following standardized folder structure:
+## Enhanced Adaptive Immune Activation
+
+HPV-positive tumors demonstrated significantly increased infiltration of adaptive immune cells, particularly:
+
+- Plasma cells
+- CD8+ T cells
+
+Independent validation using established marker genes supported these findings:
+
+### Plasma-cell markers
+
+- IGKC
+- IGHA1
+- IGHM
+- MS4A1 (CD20)
+- CD79A
+- CD79B
+
+### CD8 T-cell markers
+
+- CD8A
+- CD8B
+
+These observations are consistent with an immune-active tumor microenvironment in HPV-positive disease.
+
+---
+
+## Myeloid Compartment Remodeling
+
+HPV-negative tumors exhibited significantly increased fractions of:
+
+- M0 macrophages
+
+These cells are interpreted cautiously as unpolarized macrophage-like cells rather than inherently immunosuppressive macrophages.
+
+---
+
+## Suppression of Keratinization Programs
+
+HPV-positive tumors showed strong downregulation of genes involved in:
+
+- Keratinization
+- Cornification
+- Epithelial differentiation
+
+Representative genes include:
+
+- S100A7
+- SPRR family genes
+- LCE family genes
+- DSC1
+- KRT1
+- KRT6
+- KRT10
+- KRT14
+
+These findings are consistent with the non-keratinizing phenotype commonly observed in HPV-associated oropharyngeal carcinoma.
+
+---
+
+## Prognostic Gene Discovery
+
+Standardized Cox proportional hazards models identified several genes associated with overall survival, including:
+
+- ZFR2
+- STAG3
+- SMC1B
+- RAD9B
+
+These findings are exploratory and require validation in independent cohorts.
+
+---
+
+# Repository Structure
 
 ```text
-HNSC_HPV_Project/
+TCGA-HNSC-HPV-Transcriptomics/
 │
-├── data_raw/             # Original downloaded raw data files (RNA-seq, GDC manifests, clinical data)
-├── data_processed/       # Intermediate, cleaned datasets and CIBERSORTx deconvolution inputs/outputs
-├── scripts/              # R and Python scripts running the analytical pipeline
-├── results/              # Output tables of DEGs, enrichment (GO/KEGG/GSEA), and survival statistics
-├── figures/              # Publication-ready main manuscript figures (PNG and PDF formats)
-├── supplementary/        # Supplementary figures and tables
-│   ├── figures/          # Validation plots and supplementary enrichment/PCA plots
-│   └── tables/           # Full DEG lists, cell comparisons, and survival tables
-├── manuscript/           # Manuscript draft documents (DOCX, PDF) and reviewer response documents
-└── documentation/        # Session details, code documentation, and literature review files
+├── data_raw/
+├── data_processed/
+├── scripts/
+├── results/
+├── figures/
+├── supplementary/
+│   ├── figures/
+│   └── tables/
+├── manuscript/
+├── documentation/
+├── README.md
+└── sessionInfo.txt
 ```
 
 ---
 
-## Data Download Instructions
+# Directory Description
 
-Because raw TCGA genomic data files exceed GitHub upload limits and are protected, they are not committed to this repository. Below are the steps to retrieve the raw data:
+## data_raw/
 
-### 1. Clinical Data from cBioPortal
-The clinical datasets can be downloaded programmatically using the script provided in `scripts/download_data.py`. To download:
+Contains original downloaded files and metadata.
+
+Examples:
+
+- MANIFEST.txt
+- data_clinical_patient.txt
+- data_clinical_patient_full.txt
+- data_clinical_patient_pub.txt
+- data_clinical_sample.txt
+- hnsc_tcga_pub_clinical_data.tsv
+
+Large raw expression datasets are not included because of GitHub storage limitations.
+
+---
+
+## data_processed/
+
+Contains cleaned datasets and intermediate analysis files.
+
+Examples:
+
+- HNSC_HPV_status.csv
+- CIBERSORTx_Job3_Results.csv
+- CIBERSORTx_Job4_Results.csv
+- CIBERSORTx_Job7_Results.csv
+- CIBERSORTx_Job8_Results.csv
+- CIBERSORTx_Job14_Results.csv
+- HNSC_CIBERSORT_Input_Final.txt
+
+---
+
+## scripts/
+
+Contains all R and Python scripts used throughout the project.
+
+Examples:
+
+- HPV_HNSC_Revision.R
+- CESC_DESeq.R
+- analyze_hpv.py
+- calculate_demographics.py
+- check_studies.py
+- copy_images.py
+- download_data.py
+- fetch_cbioportal.py
+- generate_docx.py
+- plot_immune_summary.py
+- plot_workflow.py
+- recalculate_all.py
+
+---
+
+## results/
+
+Contains generated output tables.
+
+### Differential Expression
+
+- HNSC_DESeq2_All_Results.csv
+- HNSC_HPV_DEGs.csv
+- HNSC_HPV_DEGs_significant.csv
+
+### Enrichment Analyses
+
+- HNSC_HPV_GO_Enrichment.csv
+- HNSC_HPV_KEGG_Enrichment.csv
+- HNSC_HPV_GSEA.csv
+
+### Immune Analyses
+
+- HNSC_HPV_Immune_Comparison.csv
+- HNSC_HPV_Significant_Immune_Cells.csv
+- Plasma_Cell_Validation_Correlations.csv
+
+### Survival Analyses
+
+- HNSC_Survival_Results.csv
+- HNSC_Standardized_Cox_Results.csv
+- Table_Survival_Genes.csv
+
+---
+
+## figures/
+
+Contains publication-quality figures used in the main manuscript.
+
+Examples:
+
+- Figure_1_Workflow.png
+- Figure1_PCA.png
+- Figure2_Volcano.png
+- Figure8_Immune_Heatmap.png
+- HNSC_Forest_Plot.png
+- HNSC_BestGene_KM.png
+
+Both PNG and PDF formats are included when available.
+
+---
+
+## supplementary/
+
+### supplementary/figures/
+
+Contains supplementary figures and validation analyses.
+
+Includes:
+
+- Supplementary_Figure_S1_PCA
+- Supplementary_Figure_S1A_Raw_PCA
+- Supplementary_Figure_S2_Immune_Heatmap
+- Supplementary_Figure_S3_CD8_Validation
+- Supplementary_Figure_S4_PrimarySite_Adjusted
+- Supplementary_Figure_S5_GO_Enrichment
+- Supplementary_Figure_S6_KEGG_Enrichment
+- Supplementary_Figure_S7_GSEA
+- Supplementary_Figure_S8_Sensitivity_Analysis
+- Supplementary_Figure_S9_PlasmaCell_Validation
+- Supplementary_Figure_S10_Kaplan_Meier
+- Supplementary_Figure_S11_ForestPlot
+
+Additional plasma-cell marker validation plots:
+
+- Validation_CD79A_PlasmaCells
+- Validation_CD79B_PlasmaCells
+- Validation_IGKC_PlasmaCells
+- Validation_IGHA1_PlasmaCells
+- Validation_IGHM_PlasmaCells
+- Validation_MS4A1_PlasmaCells
+
+---
+
+### supplementary/tables/
+
+Contains supplementary data tables.
+
+Includes:
+
+- Supplementary_Table_S1
+- Supplementary_Table_S2
+- Supplementary_Table_S3
+- Supplementary_Table_S4
+- Supplementary_Table_S5
+- Supplementary_Table_S6
+- Supplementary_Table_S7
+- Supplementary_Table_S8
+- Supplementary_Table_S9
+- Supplementary_Table_S10
+- Supplementary_Table_S11
+- Supplementary_Table_S12
+- Supplementary_Table_S13
+- Supplementary_Table_S14
+- Supplementary_Table_S15
+- Supplementary_Table_S16
+
+---
+
+## manuscript/
+
+Contains manuscript and project documentation.
+
+Files include:
+
+- Immune_Landscape_HNSC.docx
+- HPV_Transcriptomics_Project.docx
+- Response_to_Reviewers.docx
+- Supplementary_Materials.docx
+
+---
+
+## documentation/
+
+Contains:
+
+- sessionInfo.txt
+- code.docx
+- Selected_Genes_for_Literature_Review.csv
+- Literature_Review_Template.csv
+
+---
+
+# Data Acquisition
+
+## Clinical Data
+
+Clinical information can be downloaded directly from cBioPortal.
+
 ```bash
 python scripts/download_data.py
 ```
-This retrieves:
-- `data_clinical_patient.txt`: Clinical patient characteristics for `hnsc_tcga_pub`.
-- `data_clinical_sample.txt`: Clinical sample details.
 
-To fetch clinical records directly from the cBioPortal API, run:
+or
+
 ```bash
 python scripts/fetch_cbioportal.py
 ```
-This fetches a detailed projection of clinical features for the TCGA HNSC cohort.
 
-### 2. RNA-Seq Counts and GDC Data
-To obtain raw count matrices and RData objects (`HNSC_data.rds`, `CESC_data.rds`, `HNSC_complete.RData`, `CESC_complete.RData`):
-1. **GDC Data Portal**: Use the manifest file `data_raw/MANIFEST.txt` with the GDC DTT (Data Transfer Tool) to download the raw HTSeq-Count files into `data_raw/GDCdata/`.
-2. **TCGAbiolinks (R)**: The raw RNA-seq counts and patient clinical annotations can be fetched directly in R using the following code structure:
-   ```R
-   library(TCGAbiolinks)
-   query <- GDCquery(
-       project = "TCGA-HNSC",
-       data.category = "Transcriptome Profiling",
-       data.type = "Gene Expression Quantification",
-       workflow.type = "STAR - Counts"
-   )
-   GDCdownload(query, directory = "data_raw/GDCdata")
-   data <- GDCprepare(query)
-   saveRDS(data, file = "data_raw/HNSC_data.rds")
-   ```
+Generated files:
+
+- data_clinical_patient.txt
+- data_clinical_sample.txt
+- data_clinical_patient_full.txt
+- data_clinical_patient_pub.txt
 
 ---
 
-## Reproducing the Analysis
+## TCGA RNA-Seq Data
 
-To run the pipeline and generate all tables, figures, and the manuscript, execute the scripts in the following order:
+Raw expression data were obtained from:
 
-### Step 1: Initialize Data
-Run the download scripts to ensure cBioPortal clinical files are in place:
+https://portal.gdc.cancer.gov/projects/TCGA-HNSC
+
+### Using TCGAbiolinks
+
+```r
+library(TCGAbiolinks)
+
+query <- GDCquery(
+  project = "TCGA-HNSC",
+  data.category = "Transcriptome Profiling",
+  data.type = "Gene Expression Quantification",
+  workflow.type = "STAR - Counts"
+)
+
+GDCdownload(query)
+data <- GDCprepare(query)
+
+saveRDS(data, "data_raw/HNSC_data.rds")
+```
+
+---
+
+# Reproducibility Guide
+
+Run the analysis in the following order.
+
+## Step 1 – Download and Prepare Clinical Data
+
 ```bash
 python scripts/download_data.py
 python scripts/calculate_demographics.py
 ```
-This generates Table 1 (demographics) statistics in the console and saves `data_clinical_patient_full.txt` and `data_clinical_patient_pub.txt` into `data_raw/`.
 
-### Step 2: Run Deconvolution (CIBERSORTx)
-1. Upload the expression matrix (generated by DESeq2) to the [CIBERSORTx web portal](https://cibersortx.stanford.edu/).
-2. Deconvolve using the LM22 signature matrix (1,000 permutations, absolute mode disabled).
-3. The results are placed in `data_processed/` as `CIBERSORTx_Job14_Results.csv` (or corresponding job CSVs).
+Purpose:
 
-### Step 3: Run Differential Expression & Validation
-Execute the analysis scripts to run DESeq2 (adjusting for primary site and HPV status) and validate deconvolution fractions against marker genes:
-```bash
-# Calculate correlations between CIBERSORTx estimates and cell markers (e.g. CD8A, CD8B, IGKC)
-python scripts/analyze_hpv.py
-```
-
-### Step 4: Generate Figures
-Run the visualization scripts to output the workflow and summary figures:
-```bash
-# Generate Figure 1 (Bioinformatics Workflow)
-python scripts/plot_workflow.py
-
-# Generate Figure 7 (Graphical Immune summary infographic)
-python scripts/plot_immune_summary.py
-
-# Copy and compile other figures to figures/ and supplementary/figures/
-python scripts/copy_images.py
-```
-
-### Step 5: Compile the Manuscript
-To compile the final manuscript document (`manuscript/Immune_Landscape_HNSC.docx`) with all tables formatted and figures embedded:
-```bash
-python scripts/generate_docx.py
-```
-*Note: The script has a built-in safety fallback. If the manuscript file is open in Microsoft Word and locked, it will write to `manuscript/Immune_Landscape_HNSC_Updated.docx`.*
+- Download clinical metadata
+- Generate demographic summaries
+- Produce Table 1 statistics
 
 ---
 
-## Software Environment and Dependencies
+## Step 2 – Obtain CIBERSORTx Immune Estimates
 
-### R Environment
-The R package versions utilized are detailed in `documentation/sessionInfo.txt`. Key packages include:
-- `DESeq2` (v1.42.0)
-- `TCGAbiolinks` (v2.30.0)
-- `clusterProfiler` (v4.10.0)
-- `ggplot2` (v3.4.4)
-- `pheatmap` (v1.0.12)
-- `EnhancedVolcano` (v1.20.0)
+1. Generate expression matrix.
+2. Upload matrix to CIBERSORTx.
+3. Use:
 
-### Python Environment
-Dependencies for python scripts are standard scientific libraries. You can install them via pip:
+- Signature Matrix: LM22
+- Permutations: 1000
+- Absolute Mode: Disabled
+
+Output:
+
+- CIBERSORTx_Job14_Results.csv
+
+stored in:
+
+```text
+data_processed/
+```
+
+---
+
+## Step 3 – Differential Expression Analysis
+
+```r
+source("scripts/HPV_HNSC_Revision.R")
+```
+
+Purpose:
+
+- DESeq2 analysis
+- HPV-positive vs HPV-negative comparison
+- Primary-site sensitivity analysis
+
+Outputs:
+
+- HNSC_DESeq2_All_Results.csv
+- HNSC_HPV_DEGs.csv
+- HNSC_HPV_DEGs_significant.csv
+
+---
+
+## Step 4 – Immune Validation Analyses
+
+```bash
+python scripts/analyze_hpv.py
+```
+
+Purpose:
+
+- Validate CD8 T-cell estimates
+- Validate plasma-cell estimates
+
+Outputs:
+
+- Plasma_Cell_Validation_Correlations.csv
+- Supplementary validation tables
+
+---
+
+## Step 5 – Functional Enrichment
+
+```r
+source("scripts/HPV_HNSC_Revision.R")
+```
+
+Generates:
+
+- HNSC_HPV_GO_Enrichment.csv
+- HNSC_HPV_KEGG_Enrichment.csv
+- HNSC_HPV_GSEA.csv
+
+---
+
+## Step 6 – Survival Analysis
+
+```r
+source("scripts/HPV_HNSC_Revision.R")
+```
+
+Outputs:
+
+- HNSC_Survival_Results.csv
+- HNSC_Standardized_Cox_Results.csv
+
+---
+
+## Step 7 – Generate Figures
+
+Workflow figure:
+
+```bash
+python scripts/plot_workflow.py
+```
+
+Immune summary figure:
+
+```bash
+python scripts/plot_immune_summary.py
+```
+
+Copy figures:
+
+```bash
+python scripts/copy_images.py
+```
+
+Outputs:
+
+- figures/
+- supplementary/figures/
+
+---
+
+## Step 8 – Compile Manuscript
+
+```bash
+python scripts/generate_docx.py
+```
+
+Output:
+
+- manuscript/Immune_Landscape_HNSC.docx
+
+If the document is open and locked:
+
+- Immune_Landscape_HNSC_Updated.docx
+
+will be generated automatically.
+
+---
+
+# Software Environment
+
+## R Packages
+
+- DESeq2
+- TCGAbiolinks
+- clusterProfiler
+- EnhancedVolcano
+- survival
+- survminer
+- ggplot2
+- pheatmap
+- dplyr
+
+Full package versions are listed in:
+
+```text
+documentation/sessionInfo.txt
+```
+
+---
+
+## Python Dependencies
+
 ```bash
 pip install numpy pandas scipy matplotlib seaborn python-docx beautifulsoup4
 ```
+
+---
+
+# Expected Outputs
+
+Running the pipeline should reproduce:
+
+### Main Manuscript Figures
+
+- Workflow diagram
+- PCA
+- Volcano plot
+- Immune infiltration comparison
+- Immune heatmap
+- GO enrichment
+- KEGG enrichment
+- GSEA
+- Forest plot
+- Kaplan–Meier plot
+
+### Supplementary Figures
+
+- 11 supplementary figures
+- Plasma-cell validation plots
+
+### Supplementary Tables
+
+- 16 supplementary tables
+
+### Manuscript Files
+
+- Main manuscript
+- Supplementary materials
+- Response to reviewers
+
+---
+
+# Citation
+
+If you use this repository, please cite:
+
+> Besra R. et al. Transcriptomic and Immune Profiling of HPV-Positive versus HPV-Negative Head and Neck Squamous Cell Carcinoma. IIT Kharagpur Research Internship Project, 2026.
+
+---
+
+# Author
+
+**Rejoy Besra**  
+Department of Bioscience and Biotechnology  
+Indian Institute of Technology Kharagpur
+
+GitHub: https://github.com/rejoy2004-rgb
+
+---
+
+# Reproducibility Statement
+
+All analyses were performed using publicly available TCGA-HNSC datasets. The repository includes processed data, analysis scripts, figures, supplementary materials, and manuscript files to facilitate transparency, reproducibility, and future extension of the study.
