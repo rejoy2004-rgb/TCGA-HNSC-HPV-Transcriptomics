@@ -602,6 +602,6 @@ All analyses were performed using publicly available TCGA-HNSC datasets. The rep
   - **Max Gene Set Size (`maxGSSize`)**: 500
   - **Multiple-Testing Correction**: Benjamini-Hochberg (BH)
   - **FDR Cutoff**: 0.25 (exploratory threshold recommended by the Broad Institute for GSEA)
-  - **Random Seed**: `123` (explicitly set before calling `gseGO` to ensure identical permutation results across runs)
+  - **Random Seed**: `123` (set before GSEA to maximize reproducibility across repeated executions)
 
 GSEA software and library version numbers are logged dynamically to `results/HNSC_GSEA_package_versions.txt` upon execution.
