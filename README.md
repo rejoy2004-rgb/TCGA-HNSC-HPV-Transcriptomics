@@ -590,7 +590,11 @@ GitHub: https://github.com/rejoy2004-rgb
 
 # Reproducibility and GSEA Parameters
 
-All analyses were performed using publicly available TCGA-HNSC datasets. The repository is configured to guarantee strict reproducibility:
+All analyses were performed using publicly available TCGA-HNSC datasets. The repository is configured to guarantee strict reproducibility.
+
+Immune deconvolution was performed externally using the CIBERSORTx web server. The repository includes both the exact input matrix (`data_processed/HNSC_CIBERSORT_Input_Final.txt`) and the archived output (`data_processed/CIBERSORTx_Job14_Results.csv`), together with the documented execution parameters in `documentation/CIBERSORTx_Provenance.md`.
+
+General parameters and reproducibility settings include:
 
 - **Cohort Verification**: The HNSC pipeline verifies that the processed dataset contains exactly **243 HPV-negative** and **36 HPV-positive** samples, raising an error if any data update alters this cohort. A full filtering funnel is saved in `results/HNSC_Cohort_Manifest.csv`, and all final patient barcodes are saved in `results/HNSC_Final_Cohort.csv`.
 - **GSEA Ranking Metric**: Genes are ranked using the **DESeq2 Wald statistic**, emphasizing statistical evidence of differential expression between HPV-positive and HPV-negative groups.
