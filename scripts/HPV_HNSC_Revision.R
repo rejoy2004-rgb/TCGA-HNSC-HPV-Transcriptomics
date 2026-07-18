@@ -64,7 +64,18 @@ meta_cohort <- meta_merged[meta_merged$barcode %in% common_barcodes, ]
 rownames(meta_cohort) <- meta_cohort$barcode
 hnsc_data <- hnsc_data[, meta_cohort$barcode]
 
+# Verify expression columns and metadata rows match exactly (Issue 6)
+stopifnot(
+  identical(
+    colnames(hnsc_data),
+    meta_cohort$barcode
+  )
+)
+
 # Cohort Verification (Reproducibility Guard)
+# Final cohort used in the manuscript (Issue 5).
+# Samples lacking HPV annotation or failing clinical matching
+# were excluded before differential expression analysis.
 hpv_counts <- table(meta_cohort$HPV.Status)
 
 cat("\nFinal analysis cohort:\n")
@@ -72,8 +83,14 @@ print(hpv_counts)
 
 expected_counts <- c(negative = 243, positive = 36)
 
-if (!identical(as.integer(hpv_counts[c("negative", "positive")]),
-               as.integer(expected_counts))) {
+# Robust observed counts mapping (Issue 1)
+observed_counts <- c(
+  negative = if ("negative" %in% names(hpv_counts)) as.integer(hpv_counts["negative"]) else 0L,
+  positive = if ("positive" %in% names(hpv_counts)) as.integer(hpv_counts["positive"]) else 0L
+)
+
+# Standard all() comparison check (Issue 2)
+if (!all(observed_counts == expected_counts)) {
   stop(
     sprintf(
       paste(
@@ -82,26 +99,28 @@ if (!identical(as.integer(hpv_counts[c("negative", "positive")]),
         "Observed: %d HPV-negative, %d HPV-positive."
       ),
       expected_counts["negative"], expected_counts["positive"],
-      hpv_counts["negative"], hpv_counts["positive"]
+      observed_counts["negative"], observed_counts["positive"]
     )
   )
 }
 
-# Export cohort manifest for reproducibility
+# Export cohort manifest for reproducibility with a richer funnel (Issue 3)
 cohort_manifest <- data.frame(
   Step = c(
-    "Initial samples (TCGA HNSC metadata)",
-    "After clinical HPV status alignment",
-    "Final cohort (analyzed)",
-    "Final HPV-negative group",
-    "Final HPV-positive group"
+    "1. Raw TCGA HNSC cases in RNA-seq dataset",
+    "2. Clinical HPV status mapping records available",
+    "3. Merged samples with clinical data",
+    "4. Final cohort analyzed (with matched RNA-seq)",
+    "5. Final HPV-negative group",
+    "6. Final HPV-positive group"
   ),
   Samples = c(
     nrow(meta),
+    nrow(hpv_meta),
     nrow(meta_merged),
     nrow(meta_cohort),
-    as.integer(hpv_counts["negative"]),
-    as.integer(hpv_counts["positive"])
+    observed_counts["negative"],
+    observed_counts["positive"]
   )
 )
 
@@ -111,6 +130,14 @@ write.csv(
   row.names = FALSE
 )
 cat("Cohort manifest saved to 'results/HNSC_Cohort_Manifest.csv'\n")
+
+# Save the actual sample IDs of the final cohort for full traceability (Issue 4)
+write.csv(
+  meta_cohort,
+  "results/HNSC_Final_Cohort.csv",
+  row.names = FALSE
+)
+cat("Final cohort metadata saved to 'results/HNSC_Final_Cohort.csv'\n")
 
 # -------------------------------------------------------------
 # Part 2: Differential Expression (DESeq2)
