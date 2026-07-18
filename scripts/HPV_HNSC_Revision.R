@@ -529,7 +529,8 @@ gse_res <- gseGO(
 write.csv(as.data.frame(gse_res), "results/HNSC_HPV_GSEA.csv", row.names = FALSE)
 
 # Generate GSEA visual plots for publication and verification (Issue 7)
-if (nrow(gse_res) > 0) {
+gsea_df <- as.data.frame(gse_res)
+if (nrow(gsea_df) > 0) {
   # 1. GSEA Dotplot
   png("figures/HNSC_HPV_GSEA_Dotplot.png", width = 2400, height = 1800, res = 300)
   print(dotplot(gse_res, showCategory = 15, title = "GSEA GO Biological Process (FDR < 0.25)"))
@@ -541,8 +542,8 @@ if (nrow(gse_res) > 0) {
   dev.off()
   
   # 3. GSEA Running Score Enrichment Plot for the top pathway
-  top_pathway_id <- gse_res$ID[1]
-  top_pathway_desc <- gse_res$Description[1]
+  top_pathway_id <- gsea_df$ID[1]
+  top_pathway_desc <- gsea_df$Description[1]
   png("figures/HNSC_HPV_GSEA_EnrichmentPlot.png", width = 1800, height = 1400, res = 300)
   print(gseaplot2(gse_res, geneSetID = top_pathway_id, title = top_pathway_desc))
   dev.off()
