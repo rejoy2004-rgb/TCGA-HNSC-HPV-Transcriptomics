@@ -34,7 +34,22 @@ if (!file.exists(data_path)) {
 hnsc_data <- readRDS(data_path)
 cat("SummarizedExperiment loaded. Dimensions:", paste(dim(hnsc_data), collapse = " x "), "\n")
 
-# Load HPV Status Reference
+# ------------------------------------------------------------------
+# HPV status annotations provenance (Reproducibility Guard)
+#
+# HNSC_HPV_status.csv contains HPV-positive/HPV-negative labels for
+# TCGA-HNSC cases. These labels were derived from cBioPortal patient
+# clinical metadata for the publication cohort (hnsc_tcga_pub, Nature 2015).
+# Patient IDs were mapped to 15-char sample barcodes by appending "-01"
+# (primary tumor), and HPV_STATUS (HPV+/HPV-) mapped to positive/negative.
+#
+# Samples lacking a definitive HPV annotation were excluded from
+# downstream analyses. For full details see documentation/HPV_status_provenance.md
+#
+# The final analyzed cohort contains:
+#   - 243 HPV-negative cases
+#   - 36 HPV-positive cases
+# ------------------------------------------------------------------
 hpv_status_path <- "data_processed/HNSC_HPV_status.csv"
 if (!file.exists(hpv_status_path)) {
   hpv_status_path <- "HNSC_HPV_status.csv"
