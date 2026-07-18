@@ -6,6 +6,9 @@ This document details the experimental provenance, input matrix preparation, and
 - **File**: `data_processed/HNSC_CIBERSORT_Input_Final.txt`
 - **Original Source**: The Cancer Genome Atlas (TCGA) HNSC RNA-sequencing raw counts.
 
+> [!NOTE]
+> **Reproducibility Note**: The original processing script converting the raw counts inside `data_raw/HNSC_data.rds` into TPM values and resolving duplicate gene symbols was not archived in this repository. However, the exact resulting CIBERSORTx input mixture file is fully preserved and version-controlled at [HNSC_CIBERSORT_Input_Final.txt](file:///c:/Users/rejoy/Documents/Intern_Project/data_processed/HNSC_CIBERSORT_Input_Final.txt). Future replication runs should upload this file directly to bypass manual replication of the TPM pipeline.
+
 ### Matrix Generation Pipeline
 The input file was prepared from raw data through the following steps:
 1. **Raw Counts Matrix Extraction**: Raw unstranded count matrix was extracted from `data_raw/HNSC_data.rds`.
@@ -45,4 +48,7 @@ To replicate the deconvolution:
    - **Permutations**: *100*
    - **Batch correction**: *None*
    - **Run mode**: *Relative*
-6. Click **Run**. The resulting downloaded CSV file corresponds to `data_processed/CIBERSORTx_Job14_Results.csv` (subject to minor random differences in p-value columns due to stochastic permutations).
+6. Click **Run**. The resulting downloaded CSV file corresponds to `data_processed/CIBERSORTx_Job14_Results.csv`.
+
+> [!WARNING]
+> **External Run Variance Warning**: The archived `CIBERSORTx_Job14_Results.csv` file is the canonical dataset used in the manuscript. Re-running the deconvolution using the external CIBERSORTx web application may produce small numerical variations in the output (especially in statistical p-value columns) due to updates in the external server code, underlying signature matrices, or stochastic differences in the Monte Carlo permutation sampling.

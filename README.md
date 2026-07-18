@@ -26,6 +26,23 @@ This repository is organized to enable complete reproducibility and facilitate f
 
 ---
 
+# Analysis Workflow
+
+```mermaid
+graph TD
+    A["Raw RNA-seq Count Data (HNSC_data.rds)"] --> B["Stratification by HPV Status"]
+    B --> C["Differential Expression Analysis (DESeq2)"]
+    B --> D["TPM Normalization & Gene Annotation"]
+    D --> E["CIBERSORTx Input Matrix (HNSC_CIBERSORT_Input_Final.txt)"]
+    E --> F["CIBERSORTx Deconvolution (LM22, Relative Mode)"]
+    F --> G["Deconvolution Results (CIBERSORTx_Job14_Results.csv)"]
+    C --> H["GO/KEGG Enrichment & GSEA"]
+    G --> I["Immune Microenvironment & Ratio Analysis"]
+    C & G --> J["Prognostic Survival Models (Cox & Kaplan-Meier)"]
+```
+
+---
+
 # Key Findings
 
 ## Enhanced Adaptive Immune Activation
@@ -592,7 +609,9 @@ GitHub: https://github.com/rejoy2004-rgb
 
 All analyses were performed using publicly available TCGA-HNSC datasets. The repository is configured to guarantee strict reproducibility.
 
-Immune deconvolution was performed externally using the CIBERSORTx web server. The repository includes both the exact input matrix (`data_processed/HNSC_CIBERSORT_Input_Final.txt`) and the archived output (`data_processed/CIBERSORTx_Job14_Results.csv`), together with the documented execution parameters in `documentation/CIBERSORTx_Provenance.md`.
+Immune deconvolution was performed externally using the CIBERSORTx web server (LM22 signature matrix, relative mode, 100 permutations, QN disabled, no batch correction). The repository includes both the exact input matrix (`data_processed/HNSC_CIBERSORT_Input_Final.txt`) and the archived output (`data_processed/CIBERSORTx_Job14_Results.csv`), together with the documented execution parameters in `documentation/CIBERSORTx_Provenance.md`.
+
+*Note: The archived Job14 results are the canonical results used for the manuscript. Re-running the workflow using the external CIBERSORTx web portal may produce small numerical differences due to updates in the external web service, annotation databases, or Monte Carlo permutation seed differences.*
 
 General parameters and reproducibility settings include:
 
