@@ -57,14 +57,60 @@ meta$Sample.ID <- substr(rownames(meta), 1, 15)
 
 # Merge colData with HPV status
 meta_merged <- merge(meta, hpv_meta, by = "Sample.ID")
-cat("Cohort aligned. Matches found:", nrow(meta_merged), "\n")
-print(table(meta_merged$HPV.Status))
 
 # Match colnames of expression matrix
 common_barcodes <- intersect(colnames(hnsc_data), meta_merged$barcode)
 meta_cohort <- meta_merged[meta_merged$barcode %in% common_barcodes, ]
 rownames(meta_cohort) <- meta_cohort$barcode
 hnsc_data <- hnsc_data[, meta_cohort$barcode]
+
+# Cohort Verification (Reproducibility Guard)
+hpv_counts <- table(meta_cohort$HPV.Status)
+
+cat("\nFinal analysis cohort:\n")
+print(hpv_counts)
+
+expected_counts <- c(negative = 243, positive = 36)
+
+if (!identical(as.integer(hpv_counts[c("negative", "positive")]),
+               as.integer(expected_counts))) {
+  stop(
+    sprintf(
+      paste(
+        "Final cohort does not match the manuscript.",
+        "Expected: %d HPV-negative, %d HPV-positive.",
+        "Observed: %d HPV-negative, %d HPV-positive."
+      ),
+      expected_counts["negative"], expected_counts["positive"],
+      hpv_counts["negative"], hpv_counts["positive"]
+    )
+  )
+}
+
+# Export cohort manifest for reproducibility
+cohort_manifest <- data.frame(
+  Step = c(
+    "Initial samples (TCGA HNSC metadata)",
+    "After clinical HPV status alignment",
+    "Final cohort (analyzed)",
+    "Final HPV-negative group",
+    "Final HPV-positive group"
+  ),
+  Samples = c(
+    nrow(meta),
+    nrow(meta_merged),
+    nrow(meta_cohort),
+    as.integer(hpv_counts["negative"]),
+    as.integer(hpv_counts["positive"])
+  )
+)
+
+write.csv(
+  cohort_manifest,
+  "results/HNSC_Cohort_Manifest.csv",
+  row.names = FALSE
+)
+cat("Cohort manifest saved to 'results/HNSC_Cohort_Manifest.csv'\n")
 
 # -------------------------------------------------------------
 # Part 2: Differential Expression (DESeq2)
