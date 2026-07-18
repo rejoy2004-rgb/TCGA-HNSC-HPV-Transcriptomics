@@ -682,4 +682,14 @@ p_forest <- ggplot(std_df, aes(x = HR, y = reorder(Gene, HR), color = Significan
 ggsave("figures/HNSC_Forest_Plot_Final.png", p_forest, width = 7, height = 5, dpi = 300)
 cat("Forest Plot for survival analysis generated.\n")
 
+# -------------------------------------------------------------
+# Part 7: Environment Traceability (sessionInfo)
+# -------------------------------------------------------------
+cat("\n--- Logging Environment sessionInfo ---\n")
+writeLines(
+  capture.output(sessionInfo()),
+  "results/sessionInfo.txt"
+)
+cat("Full sessionInfo logged to 'results/sessionInfo.txt'\n")
+
 cat("HPV_HNSC_Revision.R script run finished successfully.\n")
