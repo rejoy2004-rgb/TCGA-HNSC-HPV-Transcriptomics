@@ -541,7 +541,8 @@ if (nrow(gsea_df) > 0) {
   print(ridgeplot(gse_res, showCategory = 15) + labs(title = "GSEA Ridgeplot of Enriched Pathways"))
   dev.off()
   
-  # 3. GSEA Running Score Enrichment Plot for the top pathway
+  # 3. GSEA Running Score Enrichment Plot for the top pathway (sorted by p.adjust)
+  gsea_df <- gsea_df[order(gsea_df$p.adjust), ]
   top_pathway_id <- gsea_df$ID[1]
   top_pathway_desc <- gsea_df$Description[1]
   png("figures/HNSC_HPV_GSEA_EnrichmentPlot.png", width = 1800, height = 1400, res = 300)
