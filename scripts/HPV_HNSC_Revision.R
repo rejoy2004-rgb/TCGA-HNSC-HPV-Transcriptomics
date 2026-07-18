@@ -14,6 +14,7 @@ library(pheatmap)
 library(ggplot2)
 library(survival)
 library(RColorBrewer)
+library(enrichplot)
 
 # Create folders if they do not exist
 dir.create("results", showWarnings = FALSE)
@@ -472,24 +473,94 @@ ekegg_up <- enrichKEGG(gene = up_entrez, organism = "hsa")
 write.csv(as.data.frame(ekegg_up), "results/HNSC_HPV_KEGG_Upregulated.csv", row.names = FALSE)
 
 # 5.3 Gene Set Enrichment Analysis (GSEA)
-# Order genes by Wald statistics
+#
+############################################################
+# Gene Set Enrichment Analysis (GSEA)
+#
+# Gene ranking:
+# DESeq2 Wald statistic
+#
+# Duplicate Ensembl IDs:
+# collapsed by retaining the maximum Wald statistic
+#
+# Ontology:
+# GO Biological Process
+#
+# Multiple-testing correction:
+# Benjamini–Hochberg (BH)
+#
+# Exploratory significance threshold:
+# FDR < 0.25 (following Broad Institute GSEA recommendations
+# for exploratory pathway discovery)
+#
+# Random seed:
+# 123 (explicitly set before GSEA call for reproducibility)
+############################################################
+
+# Align raw DESeq2 results with Gene IDs
 res$gene_id <- sub("\\..*", "", rownames(res))
 res_annotated <- merge(as.data.frame(res), gene_map_hnsc, by.x = "gene_id", by.y = "ENSEMBL")
 res_annotated <- res_annotated[!is.na(res_annotated$stat), ]
 
-gene_list <- res_annotated$stat
-names(gene_list) <- res_annotated$SYMBOL
-gene_list <- sort(gene_list, decreasing = TRUE)
+# Order genes by Wald statistics (collapsed by max Wald stat per Ensembl ID)
+# Multiple transcript entries mapping to the same gene are collapsed
+# by retaining the maximum Wald statistic. (Genes ranked by DESeq2 Wald statistic)
+gene_list <- sort(
+  tapply(res_annotated$stat, res_annotated$gene_id, max),
+  decreasing = TRUE
+)
 
-# Run GSEA BP
+# Run GSEA using explicit parameters to ensure reproducibility
+set.seed(123)
 gse_res <- gseGO(
-  geneList = sort(tapply(res_annotated$stat, res_annotated$gene_id, max), decreasing = TRUE),
+  geneList = gene_list,
   OrgDb = org.Hs.eg.db,
   keyType = "ENSEMBL",
   ont = "BP",
-  pvalueCutoff = 0.25
+  exponent = 1,
+  minGSSize = 10,
+  maxGSSize = 500,
+  pAdjustMethod = "BH",
+  pvalueCutoff = 0.25,
+  verbose = FALSE
 )
+
+# Save GSEA results table
 write.csv(as.data.frame(gse_res), "results/HNSC_HPV_GSEA.csv", row.names = FALSE)
+
+# Generate GSEA visual plots for publication and verification (Issue 7)
+if (nrow(gse_res) > 0) {
+  # 1. GSEA Dotplot
+  png("figures/HNSC_HPV_GSEA_Dotplot.png", width = 2400, height = 1800, res = 300)
+  print(dotplot(gse_res, showCategory = 15, title = "GSEA GO Biological Process (FDR < 0.25)"))
+  dev.off()
+  
+  # 2. GSEA Ridgeplot
+  png("figures/HNSC_HPV_GSEA_Ridgeplot.png", width = 2400, height = 1800, res = 300)
+  print(ridgeplot(gse_res, showCategory = 15) + labs(title = "GSEA Ridgeplot of Enriched Pathways"))
+  dev.off()
+  
+  # 3. GSEA Running Score Enrichment Plot for the top pathway
+  top_pathway_id <- gse_res$ID[1]
+  top_pathway_desc <- gse_res$Description[1]
+  png("figures/HNSC_HPV_GSEA_EnrichmentPlot.png", width = 1800, height = 1400, res = 300)
+  print(gseaplot2(gse_res, geneSetID = top_pathway_id, title = top_pathway_desc))
+  dev.off()
+} else {
+  cat("Warning: No enriched pathways met the FDR < 0.25 threshold. GSEA plots skipped.\n")
+}
+
+# Log GSEA package versions for full environmental traceability (Issue 6)
+version_log <- paste0(
+  "GSEA Environment Traceability Log\n",
+  "---------------------------------\n",
+  "Run date: ", Sys.time(), "\n",
+  "clusterProfiler version: ", as.character(packageVersion("clusterProfiler")), "\n",
+  "org.Hs.eg.db version: ", as.character(packageVersion("org.Hs.eg.db")), "\n",
+  "enrichplot version: ", as.character(packageVersion("enrichplot")), "\n"
+)
+writeLines(version_log, "results/HNSC_GSEA_package_versions.txt")
+cat("GSEA environment versions logged to 'results/HNSC_GSEA_package_versions.txt'\n")
 
 # -------------------------------------------------------------
 # Part 6: Survival & Prognostic Modelling

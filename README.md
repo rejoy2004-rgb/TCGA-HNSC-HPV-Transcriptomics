@@ -588,6 +588,20 @@ GitHub: https://github.com/rejoy2004-rgb
 
 ---
 
-# Reproducibility Statement
+# Reproducibility and GSEA Parameters
 
-All analyses were performed using publicly available TCGA-HNSC datasets. The repository includes processed data, analysis scripts, figures, supplementary materials, and manuscript files to facilitate transparency, reproducibility, and future extension of the study.
+All analyses were performed using publicly available TCGA-HNSC datasets. The repository is configured to guarantee strict reproducibility:
+
+- **Cohort Verification**: The HNSC pipeline verifies that the processed dataset contains exactly **243 HPV-negative** and **36 HPV-positive** samples, raising an error if any data update alters this cohort. A full filtering funnel is saved in `results/HNSC_Cohort_Manifest.csv`, and all final patient barcodes are saved in `results/HNSC_Final_Cohort.csv`.
+- **GSEA Ranking Metric**: Genes are ranked using the **DESeq2 Wald statistic**, emphasizing statistical evidence of differential expression between HPV-positive and HPV-negative groups.
+- **Ensembl Duplicate Resolution**: Multiple Ensembl transcript entries mapping to the same gene are collapsed by retaining the **maximum Wald statistic**.
+- **GSEA Execution Parameters**:
+  - **Ontology**: GO Biological Process (BP)
+  - **Exponent**: 1.0 (standard weighted ranking)
+  - **Min Gene Set Size (`minGSSize`)**: 10
+  - **Max Gene Set Size (`maxGSSize`)**: 500
+  - **Multiple-Testing Correction**: Benjamini-Hochberg (BH)
+  - **FDR Cutoff**: 0.25 (exploratory threshold recommended by the Broad Institute for GSEA)
+  - **Random Seed**: `123` (explicitly set before calling `gseGO` to ensure identical permutation results across runs)
+
+GSEA software and library version numbers are logged dynamically to `results/HNSC_GSEA_package_versions.txt` upon execution.
