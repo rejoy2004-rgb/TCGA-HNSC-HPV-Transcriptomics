@@ -539,8 +539,10 @@ gse_res <- gseGO(
 # Save GSEA results table
 write.csv(as.data.frame(gse_res), "results/HNSC_HPV_GSEA.csv", row.names = FALSE)
 
-# Generate GSEA visual plots for publication and verification (Issue 7)
 gsea_df <- as.data.frame(gse_res)
+cat("Number of enriched pathways (FDR < 0.25):", nrow(gsea_df), "\n")
+
+# Generate GSEA visual plots for publication and verification (Issue 7)
 if (nrow(gsea_df) > 0) {
   # 1. GSEA Dotplot
   png("figures/HNSC_HPV_GSEA_Dotplot.png", width = 2400, height = 1800, res = 300)
