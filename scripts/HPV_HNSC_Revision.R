@@ -510,6 +510,17 @@ gene_list <- sort(
   decreasing = TRUE
 )
 
+# Export the GSEA gene ranking vector (Wald Statistics) for standalone GSEA runs
+write.csv(
+  data.frame(
+    EnsemblGeneID = names(gene_list),
+    WaldStatistic = gene_list
+  ),
+  "results/HNSC_GSEA_GeneRanking.csv",
+  row.names = FALSE
+)
+cat("GSEA gene ranking vector saved to 'results/HNSC_GSEA_GeneRanking.csv'\n")
+
 # Run GSEA using explicit parameters to ensure reproducibility
 set.seed(123)
 gse_res <- gseGO(
