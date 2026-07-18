@@ -551,10 +551,14 @@ if (nrow(gse_res) > 0) {
 }
 
 # Log GSEA package versions for full environmental traceability (Issue 6)
+bioc_ver <- if (requireNamespace("BiocManager", quietly = TRUE)) as.character(BiocManager::version()) else "Unknown/Not Installed"
 version_log <- paste0(
   "GSEA Environment Traceability Log\n",
   "---------------------------------\n",
   "Run date: ", Sys.time(), "\n",
+  "R version: ", R.version.string, "\n",
+  "Bioconductor version: ", bioc_ver, "\n",
+  "Platform: ", R.version$platform, " (", R.version$arch, ")\n",
   "clusterProfiler version: ", as.character(packageVersion("clusterProfiler")), "\n",
   "org.Hs.eg.db version: ", as.character(packageVersion("org.Hs.eg.db")), "\n",
   "enrichplot version: ", as.character(packageVersion("enrichplot")), "\n"
