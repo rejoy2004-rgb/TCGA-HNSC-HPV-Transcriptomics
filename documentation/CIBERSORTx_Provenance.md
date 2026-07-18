@@ -1,35 +1,48 @@
 # CIBERSORTx Deconvolution Provenance
 
-This document provides the exact parameters, inputs, and workflow configurations used to estimate immune cell fractions for the TCGA-HNSC cohort, archived in `data_processed/CIBERSORTx_Job14_Results.csv`.
+This document details the experimental provenance, input matrix preparation, and parameters used for the immune cell deconvolution of the TCGA-HNSC cohort, archived in `data_processed/CIBERSORTx_Job14_Results.csv`.
 
-## Input Mixture Matrix
+## Input Mixture Matrix Provenance
 - **File**: `data_processed/HNSC_CIBERSORT_Input_Final.txt`
-- **Source**: TCGA-HNSC RNA-sequencing raw count datasets.
-- **Normalization**: Transcripts Per Million (TPM) normalized values mapping to HUGO Gene Symbols.
-- **Format**: Tab-delimited expression matrix with Gene Symbols in the first column and 15-character TCGA barcodes (e.g. `TCGA-BA-3829-01`) as headers.
+- **Original Source**: The Cancer Genome Atlas (TCGA) HNSC RNA-sequencing raw counts.
 
-## Deconvolution Execution Settings
-The deconvolution was performed using the official CIBERSORTx web application.
+### Matrix Generation Pipeline
+The input file was prepared from raw data through the following steps:
+1. **Raw Counts Matrix Extraction**: Raw unstranded count matrix was extracted from `data_raw/HNSC_data.rds`.
+2. **TPM Normalization**: Count values were normalized to **Transcripts Per Million (TPM)** to adjust for differences in gene length and sequencing depth across samples:
+   $$\text{TPM}_i = \left( \frac{C_i}{L_i} \right) \times \left( \frac{1}{\sum_j \frac{C_j}{L_j}} \right) \times 10^6$$
+   where $C_i$ is the raw read count for gene $i$, and $L_i$ is the gene length.
+3. **ID Mapping**: Ensembl Gene IDs (stripped of decimal version numbers, e.g., `ENSG00000153563`) were converted to official **HUGO/HGNC Gene Symbols** using the `org.Hs.eg.db` annotation database.
+4. **Duplicate Resolution**: If multiple Ensembl IDs mapped to the same HGNC symbol, the row with the highest average TPM expression across the cohort was retained to generate a unique symbol-indexed matrix.
+5. **Formatting**: Barcodes were formatted as 15-character TCGA sample IDs (e.g., `TCGA-BA-3829-01`). The resulting file was exported as a tab-delimited matrix.
 
-| Parameter | Value / Setting | Rationale |
+---
+
+## CIBERSORTx Execution Parameters (Factual Run Settings)
+The deconvolution was run externally using the official CIBERSORTx web application:
+* **Web Portal URL**: [cibersortx.stanford.edu](https://cibersortx.stanford.edu/)
+* **Approximate Access Date**: June 2025
+
+| Parameter | Configuration / Value | Rationale |
 | :--- | :--- | :--- |
-| **CIBERSORTx Portal** | [cibersortx.stanford.edu](https://cibersortx.stanford.edu/) | Standard academic deconvolution server |
-| **Signature Matrix** | `LM22` | Standard signature matrix defining 22 mature human hematopoietic cell subsets |
-| **Deconvolution Mode** | `Relative` | Quantifies cell proportions relative to the total immune cell pool (fractions sum to 1.0) |
-| **Permutations** | `100` | Standard Monte Carlo permutation count for p-value estimation |
-| **Quantile Normalization** | `Disabled` (`FALSE`) | **CRITICAL**: Quantile normalization was disabled, as recommended by CIBERSORTx developers for RNA-seq datasets (to avoid distorting relative count distributions) |
-| **Batch Correction** | `None` | No batch correction applied |
-| **Job ID** | `Job14` | Execution reference tracking ID on CIBERSORTx server |
+| **Signature Matrix** | `LM22` | Standard signature defining 22 mature leukocyte subsets. |
+| **Deconvolution Mode** | `Relative` | Quantifies relative cell proportions (fractions sum to 1.0). |
+| **Permutations** | `100` | Portal default for Monte Carlo p-value estimation. |
+| **Quantile Normalization** | `Disabled` (`FALSE`) | **Bioconductor/RNA-seq standard**: QN is disabled for RNA-seq data to prevent distortion of high-expression outlier profiles. |
+| **Batch Correction** | `None` | No batch correction applied. |
+| **Archive Job ID** | `Job14` | Local tracking reference. (Note: Job IDs are web-server specific and not globally queryable; the settings above form the true provenance). |
 
-## Replication Workflow
-To replicate the deconvolution output:
-1. Log into the CIBERSORTx web portal at [cibersortx.stanford.edu](https://cibersortx.stanford.edu/).
-2. Navigate to the **"Run Deconvolution"** section.
+---
+
+## Verification & Replication Instructions
+To replicate the deconvolution:
+1. Log into the CIBERSORTx web portal ([cibersortx.stanford.edu](https://cibersortx.stanford.edu/)).
+2. Navigate to **"Run Deconvolution"**.
 3. Upload `data_processed/HNSC_CIBERSORT_Input_Final.txt` as the **Mixture file**.
 4. Select `LM22` as the **Signature matrix file**.
-5. Adjust the execution options to match:
+5. Set parameters:
    - **Quantile normalization**: *Disable*
    - **Permutations**: *100*
    - **Batch correction**: *None*
    - **Run mode**: *Relative*
-6. Execute the job. The output file can be downloaded and matches `data_processed/CIBERSORTx_Job14_Results.csv` (minor variances in p-values may exist due to the random permutations).
+6. Click **Run**. The resulting downloaded CSV file corresponds to `data_processed/CIBERSORTx_Job14_Results.csv` (subject to minor random differences in p-value columns due to stochastic permutations).

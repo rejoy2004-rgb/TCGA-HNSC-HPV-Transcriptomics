@@ -297,7 +297,7 @@ if (!file.exists(cibersort_path)) {
 cibersort_metadata <- paste0(
   "CIBERSORTx Deconvolution Run Metadata\n",
   "-------------------------------------\n",
-  "Run date: ", Sys.time(), "\n",
+  "Analysis script execution date: ", Sys.time(), "\n",
   "Input mixture file: data_processed/HNSC_CIBERSORT_Input_Final.txt\n",
   "Signature matrix: LM22\n",
   "Deconvolution mode: Relative\n",
