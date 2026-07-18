@@ -480,7 +480,7 @@ write.csv(as.data.frame(ekegg_up), "results/HNSC_HPV_KEGG_Upregulated.csv", row.
 # Gene ranking:
 # DESeq2 Wald statistic
 #
-# Duplicate Ensembl IDs:
+# Duplicate Ensembl gene IDs:
 # collapsed by retaining the maximum Wald statistic
 #
 # Ontology:
@@ -503,8 +503,8 @@ res_annotated <- merge(as.data.frame(res), gene_map_hnsc, by.x = "gene_id", by.y
 res_annotated <- res_annotated[!is.na(res_annotated$stat), ]
 
 # Order genes by Wald statistics (collapsed by max Wald stat per Ensembl ID)
-# Multiple transcript entries mapping to the same gene are collapsed
-# by retaining the maximum Wald statistic. (Genes ranked by DESeq2 Wald statistic)
+# Duplicate Ensembl gene IDs introduced during annotation merging
+# are collapsed by retaining the maximum Wald statistic. (Genes ranked by DESeq2 Wald statistic)
 gene_list <- sort(
   tapply(res_annotated$stat, res_annotated$gene_id, max),
   decreasing = TRUE
