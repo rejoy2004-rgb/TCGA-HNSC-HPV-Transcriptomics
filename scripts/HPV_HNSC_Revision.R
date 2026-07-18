@@ -259,6 +259,30 @@ cat("PCA and Volcano plots generated.\n")
 
 # -------------------------------------------------------------
 # Part 3: Immune Cell Deconvolution (CIBERSORTx)
+#
+# Input:
+# TPM-normalized TCGA-HNSC expression matrix (HNSC_CIBERSORT_Input_Final.txt)
+#
+# Signature matrix:
+# LM22
+#
+# Mode:
+# Relative
+#
+# Quantile normalization:
+# Disabled (RNA-seq recommendation)
+#
+# Permutations:
+# 100
+#
+# Batch correction:
+# None
+#
+# Output:
+# CIBERSORTx_Job14_Results.csv
+#
+# Full details:
+# documentation/CIBERSORTx_Provenance.md
 # -------------------------------------------------------------
 cat("\n--- Running Immune Deconvolution Analysis ---\n")
 cibersort_path <- "data_processed/CIBERSORTx_Job14_Results.csv"
@@ -268,6 +292,23 @@ if (!file.exists(cibersort_path)) {
 if (!file.exists(cibersort_path)) {
   stop("CIBERSORTx_Job14_Results.csv not found.")
 }
+
+# Log CIBERSORTx run parameters for complete experimental audit trail
+cibersort_metadata <- paste0(
+  "CIBERSORTx Deconvolution Run Metadata\n",
+  "-------------------------------------\n",
+  "Run date: ", Sys.time(), "\n",
+  "Input mixture file: data_processed/HNSC_CIBERSORT_Input_Final.txt\n",
+  "Signature matrix: LM22\n",
+  "Deconvolution mode: Relative\n",
+  "Permutations: 100\n",
+  "Quantile normalization: FALSE (Disabled for RNA-seq)\n",
+  "Batch correction: None\n",
+  "CIBERSORTx Web Job ID: Job14\n",
+  "Archived output file: data_processed/CIBERSORTx_Job14_Results.csv\n"
+)
+writeLines(cibersort_metadata, "results/CIBERSORTx_Run_Metadata.txt")
+cat("CIBERSORTx run metadata logged to 'results/CIBERSORTx_Run_Metadata.txt'\n")
 
 cibersort <- read.csv(cibersort_path)
 cibersort$Sample.ID <- substr(cibersort$Mixture, 1, 15)
