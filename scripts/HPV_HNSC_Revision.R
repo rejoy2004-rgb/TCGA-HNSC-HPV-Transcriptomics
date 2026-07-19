@@ -781,4 +781,34 @@ writeLines(
 )
 cat("Full sessionInfo logged to 'results/sessionInfo.txt'\n")
 
+# Log machine-readable package versions for long-term environment verification
+required_packages <- c(
+  "DESeq2",
+  "SummarizedExperiment",
+  "clusterProfiler",
+  "TCGAbiolinks",
+  "AnnotationDbi",
+  "org.Hs.eg.db",
+  "EnhancedVolcano",
+  "pheatmap",
+  "ggplot2",
+  "survival",
+  "enrichplot",
+  "RColorBrewer"
+)
+package_versions <- data.frame(
+  Package = required_packages,
+  Version = sapply(
+    required_packages,
+    function(pkg) as.character(packageVersion(pkg))
+  ),
+  row.names = NULL
+)
+write.csv(
+  package_versions,
+  "results/package_versions.csv",
+  row.names = FALSE
+)
+cat("Machine-readable package versions logged to 'results/package_versions.csv'\n")
+
 cat("HPV_HNSC_Revision.R script run finished successfully.\n")
