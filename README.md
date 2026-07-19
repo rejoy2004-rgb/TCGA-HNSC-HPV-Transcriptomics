@@ -154,6 +154,12 @@ Standardized Cox proportional hazards models identified several genes associated
 
 These findings are exploratory and require validation in independent cohorts.
 
+# Canonical Manuscript Outputs
+
+To ensure computational transparency, the folders `figures/` and `results/` contain only the canonical files corresponding exactly to the figures and supplementary tables in the submitted manuscript. All previous intermediate drafts or working duplicates have been archived to `figures/archive/` and `results/archive/` respectively.
+
+For a detailed 1-to-1 table mapping of every manuscript figure and supplementary table to its specific file path in this repository, see [documentation/Canonical_Outputs.md](file:///c:/Users/rejoy/Documents/Intern_Project/documentation/Canonical_Outputs.md).
+
 ---
 
 # Repository Structure
