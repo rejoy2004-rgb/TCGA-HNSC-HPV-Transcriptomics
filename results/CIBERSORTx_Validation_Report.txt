@@ -1,0 +1,18 @@
+CIBERSORTx Input Regeneration Validation Report
+-----------------------------------------------
+Execution Timestamp: 2026-07-19 10:31:11.154198
+R Version: R version 4.6.0 (2026-04-24 ucrt)
+
+Validation Results:
+  Dimensions Match: TRUE
+  Archived Dim: 4417 x 566
+  Generated Dim: 4417 x 566
+  Matched Genes: 4417 / 4417
+  Mean Pearson Correlation: 0.99999860170131
+  Median Pearson Correlation: 0.999999926753273
+  Min Pearson Correlation: 0.99975450307938
+  Mean Absolute Difference: 0.00786700453036013
+  Max Absolute Difference: 391.4976
+
+Verdict: SUCCESS. The regenerated matrix is numerically equivalent to the archived matrix (Mean Pearson r > 0.9999, mean diff < 0.2).
+
