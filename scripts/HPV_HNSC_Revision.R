@@ -395,7 +395,7 @@ p_m0 <- ggplot(immune_data, aes(x = HPV.Status, y = `Macrophages M0`, fill = HPV
   scale_fill_manual(values = c("negative" = "#F87171", "positive" = "#2DD4BF")) +
   labs(x = "HPV Status", y = "M0 Macrophage Fraction", title = "M0 Macrophage Infiltration in HNSC") +
   theme_bw()
-ggsave("figures/M2_Macrophage_Boxplot.png", p_m0, width = 6, height = 5, dpi = 300)
+ggsave("figures/M0_Macrophage_Boxplot.png", p_m0, width = 6, height = 5, dpi = 300)
 
 # 3.4 CD8 / M2 Macrophages log2-transformed ratio
 immune_data$log2_CD8_M2_Ratio <- log2(
@@ -462,7 +462,7 @@ ann_colors <- list(
   HPV = c("negative" = "#377EB8", "positive" = "#E41A1C")
 )
 
-png("figures/Figure8_Immune_Heatmap.png", width = 2100, height = 1200, res = 300)
+png("figures/Revised_Immune_Heatmap.png", width = 2100, height = 1200, res = 300)
 pheatmap(
   heatmap_matrix,
   annotation_col = annotation_col,
@@ -513,19 +513,33 @@ write.csv(as.data.frame(ego_up), "results/HNSC_HPV_GO_Upregulated.csv", row.name
 ego_down <- enrichGO(gene = down_entrez, OrgDb = org.Hs.eg.db, keyType = "ENTREZID", ont = "BP", readable = TRUE)
 write.csv(as.data.frame(ego_down), "results/HNSC_HPV_GO_Downregulated.csv", row.names = FALSE)
 
-# Generate publication-quality GO dotplot
-go_sig <- as.data.frame(ego_up)
-go_sig <- go_sig[order(go_sig$p.adjust), ]
-go_sig <- head(go_sig, 20)
-go_sig$GeneRatio_num <- sapply(strsplit(go_sig$GeneRatio, "/"), function(x) as.numeric(x[1]) / as.numeric(x[2]))
+# Generate publication-quality GO dotplot for upregulated genes
+go_up_sig <- as.data.frame(ego_up)
+go_up_sig <- go_up_sig[order(go_up_sig$p.adjust), ]
+go_up_sig <- head(go_up_sig, 20)
+go_up_sig$GeneRatio_num <- sapply(strsplit(go_up_sig$GeneRatio, "/"), function(x) as.numeric(x[1]) / as.numeric(x[2]))
 
-p_go_pub <- ggplot(go_sig, aes(x = GeneRatio_num, y = reorder(Description, GeneRatio_num), size = Count, color = -log10(p.adjust))) +
+p_go_up <- ggplot(go_up_sig, aes(x = GeneRatio_num, y = reorder(Description, GeneRatio_num), size = Count, color = -log10(p.adjust))) +
   geom_point() +
   scale_color_gradient(low = "blue", high = "red") +
   theme_bw(base_size = 12) +
   labs(x = "Gene Ratio", y = "GO Biological Process Description", color = expression(-log[10](FDR)), size = "Gene Count") +
   ggtitle("GO Enrichment - Upregulated in HPV+ HNSC")
-ggsave("figures/Figure12_GO_BP.png", p_go_pub, width = 10, height = 8, dpi = 600)
+ggsave("figures/HNSC_HPV_GO_Upregulated.png", p_go_up, width = 10, height = 8, dpi = 600)
+
+# Generate publication-quality GO dotplot for downregulated genes
+go_down_sig <- as.data.frame(ego_down)
+go_down_sig <- go_down_sig[order(go_down_sig$p.adjust), ]
+go_down_sig <- head(go_down_sig, 20)
+go_down_sig$GeneRatio_num <- sapply(strsplit(go_down_sig$GeneRatio, "/"), function(x) as.numeric(x[1]) / as.numeric(x[2]))
+
+p_go_down <- ggplot(go_down_sig, aes(x = GeneRatio_num, y = reorder(Description, GeneRatio_num), size = Count, color = -log10(p.adjust))) +
+  geom_point() +
+  scale_color_gradient(low = "blue", high = "red") +
+  theme_bw(base_size = 12) +
+  labs(x = "Gene Ratio", y = "GO Biological Process Description", color = expression(-log[10](FDR)), size = "Gene Count") +
+  ggtitle("GO Enrichment - Downregulated in HPV+ HNSC")
+ggsave("figures/HNSC_HPV_GO_Downregulated.png", p_go_down, width = 10, height = 8, dpi = 600)
 
 # 5.2 KEGG Enrichment
 ekegg_hnsc <- enrichKEGG(gene = sig_res_annotated$ENTREZID, organism = "hsa")
@@ -623,7 +637,7 @@ if (nrow(gsea_df) > 0) {
   dev.off()
   
   # 2. GSEA Ridgeplot
-  png("figures/HNSC_HPV_GSEA_Ridgeplot.png", width = 2400, height = 1800, res = 300)
+  png("figures/HNSC_HPV_GSEA_ridgeplot.png", width = 2400, height = 1800, res = 300)
   print(ridgeplot(gse_res, showCategory = 15) + labs(title = "GSEA Ridgeplot of Enriched Pathways"))
   dev.off()
   

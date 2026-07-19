@@ -20,7 +20,7 @@ This document provides a 1-to-1 mapping between the figures and supplementary ta
 | **Figure 11 (Left)** | Cox proportional-hazards forest plot of prognostic candidate risk genes | [HNSC_Forest_Plot_Final.png](file:///c:/Users/rejoy/Documents/Intern_Project/figures/HNSC_Forest_Plot_Final.png) |
 | **Figure 11 (Right)** | Kaplan-Meier overall survival curve stratified by `ZFR2` | [HNSC_BestGene_KM.png](file:///c:/Users/rejoy/Documents/Intern_Project/figures/HNSC_BestGene_KM.png) |
 | **Supplementary Figure S1** | GO biological process enrichment dotplot for downregulated genes | [HNSC_HPV_GO_Downregulated.png](file:///c:/Users/rejoy/Documents/Intern_Project/figures/HNSC_HPV_GO_Downregulated.png) |
-| **Supplementary Figure S2** | GSEA ridgeplot of enriched Hallmark gene sets in HPV status | [HNSC_HPV_GSEA_Ridgeplot.png](file:///c:/Users/rejoy/Documents/Intern_Project/figures/HNSC_HPV_GSEA_Ridgeplot.png) |
+| **Supplementary Figure S2** | GSEA ridgeplot of enriched Hallmark gene sets in HPV status | [HNSC_HPV_GSEA_ridgeplot.png](file:///c:/Users/rejoy/Documents/Intern_Project/figures/HNSC_HPV_GSEA_ridgeplot.png) |
 | **Supplementary Figure S3** | Cohort selection attrition/filtering flow diagram | [Figure_S1_Cohort_Filtering.png](file:///c:/Users/rejoy/Documents/Intern_Project/figures/Figure_S1_Cohort_Filtering.png) |
 
 ## Supplementary Tables Mapping
