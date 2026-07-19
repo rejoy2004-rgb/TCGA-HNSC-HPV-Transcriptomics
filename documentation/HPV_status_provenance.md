@@ -26,6 +26,21 @@ The script executes the following workflow:
 4. **Sample Inclusion Manifest Generation**: A detailed 566-row manifest is written to [HNSC_Sample_Inclusion_Manifest.csv](file:///c:/Users/rejoy/Documents/Intern_Project/results/HNSC_Sample_Inclusion_Manifest.csv) documenting the patient, mapped status, inclusion decision (`TRUE`/`FALSE`), and the exact inclusion or exclusion reason for every sample in the raw dataset.
 5. **Processed Export**: The final deconvolution-compatible mapping is written to [HNSC_HPV_status.csv](file:///c:/Users/rejoy/Documents/Intern_Project/data_processed/HNSC_HPV_status.csv).
 
+## Cohort Inclusion Rationale
+
+### Why only Primary Solid Tumors (Sample Type Code `01`)?
+TCGA sample barcodes encode the biological specimen type in their 14th and 15th characters. This study includes only **Sample Type Code `01` (Primary Solid Tumor)**. The scientific objective is to characterize the transcriptomic differences and immune microenvironment alterations between HPV-positive and HPV-negative primary HNSC tumors.
+
+Samples with **Sample Type Code `11` (Solid Tissue Normal)** or other non-primary specimen types (metastatic, recurrent, etc.) were excluded. Normal tissue control samples do not exhibit HPV clinical annotations in this publication cohort and would introduce unrelated normal tissue expression profiles into the differential expression and immune deconvolution analyses, compromising the tumor-vs-tumor biological comparisons.
+
+### Sample Type Reference Table
+
+| TCGA Sample Type | Meaning | Used? | Scientific Reason |
+| :---: | :--- | :---: | :--- |
+| **01** | Primary Solid Tumor | ✅ Yes | Target tissue for comparing tumor-vs-tumor HPV-status biology. |
+| **11** | Solid Tissue Normal | ❌ No | Excluded to maintain a biologically homogeneous cohort and avoid normal tissue contamination. |
+| **Others (02-09, 10, 12+)** | Recurrent / Metastatic / Control | ❌ No | Outside the study's primary inclusion criteria. |
+
 ## Final Cohort Composition
 The resulting matched cohort for down-stream RNA-seq differential expression and immune deconvolution analysis comprises:
 * **Total Patients**: 279
