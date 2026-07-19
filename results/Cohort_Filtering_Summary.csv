@@ -1,0 +1,6 @@
+"Step","Count"
+"Initial RNA-seq samples",566
+"Primary tumor samples (Sample Type Code 01)",520
+"Samples with HPV annotation",279
+"HPV-negative",243
+"HPV-positive",36

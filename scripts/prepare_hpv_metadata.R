@@ -114,10 +114,80 @@ cat("Processed HPV status mapping written to:", hpv_output_path, "\n")
 # Summarize cohort composition
 hpv_neg <- sum(cibersort_hpv_mapping$`HPV Status` == "negative")
 hpv_pos <- sum(cibersort_hpv_mapping$`HPV Status` == "positive")
+total_raw <- length(expression_barcodes)
+total_tumor <- sum(merged_manifest$Is_Tumor)
+total_included <- nrow(cibersort_hpv_mapping)
+excluded_non_tumor <- total_raw - total_tumor
+excluded_no_hpv <- total_tumor - total_included
+
 cat("\nFinal Cohort Composition:\n")
-cat("  Total Samples: ", nrow(cibersort_hpv_mapping), "\n")
+cat("  Total Samples: ", total_included, "\n")
 cat("  HPV-Negative:  ", hpv_neg, " (Expected: 243)\n")
 cat("  HPV-Positive:  ", hpv_pos, " (Expected: 36)\n")
+
+# 6. Save Cohort Filtering Summary CSV
+summary_df <- data.frame(
+  Step = c(
+    "Initial RNA-seq samples",
+    "Primary tumor samples (Sample Type Code 01)",
+    "Samples with HPV annotation",
+    "HPV-negative",
+    "HPV-positive"
+  ),
+  Count = c(
+    total_raw,
+    total_tumor,
+    total_included,
+    hpv_neg,
+    hpv_pos
+  ),
+  stringsAsFactors = FALSE
+)
+
+summary_output_path <- "results/Cohort_Filtering_Summary.csv"
+write.csv(summary_df, file = summary_output_path, row.names = FALSE)
+cat("Cohort filtering summary written to:", summary_output_path, "\n")
+
+# 7. Generate Cohort Filtering Flowchart (Figure S1)
+cat("Generating cohort filtering flow diagram...\n")
+dir.create("figures", showWarnings = FALSE)
+flowchart_path <- "figures/Figure_S1_Cohort_Filtering.png"
+
+# Setup high-resolution PNG
+png(flowchart_path, width = 1800, height = 2400, res = 300)
+par(mar = c(0.5, 0.5, 0.5, 0.5))
+plot(1, type = "n", xlab = "", ylab = "", xlim = c(0, 10), ylim = c(0, 12), axes = FALSE)
+
+# Helper function to draw rectangles with text
+draw_box <- function(x, y, w, h, text_lines, bg = "#F0F4F8", border = "#2B5C8F") {
+  rect(x - w/2, y - h/2, x + w/2, y + h/2, col = bg, border = border, lwd = 2)
+  n_lines <- length(text_lines)
+  for (i in 1:n_lines) {
+    text(x, y + (h/4) * (n_lines/2 - i + 0.5), text_lines[i], cex = 0.8, font = ifelse(i == 1, 2, 1))
+  }
+}
+
+# Draw Boxes
+draw_box(5, 11.0, 4.4, 1.1, c("TCGA-HNSC RNA-Seq Dataset", paste0("n = ", total_raw, " samples")))
+draw_box(8.3, 9.6, 2.8, 1.0, c("Excluded (non-tumor):", paste0("n = ", excluded_non_tumor, " normal controls"), "(Sample Type != '01')"), bg = "#FDF0F0", border = "#D32F2F")
+draw_box(5, 8.2, 4.4, 1.1, c("Primary HNSC Tumors", paste0("n = ", total_tumor, " samples")))
+draw_box(8.3, 6.8, 2.8, 1.0, c("Excluded (no clinical data):", paste0("n = ", excluded_no_hpv, " samples lacking"), "clinical HPV status"), bg = "#FDF0F0", border = "#D32F2F")
+draw_box(5, 5.4, 4.4, 1.1, c("Final Analysis Cohort", paste0("n = ", total_included, " tumor samples")))
+
+draw_box(2.7, 2.8, 3.2, 1.0, c("HPV-Negative Cohort", paste0("n = ", hpv_neg, " samples")))
+draw_box(7.3, 2.8, 3.2, 1.0, c("HPV-Positive Cohort", paste0("n = ", hpv_pos, " samples")))
+
+# Draw Arrows
+arrows(5, 10.4, 5, 8.8, lwd = 2, length = 0.1)
+arrows(5, 9.6, 6.8, 9.6, lwd = 2, length = 0.1)
+arrows(5, 7.6, 5, 6.0, lwd = 2, length = 0.1)
+arrows(5, 6.8, 6.8, 6.8, lwd = 2, length = 0.1)
+
+arrows(5, 4.8, 2.7, 3.4, lwd = 2, length = 0.1)
+arrows(5, 4.8, 7.3, 3.4, lwd = 2, length = 0.1)
+
+dev.off()
+cat("Cohort filtering flowchart saved to:", flowchart_path, "\n")
 
 if (hpv_neg == 243 && hpv_pos == 36) {
   cat("\nSUCCESS: Cohort counts match expected manuscript values perfectly!\n")
