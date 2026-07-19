@@ -28,18 +28,56 @@ This repository is organized to enable complete reproducibility and facilitate f
 
 # Analysis Workflow
 
+The repository implements a structured bioinformatic pipeline leading from raw TCGA-HNSC datasets to publication-ready figures and tables.
+
 ```mermaid
 graph TD
-    A["Raw RNA-seq Count Data (HNSC_data.rds)"] --> B["Stratification by HPV Status"]
-    B --> C["Differential Expression Analysis (DESeq2)"]
-    B --> D["TPM Normalization & Gene Annotation"]
-    D --> E["CIBERSORTx Input Matrix (HNSC_CIBERSORT_Input_Final.txt)"]
-    E --> F["CIBERSORTx Deconvolution (LM22, Relative Mode)"]
-    F --> G["Deconvolution Results (CIBERSORTx_Job14_Results.csv)"]
-    C --> H["GO/KEGG Enrichment & GSEA"]
-    G --> I["Immune Microenvironment & Ratio Analysis"]
-    C & G --> J["Prognostic Survival Models (Cox & Kaplan-Meier)"]
+    %% Input Data
+    RawData["TCGA HNSC RNA-seq (HNSC_data.rds) & Clinical Data"] --> PrepScript["scripts/prepare_hpv_metadata.R"]
+    
+    %% Cohort Prep
+    PrepScript --> Manifest["results/HNSC_Sample_Inclusion_Manifest.csv<br>(Sample exclusion audit log)"]
+    PrepScript --> Flowchart["figures/Figure_S1_Cohort_Filtering.png<br>(Attrition flow diagram)"]
+    PrepScript --> HPVStatus["data_processed/HNSC_HPV_status.csv<br>(Final 279-patient mapping)"]
+    
+    %% Main Script Input
+    HPVStatus --> MainScript["scripts/HPV_HNSC_Revision.R<br>(Main HNSC analysis pipeline)"]
+    
+    %% Deconvolution Preprocessing
+    RawData --> CiberPrep["scripts/prepare_cibersort_input.R"]
+    CiberPrep --> CiberInput["data_processed/HNSC_CIBERSORT_Input_Final.txt"]
+    CiberInput --> CiberRun["CIBERSORTx Deconvolution Run"]
+    CiberRun --> CiberOut["data_processed/CIBERSORTx_Job14_Results.csv"]
+    CiberOut --> MainScript
+    
+    %% Downstream Analyses
+    MainScript --> DEBlock["Differential Expression (DESeq2)"]
+    MainScript --> DeconvBlock["Immune Profile Deconvolution"]
+    MainScript --> SurvivalBlock["Survival Models"]
+    
+    %% Outputs from DE
+    DEBlock --> DEGs["results/HNSC_DESeq2_All_Results.csv<br>(Unadjusted & Adjusted DEGs)"]
+    DEGs --> GSEA["results/HNSC_GSEA_GeneRanking.csv<br>GSEA Enrichment Plots"]
+    
+    %% Outputs from Deconv
+    DeconvBlock --> Wilcox["results/HNSC_HPV_Immune_Comparison.csv<br>(Wilcoxon tests & boxplots)"]
+    
+    %% Outputs from Survival
+    SurvivalBlock --> KM["figures/HNSC_BestGene_KM.png<br>(Kaplan-Meier Curve)"]
+    SurvivalBlock --> Cox["results/HNSC_Survival_Results.csv<br>(Standardized Forest Plot)"]
+    
+    %% Final Integration
+    GSEA & Wilcox & KM & Cox --> FinalOutputs["Manuscript Figures & Tables"]
 ```
+
+### Execution Sequence
+
+To replicate the HNSC cohort selection and analysis:
+
+1. **Step 1 (Cohort Definition)**: Run [scripts/prepare_hpv_metadata.R](file:///c:/Users/rejoy/Documents/Intern_Project/scripts/prepare_hpv_metadata.R) to process clinical patient files, filter to primary solid tumors (`Sample Type Code 01`), exclude normal controls (`Sample Type Code 11`), and output the final deconvolution clinical mapping to `data_processed/HNSC_HPV_status.csv`.
+2. **Step 2 (Deconvolution Matrix Prep)**: Run [scripts/prepare_cibersort_input.R](file:///c:/Users/rejoy/Documents/Intern_Project/scripts/prepare_cibersort_input.R) to convert raw count expressions into a canonical TPM mixture matrix matching the deconvolution panel at `data_processed/HNSC_CIBERSORT_Input_Final.txt`.
+3. **Step 3 (CIBERSORTx Deconvolution)**: Upload the mixture matrix to [CIBERSORTx](https://cibersortx.stanford.edu/) under the study parameters (LM22 signature matrix, relative mode, 100 permutations, disabled QN, no batch correction) and download the results as `data_processed/CIBERSORTx_Job14_Results.csv`.
+4. **Step 4 (Main Analysis Pipeline)**: Run [scripts/HPV_HNSC_Revision.R](file:///c:/Users/rejoy/Documents/Intern_Project/scripts/HPV_HNSC_Revision.R) to perform unadjusted and covariate-adjusted differential expression, functional GO/KEGG pathway enrichments, gene set enrichment analyses (GSEA), immune-cell fraction Wilcoxon comparison testing, deconvolution validation correlations, and prognostic overall survival Cox/Kaplan-Meier modelling.
 
 ---
 
