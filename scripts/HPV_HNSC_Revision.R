@@ -51,6 +51,11 @@ cat("SummarizedExperiment loaded. Dimensions:", paste(dim(hnsc_data), collapse =
 #   - 243 HPV-negative cases
 #   - 36 HPV-positive cases
 # ------------------------------------------------------------------
+# HPV status annotations were derived from the original TCGA HNSC clinical metadata 
+# from the Nature 2015 cohort. The preprocessing workflow is fully documented in:
+#   documentation/HPV_status_provenance.md
+# and can be programmatically regenerated using:
+#   scripts/prepare_hpv_metadata.R
 hpv_status_path <- "data_processed/HNSC_HPV_status.csv"
 if (!file.exists(hpv_status_path)) {
   hpv_status_path <- "HNSC_HPV_status.csv"
@@ -148,8 +153,14 @@ write.csv(
 cat("Cohort manifest saved to 'results/HNSC_Cohort_Manifest.csv'\n")
 
 # Save the actual sample IDs of the final cohort for full traceability (Issue 4)
+# (Convert any nested list columns to semicolon-delimited strings to prevent CSV export failures)
+meta_cohort_clean <- meta_cohort
+list_cols <- sapply(meta_cohort_clean, is.list)
+for (col in names(list_cols)[list_cols]) {
+  meta_cohort_clean[[col]] <- sapply(meta_cohort_clean[[col]], function(x) paste(x, collapse = ";"))
+}
 write.csv(
-  meta_cohort,
+  meta_cohort_clean,
   "results/HNSC_Final_Cohort.csv",
   row.names = FALSE
 )
@@ -187,8 +198,8 @@ cat("Saved unadjusted results. Significant DEGs (FDR < 0.05, |log2FC| > 1):", nr
 
 # 2.2 Adjusted Sensitivity Model (Adjusting for primary tumor site)
 cat("\nRunning Adjusted DESeq2 Model...\n")
-meta_cohort$primary_site_raw <- meta_cohort$primary_site
-if (is.null(meta_cohort$primary_site_raw)) {
+meta_cohort$primary_site_raw <- meta_cohort$tissue_or_organ_of_origin
+if (is.null(meta_cohort$primary_site_raw) || all(meta_cohort$primary_site_raw == "") || all(is.na(meta_cohort$primary_site_raw))) {
   meta_cohort$primary_site_raw <- meta_cohort$site_of_resection_or_biopsy
 }
 
@@ -310,7 +321,7 @@ cibersort_metadata <- paste0(
 writeLines(cibersort_metadata, "results/CIBERSORTx_Run_Metadata.txt")
 cat("CIBERSORTx run metadata logged to 'results/CIBERSORTx_Run_Metadata.txt'\n")
 
-cibersort <- read.csv(cibersort_path)
+cibersort <- read.csv(cibersort_path, check.names = FALSE)
 cibersort$Sample.ID <- substr(cibersort$Mixture, 1, 15)
 
 # Merge CIBERSORTx results with clinical variables
@@ -540,7 +551,14 @@ write.csv(as.data.frame(ekegg_up), "results/HNSC_HPV_KEGG_Upregulated.csv", row.
 
 # Align raw DESeq2 results with Gene IDs
 res$gene_id <- sub("\\..*", "", rownames(res))
-res_annotated <- merge(as.data.frame(res), gene_map_hnsc, by.x = "gene_id", by.y = "ENSEMBL")
+all_gene_map <- AnnotationDbi::select(
+  org.Hs.eg.db,
+  keys = res$gene_id,
+  columns = "SYMBOL",
+  keytype = "ENSEMBL"
+)
+all_gene_map <- na.omit(all_gene_map)
+res_annotated <- merge(as.data.frame(res), all_gene_map, by.x = "gene_id", by.y = "ENSEMBL")
 res_annotated <- res_annotated[!is.na(res_annotated$stat), ]
 
 # Order genes by Wald statistics (collapsed by max Wald stat per Ensembl ID)
@@ -550,6 +568,7 @@ gene_list <- sort(
   tapply(res_annotated$stat, res_annotated$gene_id, max),
   decreasing = TRUE
 )
+gene_list <- setNames(as.numeric(gene_list), names(gene_list))
 
 # Export the GSEA gene ranking vector (Wald Statistics) for standalone GSEA runs
 write.csv(
@@ -656,6 +675,7 @@ cat("Samples with survival data:", nrow(survival_meta), "\n")
 
 # Align counts matrix
 surv_counts <- assay(vsd)[, survival_meta$barcode]
+rownames(surv_counts) <- sub("\\..*", "", rownames(surv_counts))
 
 # Candidate genes of interest
 candidate_genes <- c("LOC375196", "STAG3", "TAF7L", "SMC1B", "ZFR2", "RAD9B", "TDRD10", "GBX1", "GRIN2C")

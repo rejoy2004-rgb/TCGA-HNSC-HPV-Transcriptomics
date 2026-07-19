@@ -1,0 +1,7 @@
+"Step","Samples"
+"1. Raw TCGA HNSC cases in RNA-seq dataset",566
+"2. Clinical HPV status mapping records available",279
+"3. Merged samples with clinical data",279
+"4. Final cohort analyzed (with matched RNA-seq)",279
+"5. Final HPV-negative group",243
+"6. Final HPV-positive group",36
