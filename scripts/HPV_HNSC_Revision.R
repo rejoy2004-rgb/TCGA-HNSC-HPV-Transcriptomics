@@ -322,6 +322,19 @@ writeLines(cibersort_metadata, "results/CIBERSORTx_Run_Metadata.txt")
 cat("CIBERSORTx run metadata logged to 'results/CIBERSORTx_Run_Metadata.txt'\n")
 
 cibersort <- read.csv(cibersort_path, check.names = FALSE)
+
+# Validate that all expected immune cell columns exist (Defensive Guard)
+expected_cells <- c("Plasma cells", "T cells CD8", "Macrophages M0", "NK cells resting", "T cells CD4 memory resting")
+missing_cells <- setdiff(expected_cells, colnames(cibersort))
+if (length(missing_cells) > 0) {
+  stop(
+    paste(
+      "Missing expected CIBERSORTx columns:",
+      paste(missing_cells, collapse = ", ")
+    )
+  )
+}
+
 cibersort$Sample.ID <- substr(cibersort$Mixture, 1, 15)
 
 # Merge CIBERSORTx results with clinical variables
