@@ -1,0 +1,12 @@
+CIBERSORTx Deconvolution Run Metadata
+-------------------------------------
+Analysis script execution date: 2026-07-19 11:47:26.857225
+Input mixture file: data_processed/HNSC_CIBERSORT_Input_Final.txt
+Signature matrix: LM22
+Deconvolution mode: Relative
+Permutations: 100
+Quantile normalization: FALSE (Disabled for RNA-seq)
+Batch correction: None
+CIBERSORTx Web Job ID: Job14
+Archived output file: data_processed/CIBERSORTx_Job14_Results.csv
+

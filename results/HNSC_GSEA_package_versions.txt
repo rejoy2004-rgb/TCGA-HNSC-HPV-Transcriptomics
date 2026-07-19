@@ -1,0 +1,10 @@
+GSEA Environment Traceability Log
+---------------------------------
+Run date: 2026-07-19 11:49:58.935526
+R version: R version 4.6.0 (2026-04-24 ucrt)
+Bioconductor version: 3.23
+Platform: x86_64-w64-mingw32 (x86_64)
+clusterProfiler version: 4.20.0
+org.Hs.eg.db version: 3.23.1
+enrichplot version: 1.32.0
+
