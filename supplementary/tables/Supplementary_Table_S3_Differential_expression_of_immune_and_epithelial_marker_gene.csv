@@ -1,0 +1,17 @@
+﻿Gene,Role,log2FC,FDR,"log2FC, site-adjusted","FDR, site-adjusted"
+IGHM,Immunoglobulin heavy chain,2.44,2.0 × 10−8,2.63,1.8 × 10−8
+MS4A1,Mature B cell (CD20),2.07,1.8 × 10−5,2.03,4.2 × 10−5
+IGHA1,Immunoglobulin heavy chain,1.51,6.4 × 10−4,1.57,8.6 × 10−4
+CD79A,B-cell receptor,1.36,6.7 × 10−4,1.40,8.3 × 10−4
+CD79B,B-cell receptor,1.16,7.6 × 10−5,1.10,3.1 × 10−4
+IGKC,Immunoglobulin light chain,1.14,8.3 × 10−3,1.22,7.5 × 10−3
+IGHG1,Immunoglobulin heavy chain,0.93,0.035,0.99,0.038
+IGHG3,Immunoglobulin heavy chain,0.98,0.022,1.29,3.6 × 10−3
+CD8A,Cytotoxic T cell,1.26,5.3 × 10−5,1.12,9.2 × 10−4
+CD8B,Cytotoxic T cell,1.18,2.5 × 10−4,1.07,2.2 × 10−3
+KRT1,Keratinisation,−4.90,4.8 × 10−21,−4.09,1.1 × 10−13
+KRTDAP,Keratinocyte differentiation,−4.25,1.6 × 10−23,−3.72,8.3 × 10−17
+KRT14,Basal keratin,−1.87,1.5 × 10−9,−1.96,1.1 × 10−9
+KRT16,Keratinisation,−1.61,1.2 × 10−6,−1.60,2.7 × 10−6
+KRT6A,Keratinisation,−1.31,9.5 × 10−9,−1.25,2.0 × 10−7
+S100A7,Keratinisation,−1.92,1.1 × 10−5,−1.89,3.3 × 10−5

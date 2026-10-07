@@ -1,0 +1,23 @@
+﻿Population,Median HPV+,Median HPV−,P,FDR
+Macrophages M0,0.033,0.131,2.5 × 10−6,5.6 × 10−5
+Plasma cells,0.488,0.145,7.4 × 10−5,8.1 × 10−4
+T cells CD8,0.071,0.043,2.8 × 10−4,0.0017
+NK cells resting,0.005,0.029,3.1 × 10−4,0.0017
+T cells CD4 memory resting,0.041,0.068,0.0094,0.042
+Mast cells activated,0.000,0.000,0.016,0.059
+Macrophages M2,0.009,0.022,0.025,0.077
+Monocytes,0.000,0.009,0.036,0.100
+NK cells activated,0.002,0.000,0.105,0.256
+T cells follicular helper,0.057,0.050,0.118,0.260
+T cells regulatory (Tregs),0.012,0.004,0.141,0.283
+B cells naive,0.000,0.000,0.179,0.322
+B cells memory,0.011,0.014,0.200,0.322
+Dendritic cells resting,0.022,0.026,0.205,0.322
+Mast cells resting,0.064,0.067,0.287,0.421
+T cells CD4 naive,0.000,0.000,0.374,0.514
+Macrophages M1,0.041,0.049,0.585,0.756
+T cells gamma delta,0.000,0.000,0.678,0.820
+Eosinophils,0.000,0.000,0.708,0.820
+Dendritic cells activated,0.000,0.000,0.778,0.830
+T cells CD4 memory activated,0.002,0.003,0.792,0.830
+Neutrophils,0.009,0.009,0.898,0.898

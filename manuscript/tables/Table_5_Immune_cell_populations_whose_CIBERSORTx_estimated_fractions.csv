@@ -1,0 +1,6 @@
+﻿Immune-cell population,Median HPV+,Median HPV−,P,FDR,Direction in HPV+
+Plasma cells,0.488,0.145,7.4 × 10−5,8.1 × 10−4,Higher
+CD8+ T cells,0.071,0.043,2.8 × 10−4,1.7 × 10−3,Higher
+M0 macrophages,0.033,0.131,2.5 × 10−6,5.6 × 10−5,Lower
+Resting NK cells,0.005,0.029,3.1 × 10−4,1.7 × 10−3,Lower
+Resting CD4+ memory T cells,0.041,0.068,9.4 × 10−3,0.042,Lower

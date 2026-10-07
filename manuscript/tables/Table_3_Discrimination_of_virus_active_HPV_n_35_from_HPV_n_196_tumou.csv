@@ -1,0 +1,8 @@
+﻿Gene category,Genes,AUC (95% CI),P
+Synaptonemal complex,5,0.930 (0.87–0.99),5.2 × 10−16
+Meiotic cohesin,4,0.907 (0.84–0.97),1.7 × 10−14
+Meiotic recombination/DSB,16,0.829 (0.74–0.92),5.7 × 10−10
+Other germ-cell,7,0.827 (0.74–0.91),7.3 × 10−10
+piRNA/Tudor germline,11,0.740 (0.64–0.84),6.1 × 10−6
+Cell-cycle meiosis,4,0.697 (0.59–0.80),2.1 × 10−4
+Cancer–testis antigen (MAGE/CTAG),29,0.411 (0.31–0.51),0.09

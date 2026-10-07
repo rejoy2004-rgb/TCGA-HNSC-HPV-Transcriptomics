@@ -1,0 +1,7 @@
+﻿Cohort,n,Model,HPV β (SE),P (HPV),Proliferation β,P (proliferation)
+GSE181919,19,Unadjusted,0.112 (0.025),2.9 × 10−4,n/a,n/a
+GSE181919,19,+ Proliferation,0.105 (0.025),6.5 × 10−4,0.180,0.23
+GSE182227,16,Unadjusted,0.176 (0.047),0.002,n/a,n/a
+GSE182227,16,+ Proliferation,0.115 (0.040),0.01,0.414,0.005
+Pooled,35,Unadjusted,0.141 (0.026),4.5 × 10−6,n/a,n/a
+Pooled,35,+ Proliferation,0.109 (0.022),2.7 × 10−5,0.359,2.8 × 10−4

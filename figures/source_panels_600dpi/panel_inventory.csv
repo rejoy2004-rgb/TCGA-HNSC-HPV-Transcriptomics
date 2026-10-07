@@ -1,0 +1,27 @@
+folder,panel,pixels,mode,dpi,width_mm_at_600dpi,vector_pdf,source
+Figure 1,Figure 1a,3900 x 1937,RGB,600,165,True,re-rendered from plotting code
+Figure 1,Figure 1b,3900 x 1352,RGB,600,165,True,re-rendered from plotting code
+Figure 1,Figure 1c,4531 x 1352,RGB,600,192,True,re-rendered from plotting code
+Figure 2,Figure 2a,3122 x 1836,RGB,600,132,True,re-rendered from plotting code
+Figure 2,Figure 2b,2217 x 1837,RGB,600,94,True,re-rendered from plotting code
+Figure 2,Figure 2c,1672 x 1789,RGB,600,71,True,re-rendered from plotting code
+Figure 3,Figure 3a,2670 x 2376,RGB,600,113,True,re-rendered from plotting code
+Figure 3,Figure 3b,2621 x 2376,RGB,600,111,True,re-rendered from plotting code
+Figure 3,Figure 3c,2621 x 2376,RGB,600,111,True,re-rendered from plotting code
+Figure 4,Figure 4a,1767 x 2242,RGB,600,75,True,re-rendered from plotting code
+Figure 4,Figure 4b,1843 x 2256,RGB,600,78,True,re-rendered from plotting code
+Figure 4,Figure 4c,2804 x 2256,RGB,600,119,True,re-rendered from plotting code
+Figure 5,Figure 5a,2058 x 2260,RGB,600,87,True,re-rendered from plotting code
+Figure 5,Figure 5b,1974 x 2124,RGB,600,84,True,re-rendered from plotting code
+Figure 5,Figure 5c,2407 x 2124,RGB,600,102,True,re-rendered from plotting code
+Figure 6,Figure 6a,2255 x 1868,RGB,600,95,True,re-rendered from plotting code
+Figure 6,Figure 6b,1404 x 1821,RGB,600,59,True,re-rendered from plotting code
+Figure 6,Figure 6c,1706 x 1847,RGB,600,72,True,re-rendered from plotting code
+Figure 6,Figure 6d,4067 x 1752,RGB,600,172,True,re-rendered from plotting code
+Figure 6,Figure 6e,1887 x 1731,RGB,600,80,True,re-rendered from plotting code
+Figure 7,Figure 7a,1184 x 1055,RGB,600,50,False,cropped from native render
+Figure 7,Figure 7b,1185 x 1064,RGB,600,50,False,cropped from native render
+Figure 7,Figure 7c,1322 x 1140,RGB,600,56,False,cropped from native render
+Figure 7,Figure 7d,1205 x 1126,RGB,600,51,False,cropped from native render
+Figure 7,Figure 7e,1205 x 1129,RGB,600,51,False,cropped from native render
+Figure 7,Figure 7f,1231 x 1145,RGB,600,52,False,cropped from native render

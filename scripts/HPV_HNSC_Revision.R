@@ -341,12 +341,14 @@ cibersort$Sample.ID <- substr(cibersort$Mixture, 1, 15)
 immune_data <- merge(cibersort, meta_cohort, by = "Sample.ID")
 cat("CIBERSORTx samples matched to cohort:", nrow(immune_data), "\n")
 
-# Define immune cells of interest (significant fractions in study)
-cells <- c("Plasma cells", "T cells CD8", "Macrophages M0", "NK cells resting", "T cells CD4 memory resting")
+# Test all 22 LM22 populations so that the Benjamini-Hochberg correction covers every
+# comparison made (correcting across only pre-selected cells would understate the FDR).
+lm22_cells <- setdiff(colnames(cibersort), c("Mixture", "Sample.ID", "P-value", "P.value", "Correlation", "RMSE"))
+stopifnot(length(lm22_cells) == 22)
 
 # Perform Wilcoxon rank-sum tests and extract statistics
 wilcox_results <- list()
-for (cell in cells) {
+for (cell in lm22_cells) {
   test_formula <- as.formula(paste("`", cell, "` ~ HPV.Status", sep = ""))
   w_test <- wilcox.test(test_formula, data = immune_data)
   
@@ -362,12 +364,17 @@ for (cell in cells) {
 }
 wilcox_df <- do.call(rbind, wilcox_results)
 wilcox_df$FDR <- p.adjust(wilcox_df$Pvalue, method = "BH")
-write.csv(wilcox_df, "results/HNSC_HPV_Immune_Comparison.csv", row.names = FALSE)
+wilcox_df <- wilcox_df[order(wilcox_df$Pvalue), ]
+write.csv(wilcox_df, "results/HNSC_HPV_Immune_Comparison_All22_BH.csv", row.names = FALSE)
 print(wilcox_df)
 
-# Write out significant immune cells specifically
+# Write out significant immune cells specifically (FDR across all 22 populations)
 sig_immune <- subset(wilcox_df, FDR < 0.05)
+write.csv(sig_immune, "results/HNSC_HPV_Immune_Comparison.csv", row.names = FALSE)
 write.csv(sig_immune, "results/HNSC_HPV_Significant_Immune_Cells.csv", row.names = FALSE)
+
+# Significant populations are carried forward to the heatmap below
+cells <- sig_immune$CellType
 
 # Generate Box-and-Jitter plots for publication
 # 3.1 Plasma Cells

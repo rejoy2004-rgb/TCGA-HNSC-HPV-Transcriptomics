@@ -7,7 +7,7 @@ This document details the experimental provenance, input matrix preparation, and
 - **Original Source**: The Cancer Genome Atlas (TCGA) HNSC RNA-sequencing raw counts.
 
 > [!TIP]
-> **End-to-End Reproducibility**: The processing of raw counts inside `data_raw/HNSC_data.rds` into TPM values, mapping to gene symbols, and duplicate resolution is fully automated and programmatically executable via the R script [prepare_cibersort_input.R](file:///c:/Users/rejoy/Documents/Intern_Project/scripts/prepare_cibersort_input.R). Running this script in R will regenerate the `data_processed/HNSC_CIBERSORT_Input_Final.txt` file directly from the raw counts.
+> **End-to-End Reproducibility**: The processing of raw counts inside `data_raw/HNSC_data.rds` into TPM values, mapping to gene symbols, and duplicate resolution is fully automated and programmatically executable via the R script [prepare_cibersort_input.R](../scripts/prepare_cibersort_input.R). Running this script in R will regenerate the `data_processed/HNSC_CIBERSORT_Input_Final.txt` file directly from the raw counts.
 
 ### Matrix Generation Pipeline
 The input file was prepared from raw data through the following steps:

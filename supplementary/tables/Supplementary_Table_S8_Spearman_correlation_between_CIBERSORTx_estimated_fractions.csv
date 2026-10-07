@@ -1,0 +1,5 @@
+﻿Cell population,Marker,Expression,Spearman ρ,P
+CD8+ T cells,CD8A,VST,0.735,1.2 × 10−48
+CD8+ T cells,CD8B,VST,0.689,1.3 × 10−40
+Plasma cells,IGHM,TPM,0.913,6.5 × 10−110
+Plasma cells,MS4A1,TPM,0.590,1.4 × 10−27

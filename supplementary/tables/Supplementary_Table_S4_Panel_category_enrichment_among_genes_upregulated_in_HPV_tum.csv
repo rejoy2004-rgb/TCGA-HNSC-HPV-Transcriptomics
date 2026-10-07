@@ -1,0 +1,8 @@
+﻿Category,Tested,Up,Expected,Fold,P,Padj
+Cell-cycle meiosis,5,4,1.10,3.65,0.010,0.07
+Meiotic cohesin,4,3,0.88,3.42,0.04,0.25
+Synaptonemal complex,9,6,1.97,3.04,0.005,0.03
+Other germ-cell,8,5,1.75,2.85,0.02,0.11
+Meiotic recombination/DSB,21,11,4.60,2.39,0.002,0.01
+piRNA/Tudor germline,12,5,2.63,1.90,0.10,0.71
+Cancer–testis antigen (MAGE/CTAG),27,3,5.92,0.51,0.95,1.00

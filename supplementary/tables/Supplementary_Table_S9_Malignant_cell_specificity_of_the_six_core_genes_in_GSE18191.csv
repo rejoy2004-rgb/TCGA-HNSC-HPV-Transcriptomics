@@ -1,0 +1,7 @@
+﻿Gene,Malignant (%),Highest other (%),That cell type,Specificity ratio,Four-gene score
+SMC1B,15.3,1.4,T,10.96,Yes
+SYCP2,19.0,2.5,T,7.68,Yes
+MAJIN,3.5,0.5,Endothelial,6.86,Yes
+SYCE2,5.1,2.0,T,2.51,Yes
+STAG3,15.4,13.1,B/plasma,1.18,No
+MEI1,8.2,37.4,B/plasma,0.22,No

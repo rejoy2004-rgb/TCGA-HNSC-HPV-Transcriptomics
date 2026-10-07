@@ -1,0 +1,8 @@
+﻿Cohort,Platform,HPV+,HPV−,Role
+"TCGA-HNSC, transcriptomic cohort","RNA-seq (STAR counts, GDC)",36,243,"Differential expression, enrichment, immune deconvolution, survival"
+"TCGA-HNSC, panel expression","RNA-seq (RSEM, cBioPortal)",41,80,Expression discovery
+"TCGA-HNSC, panel methylation",Illumina HM450,44,81,Methylation discovery
+GSE65858,Illumina HT-12 v4 microarray,"60 (35 active, 25 silent)",196,Independent expression validation
+GSE38266,Illumina HM450,21,21,Independent methylation replication (oropharynx only)
+GSE181919,Single-cell RNA-seq,7 patients,13 patients,Malignant-cell localisation
+GSE182227,Single-cell RNA-seq,11 tumours,5 tumours,Independent single-cell replication (oropharynx)

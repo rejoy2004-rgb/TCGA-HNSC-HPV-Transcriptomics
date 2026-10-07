@@ -1,0 +1,9 @@
+﻿Cohort,Score,Δ,AUC,P,Complete separation
+GSE181919,Six-gene core,0.113,1.000,7.4 × 10−5,Yes
+GSE181919,Four-gene meiosis-specific,0.112,1.000,7.4 × 10−5,Yes
+GSE181919,CTA control (5 of 10 genes detected),−0.089,0.282,0.15,No
+GSE181919,Proliferation control (6 genes),0.038,0.731,0.13,No
+GSE182227,Six-gene core,0.162,0.945,0.003,No
+GSE182227,Four-gene meiosis-specific,0.176,0.945,0.003,No
+GSE182227,CTA control (10 genes),0.087,0.564,0.74,No
+GSE182227,Proliferation control (6 genes),0.145,0.782,0.09,No

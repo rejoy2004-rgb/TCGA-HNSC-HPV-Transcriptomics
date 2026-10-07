@@ -1,0 +1,7 @@
+﻿Gene,Functional component,Symbol in GSE181919 / GSE182227,Four-gene score
+SYCP2,Synaptonemal complex,SYCP2,Yes
+SYCE2,Synaptonemal complex,SYCE2,Yes
+MAJIN,Synaptonemal-complex attachment machinery,C11orf85 (previous symbol),Yes
+SMC1B,Meiosis-specific cohesin,SMC1B,Yes
+STAG3,Meiosis-specific cohesin,STAG3,No (detected in B/plasma cells)
+MEI1,Recombination initiation,MEI1,No (detected in B/plasma cells)
