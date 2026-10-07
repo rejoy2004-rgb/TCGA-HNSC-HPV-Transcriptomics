@@ -14,21 +14,21 @@ try:
     req = urllib.request.Request(full_pat_url, headers=headers)
     with urllib.request.urlopen(req) as response:
         full_data = response.read().decode('utf-8')
-    with open("data_clinical_patient_full.txt", "w", encoding="utf-8") as f:
+    with open("data_raw/data_clinical_patient_full.txt", "w", encoding="utf-8") as f:
         f.write(full_data)
         
     print("Downloading publication patient dataset...")
     req = urllib.request.Request(pub_pat_url, headers=headers)
     with urllib.request.urlopen(req) as response:
         pub_data = response.read().decode('utf-8')
-    with open("data_clinical_patient_pub.txt", "w", encoding="utf-8") as f:
+    with open("data_raw/data_clinical_patient_pub.txt", "w", encoding="utf-8") as f:
         f.write(pub_data)
         
     print("Files downloaded successfully!")
     
     # Load into Pandas
-    df_full = pd.read_csv("data_clinical_patient_full.txt", sep="\t", skiprows=4)
-    df_pub = pd.read_csv("data_clinical_patient_pub.txt", sep="\t", skiprows=4)
+    df_full = pd.read_csv("data_raw/data_clinical_patient_full.txt", sep="\t", skiprows=4)
+    df_pub = pd.read_csv("data_raw/data_clinical_patient_pub.txt", sep="\t", skiprows=4)
     
     print(f"Full dataset patient count: {df_full.shape[0]}")
     print(f"Publication dataset patient count: {df_pub.shape[0]}")
