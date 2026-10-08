@@ -1,0 +1,152 @@
+{
+ "core6|active_vs_neg": {
+  "n_pos": 35,
+  "n_neg": 196,
+  "auc": 0.959,
+  "delong": [
+   0.9,
+   1.0
+  ],
+  "boot": [
+   0.9,
+   1.0
+  ],
+  "mw_p": 5.2313875339037014e-18
+ },
+ "core6|silent_vs_neg": {
+  "n_pos": 25,
+  "n_neg": 196,
+  "auc": 0.464,
+  "delong": [
+   0.3,
+   0.62
+  ],
+  "boot": [
+   0.31,
+   0.61
+  ],
+  "mw_p": 0.5577275250956513
+ },
+ "core6|dna_vs_neg": {
+  "n_pos": 60,
+  "n_neg": 196,
+  "auc": 0.753,
+  "delong": [
+   0.66,
+   0.85
+  ],
+  "boot": [
+   0.65,
+   0.84
+  ],
+  "mw_p": 3.161069141675234e-09
+ },
+ "core6|active_vs_neg_oropharynx": {
+  "n_pos": 28,
+  "n_neg": 47,
+  "auc": 0.96,
+  "delong": [
+   0.9,
+   1.0
+  ],
+  "boot": [
+   0.88,
+   1.0
+  ],
+  "mw_p": 3.302953674970172e-11
+ },
+ "core6|coherence_active": {
+  "n": 35,
+  "observed": 0.556,
+  "null_95": [
+   0.027,
+   0.273
+  ],
+  "perm_p": 0.001
+ },
+ "core6|coherence_silent": {
+  "n": 25,
+  "observed": 0.541,
+  "null_95": [
+   -0.003,
+   0.299
+  ],
+  "perm_p": 0.001
+ },
+ "core6|coherence_neg": 0.149,
+ "four|active_vs_neg": {
+  "n_pos": 35,
+  "n_neg": 196,
+  "auc": 0.957,
+  "delong": [
+   0.9,
+   1.0
+  ],
+  "boot": [
+   0.89,
+   1.0
+  ],
+  "mw_p": 8.056586303529326e-18
+ },
+ "four|silent_vs_neg": {
+  "n_pos": 25,
+  "n_neg": 196,
+  "auc": 0.41,
+  "delong": [
+   0.26,
+   0.56
+  ],
+  "boot": [
+   0.27,
+   0.55
+  ],
+  "mw_p": 0.14345108012913588
+ },
+ "four|dna_vs_neg": {
+  "n_pos": 60,
+  "n_neg": 196,
+  "auc": 0.729,
+  "delong": [
+   0.63,
+   0.83
+  ],
+  "boot": [
+   0.63,
+   0.82
+  ],
+  "mw_p": 8.271960010723951e-08
+ },
+ "four|active_vs_neg_oropharynx": {
+  "n_pos": 28,
+  "n_neg": 47,
+  "auc": 0.96,
+  "delong": [
+   0.9,
+   1.0
+  ],
+  "boot": [
+   0.89,
+   1.0
+  ],
+  "mw_p": 3.557259699042441e-11
+ },
+ "four|coherence_active": {
+  "n": 35,
+  "observed": 0.546,
+  "null_95": [
+   0.015,
+   0.334
+  ],
+  "perm_p": 0.001
+ },
+ "four|coherence_silent": {
+  "n": 25,
+  "observed": 0.521,
+  "null_95": [
+   -0.036,
+   0.388
+  ],
+  "perm_p": 0.002
+ },
+ "four|coherence_neg": 0.179
+}

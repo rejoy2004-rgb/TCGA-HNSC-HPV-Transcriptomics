@@ -49,10 +49,18 @@ This maps every figure and table in `manuscript/FINAL_INTEGRATED_MANUSCRIPT.docx
 | S2 | Top up- and downregulated genes | `results/HNSC_DESeq2_All_Results.csv` |
 | S3 | Immune and epithelial marker genes, unadjusted and site-adjusted | `results/HNSC_DESeq2_All_Results.csv`, `results/HNSC_DESeq2_PrimarySite_Adjusted_All_Results.csv` |
 | S4 | Panel-category enrichment | external-cohort and single-cell analyses |
-| S5 | All 22 CIBERSORTx populations | `results/HNSC_HPV_Immune_Comparison_All22_BH.csv` |
-| S6 | CD8/M2 ratio | `results/HNSC_CD8_M2_ratio_data.csv` |
-| S7 | Deconvolution marker validation | `results/Deconvolution_Marker_Validation.csv` (`scripts/validate_deconvolution_markers.py`) |
-| S8 | Confounder controls | external-cohort and single-cell analyses |
+| S5 | Confounder and sensitivity analyses | external-cohort analyses; review rows from `results/review_sensitivity/` (`scripts/review_analyses/`) |
+| S6 | All 22 CIBERSORTx populations | `results/HNSC_HPV_Immune_Comparison_All22_BH.csv` |
+| S7 | CD8/M2 ratio | `results/HNSC_CD8_M2_ratio_data.csv` |
+| S8 | Deconvolution marker validation | `results/Deconvolution_Marker_Validation.csv` (`scripts/validate_deconvolution_markers.py`) |
 | S9 | Malignant-cell specificity | external-cohort and single-cell analyses |
 | S10 | Proliferation adjustment | external-cohort and single-cell analyses |
 | S11 | Exploratory Cox models | `results/HNSC_Standardized_Cox_Results.csv` |
+
+## Review sensitivity analyses
+
+| Analysis | Output | Script |
+|---|---|---|
+| GSE65858: DeLong and bootstrap AUC CIs (active, silent, DNA-based, oropharynx-only); size-matched coherence nulls for the active (n = 35) and silent (n = 25) groups; four-gene score | `results/review_sensitivity/GSE65858_core_module_CIs_and_nulls.json` | `gse65858_prep.py`, `gse65858_stats.py` |
+| TCGA-HNSC and GSE38266: single promoter definition (1,500 bp upstream to 500 bp downstream of an annotated TSS) for the core genes; six- vs four-gene methylation composites; B/plasma adjustment (CIBERSORTx fractions and marker score); HPV definitions p16-or-ISH, ISH-only and oropharynx-only | `results/review_sensitivity/TCGA_GSE38266_methylation_sensitivity.json` | `tcga_fetch.py`, `core_probes_and_gse38266.py`, `gdc_fetch.py`, `tcga_methylation_sensitivity.py` |
+| GSE182227: DeLong and bootstrap CI for the per-tumour four-gene AUC | `results/review_sensitivity/GSE182227_AUC_CI.json` | `gse182227_auc_ci.py` |

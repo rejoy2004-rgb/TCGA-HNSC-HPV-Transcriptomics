@@ -1,8 +1,0 @@
-﻿Analysis,Cohort (n),Estimate,P
-Within oropharynx only: core score AUC,GSE65858 (28 vs 47),AUC = 0.960 (95% CI 0.91–1.00),3.3 × 10−11
-Logistic (outcome: HPV status): meiotic score alone,GSE65858 (231),β = 4.45; model AUC = 0.959,7.6 × 10−9
-Logistic (outcome: HPV status): meiotic score + proliferation,GSE65858 (231),β = 4.52; model AUC = 0.961,9.1 × 10−9
-Purity by HPV status (mean CPE),TCGA-HNSC,0.63 vs 0.48,8.0 × 10−6 (Mann–Whitney)
-Purity vs core meiotic score,TCGA-HNSC,Spearman ρ = 0.027,0.66
-Linear model (outcome: core meiotic score) + purity: HPV coefficient,TCGA-HNSC,β = 2.29 (unadjusted) vs 2.29 (adjusted); purity coefficient = −0.022,0.89 (purity)
-Linear model (outcome: core meiotic score) + purity + proliferation: HPV coefficient,TCGA-HNSC,β = 2.25,n/a

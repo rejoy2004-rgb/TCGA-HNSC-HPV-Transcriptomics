@@ -33,10 +33,11 @@ The TCGA analyses (differential expression, enrichment, immune deconvolution, su
 │   ├── validate_deconvolution_markers.py  deconvolution marker validation
 │   ├── build_integrated_manuscript.js     builds the manuscript .docx
 │   ├── export_tables.py                   exports manuscript tables to CSV
+│   ├── review_analyses/                   review sensitivity analyses (CIs, nulls, promoter definition, B/plasma, HPV definition)
 │   └── figures/                           figure assembly and export scripts
 ├── data_raw/                              cBioPortal clinical files and GDC manifest
 ├── data_processed/                        HPV status, CIBERSORTx input and Job14 results
-├── results/                               analysis outputs
+├── results/                               analysis outputs (review_sensitivity/ for the review analyses)
 ├── figures/
 │   ├── source_panels_600dpi/              600 dpi panels for Figures 1–3, 5, 6 and Supplementary Figs S2, S4
 │   ├── integrated/                        assembled and generated figures
@@ -108,6 +109,20 @@ python scripts/figures/make_graphical_abstract.py
 python scripts/figures/export_submission_figures.py
 node scripts/build_integrated_manuscript.js        # requires: npm install docx
 python scripts/export_tables.py                   # Tables 1–6 and S1–S11 as CSV
+```
+
+### 5. Review sensitivity analyses
+
+These analyses download public data (GEO, cBioPortal, GDC) into a working folder `DATA` (outside the repository) and write their results to `results/review_sensitivity/`. Place `GSE65858_series_matrix.txt.gz`, `GPL10558.annot.gz`, `GSE38266_series_matrix.txt.gz` (GEO) and `HM450.hg38.manifest.gencode.v36.tsv.gz` (zhou-lab/InfiniumAnnotationV1) in `DATA/geo` first.
+
+```bash
+python scripts/review_analyses/gse65858_prep.py DATA/geo
+python scripts/review_analyses/gse65858_stats.py DATA/geo results/review_sensitivity/GSE65858_core_module_CIs_and_nulls.json
+python scripts/review_analyses/tcga_fetch.py DATA
+python scripts/review_analyses/core_probes_and_gse38266.py DATA
+python scripts/review_analyses/gdc_fetch.py DATA data_raw          # about 1.6 GB of GDC HM450 files
+python scripts/review_analyses/tcga_methylation_sensitivity.py DATA .
+python scripts/review_analyses/gse182227_auc_ci.py results/review_sensitivity/GSE182227_AUC_CI.json
 ```
 
 ## Software

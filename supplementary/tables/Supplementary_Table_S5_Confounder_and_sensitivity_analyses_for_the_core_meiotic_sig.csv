@@ -1,0 +1,29 @@
+﻿Analysis,Cohort (n),Estimate,P
+Within oropharynx only: core score AUC,GSE65858 (28 vs 47),AUC = 0.960 (95% CI 0.90–1.00),3.3 × 10−11
+Logistic (outcome: HPV status): meiotic score alone,GSE65858 (231),β = 4.45; model AUC = 0.959,7.6 × 10−9
+Logistic (outcome: HPV status): meiotic score + proliferation,GSE65858 (231),β = 4.52; model AUC = 0.961,9.1 × 10−9
+Purity by HPV status (mean CPE),TCGA-HNSC,0.63 vs 0.48,8.0 × 10−6 (Mann–Whitney)
+Purity vs core meiotic score,TCGA-HNSC,Spearman ρ = 0.027,0.66
+Linear model (outcome: core meiotic score) + purity: HPV coefficient,TCGA-HNSC,β = 2.29 (unadjusted) vs 2.29 (adjusted); purity coefficient = −0.022,0.89 (purity)
+Linear model (outcome: core meiotic score) + purity + proliferation: HPV coefficient,TCGA-HNSC,β = 2.25,n/a
+"Four-gene score (excludes MEI1, STAG3): virus-active HPV+ vs HPV− AUC",GSE65858 (35 vs 196),AUC = 0.957 (95% CI 0.90–1.00),8.1 × 10−18
+"Core-module coherence, transcriptionally silent HPV+ vs size-matched HPV− null",GSE65858 (25),ρ = 0.541; null 95% interval −0.003 to 0.299,0.001 (permutation)
+"Four-gene coherence, virus-active / silent HPV+ vs size-matched nulls",GSE65858 (35; 25),ρ = 0.546 / 0.521 (HPV−: 0.179),0.001 / 0.002 (permutation)
+"Core expression score AUC, HPV by p16 or ISH (main rule)",TCGA-HNSC (41 vs 80),AUC = 0.933 (95% CI 0.87–1.00),8.0 × 10−15
+"Core expression score AUC, HPV by ISH only",TCGA-HNSC (21 vs 65),AUC = 1.000 (complete separation),7.1 × 10−12
+"Core expression score AUC, p16 or ISH in oropharyngeal tumours only",TCGA-HNSC (34 vs 8),AUC = 0.974 (95% CI 0.92–1.00),7.6 × 10−7
+"Core promoter composite, HPV by p16 or ISH (main rule)",TCGA-HNSC (44 vs 81),Δβ = −0.092; AUC = 0.844 (95% CI 0.76–0.93),2.3 × 10−10
+"Core promoter composite, HPV by ISH only",TCGA-HNSC (22 vs 67),Δβ = −0.116; AUC = 0.964 (95% CI 0.93–1.00),8.0 × 10−11
+"Core promoter composite, p16 or ISH in oropharyngeal tumours only",TCGA-HNSC (35 vs 8),Δβ = −0.084; AUC = 0.918 (95% CI 0.83–1.00),5.6 × 10−5
+"Promoter Δβ, MEI1 (TCGA; GSE38266)",44 vs 81; 21 vs 21,−0.126; −0.116,1.4 × 10−6; 2.9 × 10−4
+"Promoter Δβ, SMC1B (TCGA; GSE38266)",44 vs 81; 21 vs 21,−0.073; −0.048,8.7 × 10−8; 0.056
+"Promoter Δβ, STAG3 (TCGA; GSE38266)",44 vs 81; 21 vs 21,−0.049; −0.055,7.4 × 10−4; 0.006
+"Promoter Δβ, SYCP2 (TCGA; GSE38266)",44 vs 81; 21 vs 21,−0.207; −0.110,3.4 × 10−13; 0.001
+"Promoter Δβ, SYCE2 (TCGA; GSE38266)",44 vs 81; 21 vs 21,−0.007; 0.005,0.40; 0.34
+"Promoter Δβ, MAJIN (TCGA; GSE38266)",44 vs 81; 21 vs 21,−0.092; −0.135,9.1 × 10−6; 9.7 × 10−5
+"Set-level promoter β, 80 core-module probes (HPV+ vs HPV−)",GSE38266 (21 vs 21),0.257 vs 0.334,1.1 × 10−6
+"Promoter methylation vs expression, core-module composites (four-gene)",TCGA-HNSC (121),Spearman ρ = −0.641 (−0.632),2.2 × 10−15 (8.1 × 10−15)
+Core promoter composite: HPV Δβ unadjusted vs adjusted for B/plasma marker score,TCGA-HNSC (121),−0.100 vs −0.098,9.4 × 10−15 vs 8.5 × 10−13
+Core promoter composite: HPV Δβ unadjusted vs adjusted for CIBERSORTx B + plasma fraction,TCGA-HNSC (53),−0.118 vs −0.129,1.5 × 10−7 vs 1.2 × 10−7
+Four-gene promoter composite: HPV Δβ unadjusted vs adjusted for B/plasma marker score,TCGA-HNSC (121),−0.102 vs −0.103,3.8 × 10−15 vs 1.2 × 10−13
+MEI1 promoter: HPV Δβ unadjusted vs adjusted for B/plasma marker score,TCGA-HNSC (121),−0.137 vs −0.115,4.1 × 10−10 vs 2.9 × 10−7
