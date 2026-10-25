@@ -2,7 +2,9 @@
 ZFR2 expression (DESeq2 median-of-ratios) with overall-survival time/status, for the exploratory ZFR2 Kaplan-Meier plot.
 Because DESeq2's variance-stabilising transformation is monotone in normalised counts, a median split on normalised
 counts gives the same High/Low ZFR2 groups as a median split on VST values.
-Usage: python km_zfr2_counts.py <repo> <work_dir>   (writes <work_dir>/zfr2_km_input.csv)"""
+Usage: python km_zfr2_counts.py <repo> <work_dir>
+Writes <work_dir>/counts.pkl (genes x samples) and, in <repo>/results/review_sensitivity/, ZFR2_KM_input.csv (Supplementary Fig. S7)
+and CD8_validation_input.csv (Supplementary Fig. S5). Counts are cached in <work_dir>, so a second run needs no download."""
 import json, os, sys, urllib.parse, urllib.request, concurrent.futures as cf
 import numpy as np, pandas as pd
 
@@ -49,11 +51,46 @@ def get(item):
 
 
 cols = {}
+if os.path.exists(f"{W}/counts.pkl"):
+    fmap = {}
 with cf.ThreadPoolExecutor(8) as ex:
     for i, (b, d) in enumerate(ex.map(get, list(fmap.items()))):
         if d is None: print("FAILED", b, flush=True)
         else: cols[b] = d
         if i % 25 == 0: print(i, flush=True)
-M = pd.DataFrame(cols)
-M.to_pickle(f"{W}/counts.pkl")
+if os.path.exists(f"{W}/counts.pkl") and not cols:
+    M = pd.read_pickle(f"{W}/counts.pkl")
+else:
+    M = pd.DataFrame(cols)
+    M.to_pickle(f"{W}/counts.pkl")
 print(M.shape)
+
+# ---- DESeq2 median-of-ratios size factors (genes with non-zero counts in every sample) and normalised counts
+M.index = [i.split(".")[0] for i in M.index]
+nz = M[(M > 0).all(axis=1)]
+lg = np.log(nz)
+sf = np.exp(lg.sub(lg.mean(axis=1), axis=0).median(axis=0))
+N = M / sf
+ZFR2, CD8A, CD8B = "ENSG00000105278", "ENSG00000153563", "ENSG00000172116"
+
+# ---- overall survival (same rule as scripts/HPV_HNSC_Revision.R) and High/Low ZFR2 median split
+cl = pd.read_csv(f"{REPO}/data_raw/data_clinical_patient_full.txt", sep="	", skiprows=4)
+d = pd.DataFrame({"barcode": N.columns, "ZFR2_normalised_count": N.loc[ZFR2].values})
+d["PATIENT_ID"] = d.barcode.str[:12]
+d = d.merge(cl[["PATIENT_ID", "OS_STATUS", "OS_MONTHS"]], on="PATIENT_ID")
+d["OS_event"] = d.OS_STATUS.astype(str).str.contains("DECEASED|DEAD|1").astype(int)
+d["OS_months"] = pd.to_numeric(d.OS_MONTHS, errors="coerce")
+d = d.dropna(subset=["OS_months"])
+d["group"] = np.where(d.ZFR2_normalised_count > d.ZFR2_normalised_count.median(), "High ZFR2", "Low ZFR2")
+os.makedirs(f"{REPO}/results/review_sensitivity", exist_ok=True)
+d[["barcode", "ZFR2_normalised_count", "OS_months", "OS_event", "group"]].to_csv(f"{REPO}/results/review_sensitivity/ZFR2_KM_input.csv", index=False)
+print("ZFR2 KM input", d.shape, d.group.value_counts().to_dict())
+
+# ---- CIBERSORTx CD8+ T-cell fraction against CD8A / CD8B
+job = pd.read_csv(f"{REPO}/data_processed/CIBERSORTx_Job14_Results.csv")
+job["s"] = job["Mixture"].str[:15]
+c = pd.DataFrame({"barcode": N.columns, "s": [x[:15] for x in N.columns],
+                  "CD8A_normalised_count": N.loc[CD8A].values, "CD8B_normalised_count": N.loc[CD8B].values})
+c = c.merge(job[["s", "T cells CD8"]], on="s").rename(columns={"T cells CD8": "CIBERSORTx_CD8_T_cells"}).drop(columns="s")
+c.to_csv(f"{REPO}/results/review_sensitivity/CD8_validation_input.csv", index=False)
+print("CD8 validation input", c.shape)

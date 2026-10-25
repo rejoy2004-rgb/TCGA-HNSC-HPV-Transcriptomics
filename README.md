@@ -16,6 +16,7 @@ The TCGA analyses (differential expression, enrichment, immune deconvolution, su
 ## Repository structure
 
 ```text
+├── requirements.txt                       Python dependencies
 ├── manuscript/
 │   ├── FINAL_INTEGRATED_MANUSCRIPT.docx   integrated manuscript
 │   ├── submission_figures/                Figures 1–6 and graphical abstract (TIFF + PNG)
@@ -103,15 +104,25 @@ python scripts/calculate_demographics.py
 Run from the repository root:
 
 ```bash
+python scripts/figures/make_enrichment_panels.py   # Figure 1a, 1c and Supplementary Fig. S2a panels (volcano and enrichment re-run)
 python scripts/figures/make_tme_figure.py          # Figure 4
 python scripts/figures/compose_figures.py          # Figures 1–3, 5, 6; Supplementary Figs S2, S4
-python scripts/figures/make_supp_composites.py     # Supplementary Figs S3, S5
+python scripts/figures/make_supp_dotplots.py       # Supplementary Fig. S3 (downregulated GO and KEGG)
+python scripts/figures/make_cd8_validation.py      # Supplementary Fig. S5 (CD8A/CD8B vs CIBERSORTx)
 python scripts/figures/make_forest_plot.py         # Supplementary Fig. S6
+python scripts/figures/make_km_zfr2.py             # Supplementary Fig. S7 (Kaplan–Meier with numbers at risk)
 python scripts/figures/make_graphical_abstract.py
 python scripts/figures/export_submission_figures.py
 node scripts/build_integrated_manuscript.js        # requires: npm install docx
 python scripts/export_tables.py                   # Tables 1–6 and S1–S11 as CSV
 ```
+
+Notes on the figure scripts:
+
+- `make_enrichment_panels.py` draws Figure 1a (volcano from `results/HNSC_DESeq2_All_Results.csv`), Figure 1c and Supplementary Fig. S2a from the deposited DESeq2, GO and GSEA outputs, so figures and text share one source. Run `compose_figures.py` afterwards (the panel folders of Figures 3, 4 and 6 are written by `scripts/meiotic_programme/run_meiotic_analysis.py --panels` and `gse182227_singlecell.py --panels`; do not re-run the full composer unless those folders are current).
+- `make_km_zfr2.py` reads `results/review_sensitivity/ZFR2_KM_input.csv`: DESeq2-normalised ZFR2 counts and overall survival for the 279 tumours, built by `scripts/review_analyses/km_zfr2_counts.py` from GDC STAR counts. The groups are a median split; a median split on normalised counts equals one on VST values. The base-R Kaplan–Meier block in `HPV_HNSC_Revision.R` writes `figures/HNSC_BestGene_KM_R.png` and does not overwrite the manuscript figure.
+- `make_cd8_validation.py` reads `results/review_sensitivity/CD8_validation_input.csv`; Spearman ρ is rank-based, so it is the same for normalised-count and variance-stabilised expression.
+- Figure text sizes: `meiotic_programme/run_meiotic_analysis.py` rescales the text of the figures that are reduced to page width (`FONT_SCALE` in that file).
 
 ### 5. Meiotic programme: panel, methylation, external cohorts and single cell
 
@@ -136,6 +147,8 @@ python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --p
 | `gse181919_singlecell.py`, `sc_scoring.py` | single-cell analysis and Tirosh module scoring (Fig. 5) |
 | `figures.py`, `fig_gse182227.py`, `panel_export.py` | figure builders and 600 dpi per-panel export |
 
+`tcga_purity_regression.py` repeats the purity and proliferation models of Supplementary Table S5 and Section 3.9 with ABSOLUTE purity calls (`data_raw/TCGA_mastercalls.abs_tables_JSedit.fixed.txt`, the public PanCancer Atlas file from the GDC; the script gives the download address) and writes `results/meiotic_programme/purity/`. In the single-cell stage MAJIN is resolved to its deposited symbol C11orf85, and all Mann–Whitney tests are two-sided (exact at tumour level).
+
 `gse182227_singlecell.py` annotates GSE182227 from scratch (Leiden clustering, marker lineages, inferred-CNV malignant calls), scores malignant cells and fits the pooled two-cohort per-tumour models with proliferation adjustment (Fig. 6). The enrichment inputs in `data_processed/meiotic_programme/` are frozen copies of the outputs the manuscript numbers were computed from; regenerated GO/GSEA outputs in `results/` can differ slightly.
 
 ### 6. Review sensitivity analyses
@@ -150,13 +163,14 @@ python scripts/review_analyses/core_probes_and_gse38266.py DATA
 python scripts/review_analyses/gdc_fetch.py DATA data_raw          # about 1.6 GB of GDC HM450 files
 python scripts/review_analyses/tcga_methylation_sensitivity.py DATA .
 python scripts/review_analyses/gse182227_auc_ci.py results/review_sensitivity/GSE182227_AUC_CI.json
+python scripts/review_analyses/km_zfr2_counts.py . DATA/km   # GDC STAR counts -> ZFR2 survival and CD8 validation inputs (about 1 GB)
 ```
 
 ## Software
 
 R 4.6.0 with Bioconductor 3.23: DESeq2 1.52.0, clusterProfiler 4.20.0, enrichplot 1.32.0, org.Hs.eg.db 3.23.1, TCGAbiolinks 2.40.0 and survival 3.8.6. Full versions are in `results/sessionInfo.txt` and `results/package_versions.csv`.
 
-Python 3.11: pandas, numpy, scipy, matplotlib, Pillow and python-docx; for `scripts/meiotic_programme/` also statsmodels, scikit-learn, requests, python-igraph, leidenalg and umap-learn (`scripts/meiotic_programme/requirements.txt`). Node.js: `docx`.
+Python 3.11: install everything with `pip install -r requirements.txt` (pandas, numpy, scipy, matplotlib, Pillow, python-docx, statsmodels, scikit-learn, requests, lifelines, python-igraph, leidenalg, umap-learn, scanpy and anndata); `scripts/meiotic_programme/requirements.txt` lists the subset needed for the meiotic-programme and single-cell analyses. Node.js: `docx`.
 
 ## Data sources
 
