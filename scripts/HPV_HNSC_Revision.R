@@ -770,7 +770,9 @@ if (!is.na(zfr2_id) && zfr2_id %in% rownames(surv_counts)) {
   lr_p <- 1 - pchisq(survdiff(Surv(time, status) ~ ZFR2, data = km_data)$chisq, df = 1)
   cols <- c("#E41A1C", "#377EB8")
 
-  png("figures/HNSC_BestGene_KM.png", width = 1800, height = 1700, res = 300)
+  # The manuscript's Supplementary Fig. S7 (figures/HNSC_BestGene_KM.png) is drawn by scripts/figures/make_km_zfr2.py from
+  # results/review_sensitivity/ZFR2_KM_input.csv; this base-R version is written to a separate file so it does not overwrite it.
+  png("figures/HNSC_BestGene_KM_R.png", width = 1800, height = 1700, res = 300)
   par(mar = c(9, 5, 3, 1))
   plot(
     km_fit,
