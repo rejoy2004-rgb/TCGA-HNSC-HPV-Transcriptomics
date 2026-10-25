@@ -25,7 +25,7 @@ panels = [("Plasma cells", "Plasma cells"), ("T cells CD8", "CD8+ T cells"),
           ("Macrophages M0", "M0 macrophages"), ("NK cells resting", "Resting NK cells"),
           ("T cells CD4 memory resting", "Resting CD4+ memory T cells"), (None, "log2(CD8 / M2) ratio")]
 n = d["HPV Status"].value_counts()
-fig, axes = plt.subplots(2, 3, figsize=(10.5, 6.6), dpi=300)
+fig, axes = plt.subplots(2, 3, figsize=(7.4, 5.2), dpi=300)
 rng = np.random.default_rng(1)
 for ax, (col, title), letter in zip(axes.flat, panels, "abcdef"):
     if col is None:
@@ -43,8 +43,8 @@ for ax, (col, title), letter in zip(axes.flat, panels, "abcdef"):
         ax.scatter(i + rng.uniform(-0.17, 0.17, len(v)), v, s=9, color=COL[g], alpha=0.65,
                    edgecolors="white", linewidths=0.3, zorder=3)
     ax.set_xticks([0, 1], [f"HPV−\n(n = {n['negative']})", f"HPV+\n(n = {n['positive']})"], fontsize=8)
-    ax.set_title(f"{letter}  {title}", loc="left", fontsize=9.5, fontweight="bold")
-    ax.text(1.0, 1.02, note, transform=ax.transAxes, ha="right", va="bottom", fontsize=7.5, color="#444")
+    ax.set_title(f"{letter}  {title}", loc="left", fontsize=8, fontweight="bold", pad=13)
+    ax.text(0.0, 1.02, note, transform=ax.transAxes, ha="left", va="bottom", fontsize=7.5, color="#444")
     ax.set_ylabel(ylab, fontsize=8); ax.tick_params(labelsize=7.5)
     ax.grid(axis="y", color="#e6e6e6", lw=0.6); ax.set_axisbelow(True)
     for s in ("top", "right"): ax.spines[s].set_visible(False)

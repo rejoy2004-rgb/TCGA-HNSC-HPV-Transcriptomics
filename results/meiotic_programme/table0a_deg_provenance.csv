@@ -1,0 +1,3 @@
+threshold,universe,selected,set_size,hits,expected,fold,hyper_p,wt_selected,wt_hits,wt_testable,wt_fold,fold_ratio
+"Loose (padj<0.05, log2FC>0)",31226,6844,86,37,18.85,1.96,9.596026395955326e-06,7971,36,82,1.7,1.15
+"Stringent (padj<1e-10, log2FC>1)",31226,406,86,22,1.12,19.67,1.448001555658002e-22,454,21,82,17.4,1.13

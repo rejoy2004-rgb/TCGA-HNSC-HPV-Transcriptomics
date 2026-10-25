@@ -2,6 +2,7 @@
 (results/HNSC_HPV_GO_Upregulated.csv, results/HNSC_HPV_GSEA.csv) so that figures and text share one source."""
 import csv, math, re
 import matplotlib
+import matplotlib.text
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
@@ -33,7 +34,7 @@ names = [x["Description"] for x in gs][::-1]; nes = [float(x["NES"]) for x in gs
 isb = [bool(re.search(r"meio|recombination", n)) and n != "recombinational repair" for n in names]
 top5 = [bool(re.search(r"meio|recombination", x["Description"])) for x in gs[:5]]
 trunc = lambda s: s if len(s) <= 40 else s[:39] + "…"
-fig, ax = plt.subplots(figsize=(5.2, 3.06))
+fig, ax = plt.subplots(figsize=(6.4, 3.7))
 for i, (n, v, b) in enumerate(zip(names, nes, isb)):
     ax.plot([2.0, v], [i, i], color="#5b94c9" if b else "#c8cdd5", lw=1.3, zorder=1)
     ax.scatter([v], [i], s=34, color=BLUE if b else LGREY, zorder=2)
@@ -42,6 +43,8 @@ ax.set_xlim(2.0, 3.02); ax.set_xlabel("GSEA normalised enrichment score", fontsi
 ax.set_title("Meiosis dominates the original\nHPV+ enrichment ranking", fontsize=8.5, loc="left")
 ax.text(0.97, 0.12, f"blue = meiosis-related\n({sum(top5)} of the top 5)", transform=ax.transAxes, ha="right", color=BLUE, fontsize=7)
 fig.text(0.02, 0.93, "a", fontsize=11, fontweight="bold")
+fig.canvas.draw()
+for _t in fig.findobj(matplotlib.text.Text): _t.set_fontsize(_t.get_fontsize() * 1.5)   # panel is shown at about 70% of its size in the composite
 fig.savefig("figures/source_panels_600dpi/Figure 2/Figure 2a.png", dpi=600, bbox_inches="tight")
 fig.savefig("figures/source_panels_600dpi/Figure 2/Figure 2a.pdf", bbox_inches="tight")
 fig.savefig("figures/source_panels_600dpi/Figure 2/Figure 2a.tif", dpi=600, bbox_inches="tight", pil_kwargs={"compression": "tiff_lzw"})

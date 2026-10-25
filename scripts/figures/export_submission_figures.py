@@ -15,7 +15,7 @@ SUPP = [("Supplementary_Figure_S1_PCA", "figures/HNSC_HPV_PCA.png", 300),
         ("Supplementary_Figure_S2_enrichment_origin", f"{I}/composed/SuppFig_S2.png", 600),
         ("Supplementary_Figure_S3_downregulated_GO_KEGG", f"{I}/SuppFig_Down_GO_KEGG.png", 600),
         ("Supplementary_Figure_S4_module_coherence", f"{I}/composed/SuppFig_S4.png", 600),
-        ("Supplementary_Figure_S5_CD8_validation", f"{I}/SuppFig_CD8_Validation.png", 300),
+        ("Supplementary_Figure_S5_CD8_validation", f"{I}/SuppFig_CD8_Validation.png", 600),
         ("Supplementary_Figure_S6_Cox_forest", f"{I}/SuppFig_Cox_forest_600dpi.png", 600),
         ("Supplementary_Figure_S7_ZFR2_Kaplan_Meier", "figures/HNSC_BestGene_KM.png", 600)]
 

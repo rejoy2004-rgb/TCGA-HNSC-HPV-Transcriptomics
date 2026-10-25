@@ -44,6 +44,10 @@ PANEL_FOLDERS = {"fig0_provenance": "Figure 2", "fig2_methylation": "Figure 3",
                  "fig4_singlecell": "Figure 6"}
 
 
+# text-size multipliers for figures that are reduced to page width in the manuscript
+FONT_SCALE = {"fig0_provenance": 1.5, "fig1_activation": 1.25, "fig2_methylation": 1.4, "fig3_coordination": 1.3}
+
+
 def scalars(d):
     """Keep only JSON-friendly scalars; tables are already written as CSV."""
     out = {}
@@ -68,7 +72,7 @@ def main():
     CACHE, RESULTS, PROCESSED = Path(a.data), Path(a.out), Path(a.processed)
     CACHE.mkdir(parents=True, exist_ok=True); RESULTS.mkdir(parents=True, exist_ok=True)
     install_export_hook(RESULTS, str(REPO / "figures" / "source_panels_600dpi") if a.panels else None,
-                        PANEL_FOLDERS, dpi=600)
+                        PANEL_FOLDERS, dpi=600, font_scale=FONT_SCALE)
     np.random.seed(RANDOM_SEED)
     T0 = time.time()
 

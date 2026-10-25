@@ -48,13 +48,13 @@ def make_provenance_figure(prov, percat, top20, overlap, outdir):
     axB.hlines(y2, 1.0, pc.fold, color=cb, lw=1.1, alpha=.75)
     axB.scatter(pc.fold, y2, s=30, color=cb, zorder=3)
     for yy, f in zip(y2, pc.fold):
-        axB.annotate(f"{f:.1f}x", (f, yy), xytext=(4, 0), textcoords="offset points",
-                     va="center", fontsize=6)
+        axB.annotate(f"{f:.1f}x", (f, yy), xytext=(4, 0) if f >= 1 else (3, 8), textcoords="offset points",
+                     va="center", ha="left" if f >= 1 else "center", fontsize=6)
     axB.set_yticks(y2); axB.set_yticklabels(lab, fontsize=6)
     axB.set_xlim(0, 4.5); axB.margins(y=0.05)
-    axB.set_xlabel("Fold enrichment among upregulated DEGs"); axB.xaxis.labelpad = 6
+    axB.set_xlabel("Fold enrichment\n(upregulated DEGs)"); axB.xaxis.labelpad = 6
     axB.set_title("The specificity was already\nvisible in the DEG list", loc="left")
-    axB.text(0.96, 0.10, "dashed = no enrichment", transform=axB.transAxes,
+    axB.text(0.99, 0.01, "dashed = 1x", transform=axB.transAxes,
              ha="right", va="bottom", fontsize=6, color="0.35")
 
     x = np.arange(2); w = 0.34
@@ -67,11 +67,11 @@ def make_provenance_figure(prov, percat, top20, overlap, outdir):
                      va="bottom", fontsize=6)
     axC.set_xticks(x)
     axC.set_xticklabels([f"padj<0.05\n({overlap.selected.iloc[0]:,} genes)",
-                         f"padj<1e-10, |log2FC|>1\n({overlap.selected.iloc[1]} genes)"], fontsize=6)
+                         f"padj<1e-10,\n|log2FC|>1\n({overlap.selected.iloc[1]} genes)"], fontsize=6)
     axC.set_ylabel("Panel genes in DEG set"); axC.yaxis.labelpad = 4
-    axC.set_ylim(0, max(obs) * 1.2)
+    axC.set_ylim(0, max(obs) * 1.55)
     axC.set_title("Panel overlaps the DEG list\nfar beyond chance", loc="left")
-    axC.legend(frameon=False, fontsize=6, loc="upper right")
+    axC.legend(frameon=False, fontsize=6, loc="upper left")
 
     for ax, L in ((axA, "a"), (axB, "b"), (axC, "c")):
         ax.text(-0.10, 1.06, L, transform=ax.transAxes, fontsize=9, fontweight="bold", va="bottom")
@@ -135,7 +135,7 @@ def make_figures(val: dict, disc: dict, rep: dict, outdir: Path) -> None:
     ax.set_yticks(yy)
     ax.set_yticklabels(pg.gene, fontsize=6.2, style="italic")
     ax.set_xlabel("AUC, virus-active HPV+ vs HPV-")
-    ax.set_xlim(.45, 1.0)
+    ax.set_xlim(.45, 1.12); ax.set_xticks([.5, .6, .7, .8, .9, 1.0])
     ax.set_title("Meiotic machinery genes discriminate;\nclassic cancer-testis antigens do not", loc="left")
     ax.text(.985, .05, "grey = classic CTA\ndashed = chance", transform=ax.transAxes,
             ha="right", fontsize=6, color=GREY, linespacing=1.5)
@@ -187,9 +187,10 @@ def make_figures(val: dict, disc: dict, rep: dict, outdir: Path) -> None:
     ax.axvline(0, lw=.6, color=GREY, ls=":")
     for _, r in mm2[mm2.gene.isin(CORE6)].iterrows():
         ax.annotate(r.gene, (r.delta_beta, r.rho_meth_expr), fontsize=5.9, style="italic",
-                    xytext=(3.5, 3), textcoords="offset points", color="#0c4a6e")
+                    xytext={"SYCE2": (4, 6), "SYCP2": (4, -12), "STAG3": (-32, 4)}.get(r.gene, (3.5, 3)),
+                    textcoords="offset points", color="#0c4a6e")
     ax.set_xlabel("delta promoter methylation (HPV+ - HPV-)")
-    ax.set_ylabel("Spearman rho, methylation vs expression")
+    ax.set_ylabel("Spearman rho\n(methylation vs expression)")
     ax.set_title(f"Hypomethylation tracks transcriptional activation\n"
                  f"({disc['n_neg_rho']} of {disc['n_hypo']} FDR-significant genes show rho < 0)",
                  loc="left")
