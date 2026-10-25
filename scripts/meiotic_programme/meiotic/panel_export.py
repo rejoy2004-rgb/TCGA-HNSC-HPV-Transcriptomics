@@ -100,7 +100,20 @@ def export_panels(fig, outdir, stem, dpi=600, fmts=("tif", "png", "pdf"), pad=0.
 # ---------------------------------------------------------------------------
 # 600 dpi export hook used by the run scripts
 # ---------------------------------------------------------------------------
-def install_export_hook(results_dir, panels_root=None, stem_to_folder=None, dpi=600):
+def scale_fonts(fig, factor):
+    """Multiply every text size in `fig` by `factor` (once per figure), so figures that are
+    reduced to page width still print at a legible size."""
+    import matplotlib.text as mt
+    if getattr(fig, "_fonts_scaled", False):
+        return
+    fig.canvas.draw()
+    for t in fig.findobj(mt.Text):
+        t.set_fontsize(t.get_fontsize() * factor)
+    fig._fonts_scaled = True
+    fig.canvas.draw()
+
+
+def install_export_hook(results_dir, panels_root=None, stem_to_folder=None, dpi=600, font_scale=None):
     """Wrap Figure.savefig so every figure the analysis code saves is written at
     `dpi` (PNG + vector PDF), and - when `panels_root` is given - each figure named
     in `stem_to_folder` is also split into one file per panel
@@ -109,11 +122,15 @@ def install_export_hook(results_dir, panels_root=None, stem_to_folder=None, dpi=
     The analysis code itself is not edited; only the export resolution changes."""
     import matplotlib.figure as _mf
     stem_to_folder = stem_to_folder or {}
+    font_scale = font_scale or {}
     orig = getattr(_mf.Figure, "_meiotic_orig_savefig", _mf.Figure.savefig)
     _mf.Figure._meiotic_orig_savefig = orig
 
     def _savefig(self, fname, *a, **kw):
         kw["dpi"] = dpi
+        _stem = os.path.splitext(os.path.basename(str(fname)))[0]
+        if _stem in font_scale:
+            scale_fonts(self, font_scale[_stem])
         orig(self, fname, *a, **kw)
         fn = str(fname)
         if fn.lower().endswith(".png"):
