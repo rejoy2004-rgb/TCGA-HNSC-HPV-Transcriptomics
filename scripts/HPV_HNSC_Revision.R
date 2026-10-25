@@ -763,16 +763,34 @@ if (!is.na(zfr2_id) && zfr2_id %in% rownames(surv_counts)) {
   
   km_fit <- survfit(Surv(time, status) ~ ZFR2, data = km_data)
   
-  png("figures/HNSC_BestGene_KM.png", width = 1800, height = 1400, res = 300)
+  # number at risk (months 0-120 every 24) and log-rank P, drawn under the curves
+  at_times <- seq(0, 120, by = 24)
+  risk <- summary(km_fit, times = at_times, extend = TRUE)
+  n_risk <- matrix(risk$n.risk, nrow = length(at_times))   # columns follow the strata: High ZFR2, Low ZFR2
+  lr_p <- 1 - pchisq(survdiff(Surv(time, status) ~ ZFR2, data = km_data)$chisq, df = 1)
+  cols <- c("#E41A1C", "#377EB8")
+
+  png("figures/HNSC_BestGene_KM.png", width = 1800, height = 1700, res = 300)
+  par(mar = c(9, 5, 3, 1))
   plot(
     km_fit,
-    col = c("#E41A1C", "#377EB8"),
+    col = cols,
     lwd = 2,
-    xlab = "Overall Survival (Months)",
+    xlim = c(0, 120),
+    xaxt = "n",
+    xlab = "",
     ylab = "Survival Probability",
     main = "Kaplan-Meier Curve stratified by ZFR2"
   )
-  legend("bottomleft", legend = c("High ZFR2", "Low ZFR2"), col = c("#E41A1C", "#377EB8"), lwd = 2)
+  axis(1, at = at_times)
+  mtext("Overall Survival (Months)", side = 1, line = 2.2)
+  legend("bottomleft", legend = c("High ZFR2", "Low ZFR2"), col = cols, lwd = 2, bty = "n")
+  legend("topright", legend = sprintf("Log-rank P = %.3g (exploratory, unadjusted)", lr_p), bty = "n")
+  mtext("Number at risk", side = 1, line = 4.2, adj = 0, font = 2, cex = 0.8)
+  for (g in 1:2) {
+    mtext(c("High", "Low")[g], side = 1, line = 4.2 + g, at = -12, col = cols[g], cex = 0.8, adj = 1)
+    mtext(n_risk[, g], side = 1, line = 4.2 + g, at = at_times, col = cols[g], cex = 0.8)
+  }
   dev.off()
   cat("Kaplan-Meier curve for ZFR2 plotted.\n")
 }
