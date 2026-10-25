@@ -62,7 +62,7 @@ def make_provenance_figure(prov, percat, top20, overlap, outdir):
     axC.bar(x - w/2, exp, w, color=GREY, label="expected by chance")
     axC.bar(x + w/2, obs, w, color=CORE, label="observed")
     for xi, (o, e) in enumerate(zip(obs, exp)):
-        axC.annotate(f"{o/e:.1f}x\np={overlap.hyper_p.iloc[xi]:.0e}", (xi + w/2, o),
+        axC.annotate(f"{overlap.fold.iloc[xi]:.1f}x\np={overlap.hyper_p.iloc[xi]:.0e}", (xi + w/2, o),
                      xytext=(0, 3), textcoords="offset points", ha="center",
                      va="bottom", fontsize=6)
     axC.set_xticks(x)

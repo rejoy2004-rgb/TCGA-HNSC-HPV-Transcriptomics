@@ -6,4 +6,4 @@ sklearn       1.9.1
 statsmodels   0.15.0
 scipy         1.17.1
 random seed   0
-runtime       33 s
+runtime       27 s
