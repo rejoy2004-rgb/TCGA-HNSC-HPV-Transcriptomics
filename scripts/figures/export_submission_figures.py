@@ -32,6 +32,6 @@ def save(name, src, dpi, dests):
     print(f"{name:48s} {im.width:>5d}x{im.height:<5d} {dpi} dpi, {im.width / dpi * 25.4:.0f} mm wide")
 
 for n, s in MAIN:
-    save(n, s, 600, [out])
+    save(n, s, 300 if n == "Figure5" else 600, [out])  # Figure 5 (six-gene) is available at 300 dpi only
 for n, s, dpi in SUPP:
     save(n, s, dpi, ["supplementary/figures"])
