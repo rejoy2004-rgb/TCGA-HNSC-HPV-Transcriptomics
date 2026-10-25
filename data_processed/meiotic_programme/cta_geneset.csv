@@ -1,0 +1,96 @@
+gene,category
+ACRBP,Cancer-testis antigen (MAGE/CTAG)
+CT45A1,Cancer-testis antigen (MAGE/CTAG)
+CTAG1B,Cancer-testis antigen (MAGE/CTAG)
+CTAG2,Cancer-testis antigen (MAGE/CTAG)
+CTCFL,Cancer-testis antigen (MAGE/CTAG)
+DPPA2,Cancer-testis antigen (MAGE/CTAG)
+FMR1NB,Cancer-testis antigen (MAGE/CTAG)
+GAGE1,Cancer-testis antigen (MAGE/CTAG)
+GAGE2A,Cancer-testis antigen (MAGE/CTAG)
+LUZP4,Cancer-testis antigen (MAGE/CTAG)
+MAGEA1,Cancer-testis antigen (MAGE/CTAG)
+MAGEA10,Cancer-testis antigen (MAGE/CTAG)
+MAGEA11,Cancer-testis antigen (MAGE/CTAG)
+MAGEA12,Cancer-testis antigen (MAGE/CTAG)
+MAGEA2,Cancer-testis antigen (MAGE/CTAG)
+MAGEA3,Cancer-testis antigen (MAGE/CTAG)
+MAGEA4,Cancer-testis antigen (MAGE/CTAG)
+MAGEA6,Cancer-testis antigen (MAGE/CTAG)
+MAGEB1,Cancer-testis antigen (MAGE/CTAG)
+MAGEB2,Cancer-testis antigen (MAGE/CTAG)
+MAGEC1,Cancer-testis antigen (MAGE/CTAG)
+MAGEC2,Cancer-testis antigen (MAGE/CTAG)
+PASD1,Cancer-testis antigen (MAGE/CTAG)
+PRAME,Cancer-testis antigen (MAGE/CTAG)
+PRSS55,Cancer-testis antigen (MAGE/CTAG)
+SPANXB1,Cancer-testis antigen (MAGE/CTAG)
+SSX1,Cancer-testis antigen (MAGE/CTAG)
+SSX2,Cancer-testis antigen (MAGE/CTAG)
+SSX4,Cancer-testis antigen (MAGE/CTAG)
+TAF7L,Cancer-testis antigen (MAGE/CTAG)
+XAGE1B,Cancer-testis antigen (MAGE/CTAG)
+ZNF165,Cancer-testis antigen (MAGE/CTAG)
+ZPBP2,Cancer-testis antigen (MAGE/CTAG)
+AURKC,Cell-cycle meiosis
+CCNB3,Cell-cycle meiosis
+CDC20B,Cell-cycle meiosis
+OIP5,Cell-cycle meiosis
+TDRKH,Cell-cycle meiosis
+RAD21L1,Meiotic cohesin
+REC8,Meiotic cohesin
+SMC1B,Meiotic cohesin
+STAG3,Meiotic cohesin
+ANKRD31,Meiotic recombination/DSB
+BRME1,Meiotic recombination/DSB
+CCDC36,Meiotic recombination/DSB
+CNTD1,Meiotic recombination/DSB
+DMC1,Meiotic recombination/DSB
+HFM1,Meiotic recombination/DSB
+HORMAD1,Meiotic recombination/DSB
+HORMAD2,Meiotic recombination/DSB
+MCMDC2,Meiotic recombination/DSB
+MEI1,Meiotic recombination/DSB
+MEI4,Meiotic recombination/DSB
+MEIOB,Meiotic recombination/DSB
+MLH3,Meiotic recombination/DSB
+MND1,Meiotic recombination/DSB
+MSH4,Meiotic recombination/DSB
+MSH5,Meiotic recombination/DSB
+PSMC3IP,Meiotic recombination/DSB
+RAD9B,Meiotic recombination/DSB
+REC114,Meiotic recombination/DSB
+RNF212,Meiotic recombination/DSB
+SHCBP1L,Meiotic recombination/DSB
+SPATA22,Meiotic recombination/DSB
+SPO11,Meiotic recombination/DSB
+GBX1,Other germ-cell
+GRIN2C,Other germ-cell
+GTSF1,Other germ-cell
+RBMXL2,Other germ-cell
+STRA8,Other germ-cell
+TEX14,Other germ-cell
+TEX15,Other germ-cell
+ZFR2,Other germ-cell
+MAJIN,Synaptonemal complex
+SIX6OS1,Synaptonemal complex
+SYCE1,Synaptonemal complex
+SYCE2,Synaptonemal complex
+SYCE3,Synaptonemal complex
+SYCP1,Synaptonemal complex
+SYCP2,Synaptonemal complex
+SYCP2L,Synaptonemal complex
+SYCP3,Synaptonemal complex
+TEX12,Synaptonemal complex
+DDX4,piRNA/Tudor germline
+HENMT1,piRNA/Tudor germline
+MAEL,piRNA/Tudor germline
+MOV10L1,piRNA/Tudor germline
+PIWIL1,piRNA/Tudor germline
+PIWIL2,piRNA/Tudor germline
+TDRD1,piRNA/Tudor germline
+TDRD10,piRNA/Tudor germline
+TDRD12,piRNA/Tudor germline
+TDRD5,piRNA/Tudor germline
+TDRD6,piRNA/Tudor germline
+TDRD9,piRNA/Tudor germline
