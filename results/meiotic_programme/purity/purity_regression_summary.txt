@@ -1,0 +1,53 @@
+n analysed = 277 (of 279; 2 without ABSOLUTE purity)
+
+HPV_status   n  purity_mean  purity_sd  prolif_mean  meiotic_mean
+  negative 241     0.483859   0.175163    -0.050872     -0.295489
+  positive  36     0.631111   0.161807     0.601937      1.995561
+
+purity HPV+ vs HPV-: Mann-Whitney U=6340, P=7.96e-06
+Spearman purity~meiotic: rho=0.027, P=0.66
+Spearman purity~proliferation: rho=0.244, P=4.2e-05
+
+               term      VIF
+              const 1.000000
+                hpv 1.142967
+       tumor_purity 1.102975
+proliferation_score 1.101577
+
+                                 model   n                term      beta       se     ci_lo    ci_hi         t            p   adj_r2
+                         meiotic ~ hpv 277                 hpv  2.291050 0.079695  2.134160 2.447940 28.747693 7.636863e-85 0.749417
+                meiotic ~ hpv + purity 277                 hpv  2.294297 0.083047  2.130805 2.457789 27.626438 3.517441e-81 0.748521
+                meiotic ~ hpv + purity 277        tumor_purity -0.022048 0.155278 -0.327738 0.283641 -0.141993 8.871902e-01 0.748521
+         meiotic ~ hpv + proliferation 277                 hpv  2.236796 0.082126  2.075118 2.398474 27.236221 6.148438e-80 0.753758
+         meiotic ~ hpv + proliferation 277 proliferation_score  0.083109 0.034368  0.015451 0.150768  2.418229 1.624860e-02 0.753758
+meiotic ~ hpv + purity + proliferation 277                 hpv  2.246290 0.084579  2.079779 2.412800 26.558382 1.223981e-77 0.753065
+meiotic ~ hpv + purity + proliferation 277        tumor_purity -0.074680 0.155351 -0.380519 0.231159 -0.480718 6.311021e-01 0.753065
+meiotic ~ hpv + purity + proliferation 277 proliferation_score  0.085412 0.034748  0.017004 0.153819  2.458043 1.459118e-02 0.753065
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                meiotic   R-squared:                       0.756
+Model:                            OLS   Adj. R-squared:                  0.753
+Method:                 Least Squares   F-statistic:                     281.6
+Date:                Sun, 25 Oct 2026   Prob (F-statistic):           3.17e-83
+Time:                        15:04:41   Log-Likelihood:                -165.35
+No. Observations:                 277   AIC:                             338.7
+Df Residuals:                     273   BIC:                             353.2
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+Intercept              -0.2550      0.081     -3.162      0.002      -0.414      -0.096
+hpv                     2.2463      0.085     26.558      0.000       2.080       2.413
+tumor_purity           -0.0747      0.155     -0.481      0.631      -0.381       0.231
+proliferation_score     0.0854      0.035      2.458      0.015       0.017       0.154
+==============================================================================
+Omnibus:                      203.776   Durbin-Watson:                   1.912
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            11005.297
+Skew:                           2.293   Prob(JB):                         0.00
+Kurtosis:                      33.537   Cond. No.                         7.43
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

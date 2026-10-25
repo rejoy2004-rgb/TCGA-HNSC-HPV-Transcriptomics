@@ -3,6 +3,7 @@
 
 Inputs (from the repository):
   data_raw/TCGA_mastercalls.abs_tables_JSedit.fixed.txt         ABSOLUTE purity calls (TCGA PanCanAtlas)
+      (public file; download from https://api.gdc.cancer.gov/data/4f277128-f793-4354-a13d-30cc7fe9f6b5 if absent)
   data_processed/meiotic_programme/TCGA_HNSC_per_sample_scores.csv  per-sample core-6 score and HPV status (n = 279)
 Proliferation genes are fetched from cBioPortal (hnsc_tcga_rna_seq_v2_mrna).
 
@@ -35,7 +36,7 @@ PROLIFERATION = ["MKI67", "CCNB1", "TOP2A", "BUB1", "CDK1", "AURKA", "PLK1", "TY
 
 def post(path, payload, params=None):
     r = requests.post(B + path, json=payload, params=params,
-                      headers={"Content-Type": "application/json"}, timeout=300)
+                      headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}, timeout=300)
     r.raise_for_status()
     return r.json()
 
