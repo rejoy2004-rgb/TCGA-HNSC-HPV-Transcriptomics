@@ -1,0 +1,3 @@
+model,term,coef,ci_lo,ci_hi,p
+malignant only,hpv_pos,0.1077,0.0711,0.1443,8.36654971276627e-09
+all cells,hpv_pos:malig,0.0812,0.0746,0.0878,5.536855266513547e-128

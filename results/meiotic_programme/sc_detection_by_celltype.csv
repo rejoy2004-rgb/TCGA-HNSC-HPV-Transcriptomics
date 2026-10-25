@@ -1,0 +1,1045 @@
+cell_type,hpv,n_cells,gene,category,detection_rate
+Malignant.cells,HPV+,2463,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0024
+Malignant.cells,HPV+,2463,ANKRD31,Meiotic recombination/DSB,0.0028
+Malignant.cells,HPV+,2463,AURKC,Cell-cycle meiosis,0.0195
+Malignant.cells,HPV+,2463,CCDC36,Meiotic recombination/DSB,0.0004
+Malignant.cells,HPV+,2463,CDC20B,Cell-cycle meiosis,0.0122
+Malignant.cells,HPV+,2463,CNTD1,Meiotic recombination/DSB,0.0264
+Malignant.cells,HPV+,2463,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.002
+Malignant.cells,HPV+,2463,DMC1,Meiotic recombination/DSB,0.0698
+Malignant.cells,HPV+,2463,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.1547
+Malignant.cells,HPV+,2463,GRIN2C,Other germ-cell,0.0142
+Malignant.cells,HPV+,2463,GTSF1,Other germ-cell,0.0012
+Malignant.cells,HPV+,2463,HENMT1,piRNA/Tudor germline,0.2099
+Malignant.cells,HPV+,2463,HORMAD1,Meiotic recombination/DSB,0.0467
+Malignant.cells,HPV+,2463,MAEL,piRNA/Tudor germline,0.0361
+Malignant.cells,HPV+,2463,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.3776
+Malignant.cells,HPV+,2463,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0004
+Malignant.cells,HPV+,2463,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0146
+Malignant.cells,HPV+,2463,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0028
+Malignant.cells,HPV+,2463,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.002
+Malignant.cells,HPV+,2463,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0073
+Malignant.cells,HPV+,2463,MAJIN,Synaptonemal complex,0.0686
+Malignant.cells,HPV+,2463,MCMDC2,Meiotic recombination/DSB,0.0166
+Malignant.cells,HPV+,2463,MEI1,Meiotic recombination/DSB,0.1214
+Malignant.cells,HPV+,2463,MEIOB,Meiotic recombination/DSB,0.0223
+Malignant.cells,HPV+,2463,MLH3,Meiotic recombination/DSB,0.1255
+Malignant.cells,HPV+,2463,MND1,Meiotic recombination/DSB,0.1847
+Malignant.cells,HPV+,2463,MOV10L1,piRNA/Tudor germline,0.0231
+Malignant.cells,HPV+,2463,MSH5,Meiotic recombination/DSB,0.0028
+Malignant.cells,HPV+,2463,OIP5,Cell-cycle meiosis,0.147
+Malignant.cells,HPV+,2463,PIWIL1,piRNA/Tudor germline,0.0077
+Malignant.cells,HPV+,2463,PIWIL2,piRNA/Tudor germline,0.0305
+Malignant.cells,HPV+,2463,PRAME,Cancer-testis antigen (MAGE/CTAG),0.1125
+Malignant.cells,HPV+,2463,PSMC3IP,Meiotic recombination/DSB,0.3455
+Malignant.cells,HPV+,2463,RAD9B,Meiotic recombination/DSB,0.0235
+Malignant.cells,HPV+,2463,REC8,Meiotic cohesin,0.0995
+Malignant.cells,HPV+,2463,RNF212,Meiotic recombination/DSB,0.1709
+Malignant.cells,HPV+,2463,SHCBP1L,Meiotic recombination/DSB,0.0552
+Malignant.cells,HPV+,2463,SMC1B,Meiotic cohesin,0.2948
+Malignant.cells,HPV+,2463,STAG3,Meiotic cohesin,0.2493
+Malignant.cells,HPV+,2463,SYCE1,Synaptonemal complex,0.0
+Malignant.cells,HPV+,2463,SYCE2,Synaptonemal complex,0.08
+Malignant.cells,HPV+,2463,SYCE3,Synaptonemal complex,0.0528
+Malignant.cells,HPV+,2463,SYCP2,Synaptonemal complex,0.3581
+Malignant.cells,HPV+,2463,SYCP2L,Synaptonemal complex,0.0004
+Malignant.cells,HPV+,2463,SYCP3,Synaptonemal complex,0.0134
+Malignant.cells,HPV+,2463,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0747
+Malignant.cells,HPV+,2463,TDRD1,piRNA/Tudor germline,0.0
+Malignant.cells,HPV+,2463,TDRD10,piRNA/Tudor germline,0.0187
+Malignant.cells,HPV+,2463,TDRD12,piRNA/Tudor germline,0.0
+Malignant.cells,HPV+,2463,TDRD5,piRNA/Tudor germline,0.0065
+Malignant.cells,HPV+,2463,TDRD6,piRNA/Tudor germline,0.0008
+Malignant.cells,HPV+,2463,TDRD9,piRNA/Tudor germline,0.052
+Malignant.cells,HPV+,2463,TDRKH,Cell-cycle meiosis,0.0491
+Malignant.cells,HPV+,2463,TEX12,Synaptonemal complex,0.0057
+Malignant.cells,HPV+,2463,TEX14,Other germ-cell,0.0004
+Malignant.cells,HPV+,2463,ZFR2,Other germ-cell,0.3069
+Malignant.cells,HPV+,2463,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0861
+Malignant.cells,HPV+,2463,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0374
+Malignant.cells,HPV-,2366,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0068
+Malignant.cells,HPV-,2366,ANKRD31,Meiotic recombination/DSB,0.0055
+Malignant.cells,HPV-,2366,AURKC,Cell-cycle meiosis,0.0258
+Malignant.cells,HPV-,2366,CCDC36,Meiotic recombination/DSB,0.0017
+Malignant.cells,HPV-,2366,CDC20B,Cell-cycle meiosis,0.0034
+Malignant.cells,HPV-,2366,CNTD1,Meiotic recombination/DSB,0.0042
+Malignant.cells,HPV-,2366,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0038
+Malignant.cells,HPV-,2366,DMC1,Meiotic recombination/DSB,0.0495
+Malignant.cells,HPV-,2366,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0038
+Malignant.cells,HPV-,2366,GRIN2C,Other germ-cell,0.0042
+Malignant.cells,HPV-,2366,GTSF1,Other germ-cell,0.3094
+Malignant.cells,HPV-,2366,HENMT1,piRNA/Tudor germline,0.197
+Malignant.cells,HPV-,2366,HORMAD1,Meiotic recombination/DSB,0.0655
+Malignant.cells,HPV-,2366,MAEL,piRNA/Tudor germline,0.0017
+Malignant.cells,HPV-,2366,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0769
+Malignant.cells,HPV-,2366,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0757
+Malignant.cells,HPV-,2366,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.1412
+Malignant.cells,HPV-,2366,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.224
+Malignant.cells,HPV-,2366,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.358
+Malignant.cells,HPV-,2366,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.2451
+Malignant.cells,HPV-,2366,MAJIN,Synaptonemal complex,0.0
+Malignant.cells,HPV-,2366,MCMDC2,Meiotic recombination/DSB,0.0224
+Malignant.cells,HPV-,2366,MEI1,Meiotic recombination/DSB,0.0406
+Malignant.cells,HPV-,2366,MEIOB,Meiotic recombination/DSB,0.0008
+Malignant.cells,HPV-,2366,MLH3,Meiotic recombination/DSB,0.1864
+Malignant.cells,HPV-,2366,MND1,Meiotic recombination/DSB,0.1855
+Malignant.cells,HPV-,2366,MOV10L1,piRNA/Tudor germline,0.008
+Malignant.cells,HPV-,2366,MSH5,Meiotic recombination/DSB,0.0106
+Malignant.cells,HPV-,2366,OIP5,Cell-cycle meiosis,0.1724
+Malignant.cells,HPV-,2366,PIWIL1,piRNA/Tudor germline,0.0178
+Malignant.cells,HPV-,2366,PIWIL2,piRNA/Tudor germline,0.011
+Malignant.cells,HPV-,2366,PRAME,Cancer-testis antigen (MAGE/CTAG),0.1205
+Malignant.cells,HPV-,2366,PSMC3IP,Meiotic recombination/DSB,0.2274
+Malignant.cells,HPV-,2366,RAD9B,Meiotic recombination/DSB,0.0034
+Malignant.cells,HPV-,2366,REC8,Meiotic cohesin,0.0934
+Malignant.cells,HPV-,2366,RNF212,Meiotic recombination/DSB,0.0685
+Malignant.cells,HPV-,2366,SHCBP1L,Meiotic recombination/DSB,0.0
+Malignant.cells,HPV-,2366,SMC1B,Meiotic cohesin,0.0063
+Malignant.cells,HPV-,2366,STAG3,Meiotic cohesin,0.0558
+Malignant.cells,HPV-,2366,SYCE1,Synaptonemal complex,0.0017
+Malignant.cells,HPV-,2366,SYCE2,Synaptonemal complex,0.0199
+Malignant.cells,HPV-,2366,SYCE3,Synaptonemal complex,0.06
+Malignant.cells,HPV-,2366,SYCP2,Synaptonemal complex,0.0152
+Malignant.cells,HPV-,2366,SYCP2L,Synaptonemal complex,0.003
+Malignant.cells,HPV-,2366,SYCP3,Synaptonemal complex,0.0068
+Malignant.cells,HPV-,2366,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0038
+Malignant.cells,HPV-,2366,TDRD1,piRNA/Tudor germline,0.0055
+Malignant.cells,HPV-,2366,TDRD10,piRNA/Tudor germline,0.0021
+Malignant.cells,HPV-,2366,TDRD12,piRNA/Tudor germline,0.008
+Malignant.cells,HPV-,2366,TDRD5,piRNA/Tudor germline,0.0309
+Malignant.cells,HPV-,2366,TDRD6,piRNA/Tudor germline,0.0055
+Malignant.cells,HPV-,2366,TDRD9,piRNA/Tudor germline,0.0017
+Malignant.cells,HPV-,2366,TDRKH,Cell-cycle meiosis,0.0499
+Malignant.cells,HPV-,2366,TEX12,Synaptonemal complex,0.0025
+Malignant.cells,HPV-,2366,TEX14,Other germ-cell,0.0059
+Malignant.cells,HPV-,2366,ZFR2,Other germ-cell,0.0004
+Malignant.cells,HPV-,2366,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0904
+Malignant.cells,HPV-,2366,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+T.cells,HPV+,4606,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0009
+T.cells,HPV+,4606,ANKRD31,Meiotic recombination/DSB,0.0013
+T.cells,HPV+,4606,AURKC,Cell-cycle meiosis,0.0052
+T.cells,HPV+,4606,CCDC36,Meiotic recombination/DSB,0.0004
+T.cells,HPV+,4606,CDC20B,Cell-cycle meiosis,0.0026
+T.cells,HPV+,4606,CNTD1,Meiotic recombination/DSB,0.0041
+T.cells,HPV+,4606,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0002
+T.cells,HPV+,4606,DMC1,Meiotic recombination/DSB,0.0254
+T.cells,HPV+,4606,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0024
+T.cells,HPV+,4606,GRIN2C,Other germ-cell,0.0026
+T.cells,HPV+,4606,GTSF1,Other germ-cell,0.035
+T.cells,HPV+,4606,HENMT1,piRNA/Tudor germline,0.1298
+T.cells,HPV+,4606,HORMAD1,Meiotic recombination/DSB,0.0009
+T.cells,HPV+,4606,MAEL,piRNA/Tudor germline,0.0015
+T.cells,HPV+,4606,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0302
+T.cells,HPV+,4606,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+T.cells,HPV+,4606,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0004
+T.cells,HPV+,4606,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0002
+T.cells,HPV+,4606,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+T.cells,HPV+,4606,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+T.cells,HPV+,4606,MAJIN,Synaptonemal complex,0.0028
+T.cells,HPV+,4606,MCMDC2,Meiotic recombination/DSB,0.0028
+T.cells,HPV+,4606,MEI1,Meiotic recombination/DSB,0.167
+T.cells,HPV+,4606,MEIOB,Meiotic recombination/DSB,0.0009
+T.cells,HPV+,4606,MLH3,Meiotic recombination/DSB,0.038
+T.cells,HPV+,4606,MND1,Meiotic recombination/DSB,0.0821
+T.cells,HPV+,4606,MOV10L1,piRNA/Tudor germline,0.0002
+T.cells,HPV+,4606,MSH5,Meiotic recombination/DSB,0.0033
+T.cells,HPV+,4606,OIP5,Cell-cycle meiosis,0.056
+T.cells,HPV+,4606,PIWIL1,piRNA/Tudor germline,0.0072
+T.cells,HPV+,4606,PIWIL2,piRNA/Tudor germline,0.0028
+T.cells,HPV+,4606,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0141
+T.cells,HPV+,4606,PSMC3IP,Meiotic recombination/DSB,0.071
+T.cells,HPV+,4606,RAD9B,Meiotic recombination/DSB,0.0037
+T.cells,HPV+,4606,REC8,Meiotic cohesin,0.0838
+T.cells,HPV+,4606,RNF212,Meiotic recombination/DSB,0.0043
+T.cells,HPV+,4606,SHCBP1L,Meiotic recombination/DSB,0.0065
+T.cells,HPV+,4606,SMC1B,Meiotic cohesin,0.0215
+T.cells,HPV+,4606,STAG3,Meiotic cohesin,0.0888
+T.cells,HPV+,4606,SYCE1,Synaptonemal complex,0.0017
+T.cells,HPV+,4606,SYCE2,Synaptonemal complex,0.0221
+T.cells,HPV+,4606,SYCE3,Synaptonemal complex,0.0046
+T.cells,HPV+,4606,SYCP2,Synaptonemal complex,0.0354
+T.cells,HPV+,4606,SYCP2L,Synaptonemal complex,0.0
+T.cells,HPV+,4606,SYCP3,Synaptonemal complex,0.0041
+T.cells,HPV+,4606,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0046
+T.cells,HPV+,4606,TDRD1,piRNA/Tudor germline,0.0
+T.cells,HPV+,4606,TDRD10,piRNA/Tudor germline,0.0
+T.cells,HPV+,4606,TDRD12,piRNA/Tudor germline,0.0015
+T.cells,HPV+,4606,TDRD5,piRNA/Tudor germline,0.0007
+T.cells,HPV+,4606,TDRD6,piRNA/Tudor germline,0.0002
+T.cells,HPV+,4606,TDRD9,piRNA/Tudor germline,0.0072
+T.cells,HPV+,4606,TDRKH,Cell-cycle meiosis,0.0263
+T.cells,HPV+,4606,TEX12,Synaptonemal complex,0.0015
+T.cells,HPV+,4606,TEX14,Other germ-cell,0.0028
+T.cells,HPV+,4606,ZFR2,Other germ-cell,0.0254
+T.cells,HPV+,4606,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.056
+T.cells,HPV+,4606,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0046
+T.cells,HPV-,3390,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0018
+T.cells,HPV-,3390,ANKRD31,Meiotic recombination/DSB,0.0006
+T.cells,HPV-,3390,AURKC,Cell-cycle meiosis,0.0074
+T.cells,HPV-,3390,CCDC36,Meiotic recombination/DSB,0.0006
+T.cells,HPV-,3390,CDC20B,Cell-cycle meiosis,0.0009
+T.cells,HPV-,3390,CNTD1,Meiotic recombination/DSB,0.0018
+T.cells,HPV-,3390,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0118
+T.cells,HPV-,3390,DMC1,Meiotic recombination/DSB,0.0316
+T.cells,HPV-,3390,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0006
+T.cells,HPV-,3390,GRIN2C,Other germ-cell,0.0027
+T.cells,HPV-,3390,GTSF1,Other germ-cell,0.1032
+T.cells,HPV-,3390,HENMT1,piRNA/Tudor germline,0.1345
+T.cells,HPV-,3390,HORMAD1,Meiotic recombination/DSB,0.0133
+T.cells,HPV-,3390,MAEL,piRNA/Tudor germline,0.0012
+T.cells,HPV-,3390,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0038
+T.cells,HPV-,3390,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0112
+T.cells,HPV-,3390,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0192
+T.cells,HPV-,3390,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0322
+T.cells,HPV-,3390,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.046
+T.cells,HPV-,3390,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0292
+T.cells,HPV-,3390,MAJIN,Synaptonemal complex,0.0003
+T.cells,HPV-,3390,MCMDC2,Meiotic recombination/DSB,0.005
+T.cells,HPV-,3390,MEI1,Meiotic recombination/DSB,0.2044
+T.cells,HPV-,3390,MEIOB,Meiotic recombination/DSB,0.0012
+T.cells,HPV-,3390,MLH3,Meiotic recombination/DSB,0.0507
+T.cells,HPV-,3390,MND1,Meiotic recombination/DSB,0.1074
+T.cells,HPV-,3390,MOV10L1,piRNA/Tudor germline,0.0009
+T.cells,HPV-,3390,MSH5,Meiotic recombination/DSB,0.0068
+T.cells,HPV-,3390,OIP5,Cell-cycle meiosis,0.0776
+T.cells,HPV-,3390,PIWIL1,piRNA/Tudor germline,0.0056
+T.cells,HPV-,3390,PIWIL2,piRNA/Tudor germline,0.0024
+T.cells,HPV-,3390,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0183
+T.cells,HPV-,3390,PSMC3IP,Meiotic recombination/DSB,0.0867
+T.cells,HPV-,3390,RAD9B,Meiotic recombination/DSB,0.0027
+T.cells,HPV-,3390,REC8,Meiotic cohesin,0.0826
+T.cells,HPV-,3390,RNF212,Meiotic recombination/DSB,0.0124
+T.cells,HPV-,3390,SHCBP1L,Meiotic recombination/DSB,0.0
+T.cells,HPV-,3390,SMC1B,Meiotic cohesin,0.0038
+T.cells,HPV-,3390,STAG3,Meiotic cohesin,0.0676
+T.cells,HPV-,3390,SYCE1,Synaptonemal complex,0.0021
+T.cells,HPV-,3390,SYCE2,Synaptonemal complex,0.0174
+T.cells,HPV-,3390,SYCE3,Synaptonemal complex,0.0071
+T.cells,HPV-,3390,SYCP2,Synaptonemal complex,0.0103
+T.cells,HPV-,3390,SYCP2L,Synaptonemal complex,0.0003
+T.cells,HPV-,3390,SYCP3,Synaptonemal complex,0.005
+T.cells,HPV-,3390,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0006
+T.cells,HPV-,3390,TDRD1,piRNA/Tudor germline,0.0009
+T.cells,HPV-,3390,TDRD10,piRNA/Tudor germline,0.0009
+T.cells,HPV-,3390,TDRD12,piRNA/Tudor germline,0.0009
+T.cells,HPV-,3390,TDRD5,piRNA/Tudor germline,0.0021
+T.cells,HPV-,3390,TDRD6,piRNA/Tudor germline,0.0009
+T.cells,HPV-,3390,TDRD9,piRNA/Tudor germline,0.0015
+T.cells,HPV-,3390,TDRKH,Cell-cycle meiosis,0.0239
+T.cells,HPV-,3390,TEX12,Synaptonemal complex,0.0015
+T.cells,HPV-,3390,TEX14,Other germ-cell,0.0053
+T.cells,HPV-,3390,ZFR2,Other germ-cell,0.0021
+T.cells,HPV-,3390,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0602
+T.cells,HPV-,3390,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0009
+B_Plasma.cells,HPV+,1678,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0072
+B_Plasma.cells,HPV+,1678,ANKRD31,Meiotic recombination/DSB,0.0018
+B_Plasma.cells,HPV+,1678,AURKC,Cell-cycle meiosis,0.0072
+B_Plasma.cells,HPV+,1678,CCDC36,Meiotic recombination/DSB,0.0012
+B_Plasma.cells,HPV+,1678,CDC20B,Cell-cycle meiosis,0.003
+B_Plasma.cells,HPV+,1678,CNTD1,Meiotic recombination/DSB,0.0072
+B_Plasma.cells,HPV+,1678,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+B_Plasma.cells,HPV+,1678,DMC1,Meiotic recombination/DSB,0.0048
+B_Plasma.cells,HPV+,1678,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.003
+B_Plasma.cells,HPV+,1678,GRIN2C,Other germ-cell,0.003
+B_Plasma.cells,HPV+,1678,GTSF1,Other germ-cell,0.0578
+B_Plasma.cells,HPV+,1678,HENMT1,piRNA/Tudor germline,0.0358
+B_Plasma.cells,HPV+,1678,HORMAD1,Meiotic recombination/DSB,0.0018
+B_Plasma.cells,HPV+,1678,MAEL,piRNA/Tudor germline,0.0054
+B_Plasma.cells,HPV+,1678,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0054
+B_Plasma.cells,HPV+,1678,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+B_Plasma.cells,HPV+,1678,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0006
+B_Plasma.cells,HPV+,1678,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+B_Plasma.cells,HPV+,1678,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+B_Plasma.cells,HPV+,1678,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+B_Plasma.cells,HPV+,1678,MAJIN,Synaptonemal complex,0.003
+B_Plasma.cells,HPV+,1678,MCMDC2,Meiotic recombination/DSB,0.0018
+B_Plasma.cells,HPV+,1678,MEI1,Meiotic recombination/DSB,0.3159
+B_Plasma.cells,HPV+,1678,MEIOB,Meiotic recombination/DSB,0.0012
+B_Plasma.cells,HPV+,1678,MLH3,Meiotic recombination/DSB,0.0375
+B_Plasma.cells,HPV+,1678,MND1,Meiotic recombination/DSB,0.0173
+B_Plasma.cells,HPV+,1678,MOV10L1,piRNA/Tudor germline,0.0024
+B_Plasma.cells,HPV+,1678,MSH5,Meiotic recombination/DSB,0.0042
+B_Plasma.cells,HPV+,1678,OIP5,Cell-cycle meiosis,0.0131
+B_Plasma.cells,HPV+,1678,PIWIL1,piRNA/Tudor germline,0.0083
+B_Plasma.cells,HPV+,1678,PIWIL2,piRNA/Tudor germline,0.0006
+B_Plasma.cells,HPV+,1678,PRAME,Cancer-testis antigen (MAGE/CTAG),0.003
+B_Plasma.cells,HPV+,1678,PSMC3IP,Meiotic recombination/DSB,0.0262
+B_Plasma.cells,HPV+,1678,RAD9B,Meiotic recombination/DSB,0.0012
+B_Plasma.cells,HPV+,1678,REC8,Meiotic cohesin,0.056
+B_Plasma.cells,HPV+,1678,RNF212,Meiotic recombination/DSB,0.0095
+B_Plasma.cells,HPV+,1678,SHCBP1L,Meiotic recombination/DSB,0.003
+B_Plasma.cells,HPV+,1678,SMC1B,Meiotic cohesin,0.006
+B_Plasma.cells,HPV+,1678,STAG3,Meiotic cohesin,0.1836
+B_Plasma.cells,HPV+,1678,SYCE1,Synaptonemal complex,0.0018
+B_Plasma.cells,HPV+,1678,SYCE2,Synaptonemal complex,0.0042
+B_Plasma.cells,HPV+,1678,SYCE3,Synaptonemal complex,0.0036
+B_Plasma.cells,HPV+,1678,SYCP2,Synaptonemal complex,0.0089
+B_Plasma.cells,HPV+,1678,SYCP2L,Synaptonemal complex,0.0
+B_Plasma.cells,HPV+,1678,SYCP3,Synaptonemal complex,0.0048
+B_Plasma.cells,HPV+,1678,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.003
+B_Plasma.cells,HPV+,1678,TDRD1,piRNA/Tudor germline,0.0006
+B_Plasma.cells,HPV+,1678,TDRD10,piRNA/Tudor germline,0.0006
+B_Plasma.cells,HPV+,1678,TDRD12,piRNA/Tudor germline,0.0
+B_Plasma.cells,HPV+,1678,TDRD5,piRNA/Tudor germline,0.0
+B_Plasma.cells,HPV+,1678,TDRD6,piRNA/Tudor germline,0.0012
+B_Plasma.cells,HPV+,1678,TDRD9,piRNA/Tudor germline,0.003
+B_Plasma.cells,HPV+,1678,TDRKH,Cell-cycle meiosis,0.0089
+B_Plasma.cells,HPV+,1678,TEX12,Synaptonemal complex,0.0042
+B_Plasma.cells,HPV+,1678,TEX14,Other germ-cell,0.0221
+B_Plasma.cells,HPV+,1678,ZFR2,Other germ-cell,0.0089
+B_Plasma.cells,HPV+,1678,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.1466
+B_Plasma.cells,HPV+,1678,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0024
+B_Plasma.cells,HPV-,2011,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.005
+B_Plasma.cells,HPV-,2011,ANKRD31,Meiotic recombination/DSB,0.0015
+B_Plasma.cells,HPV-,2011,AURKC,Cell-cycle meiosis,0.007
+B_Plasma.cells,HPV-,2011,CCDC36,Meiotic recombination/DSB,0.0
+B_Plasma.cells,HPV-,2011,CDC20B,Cell-cycle meiosis,0.002
+B_Plasma.cells,HPV-,2011,CNTD1,Meiotic recombination/DSB,0.0005
+B_Plasma.cells,HPV-,2011,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0005
+B_Plasma.cells,HPV-,2011,DMC1,Meiotic recombination/DSB,0.002
+B_Plasma.cells,HPV-,2011,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+B_Plasma.cells,HPV-,2011,GRIN2C,Other germ-cell,0.0005
+B_Plasma.cells,HPV-,2011,GTSF1,Other germ-cell,0.0701
+B_Plasma.cells,HPV-,2011,HENMT1,piRNA/Tudor germline,0.0343
+B_Plasma.cells,HPV-,2011,HORMAD1,Meiotic recombination/DSB,0.0025
+B_Plasma.cells,HPV-,2011,MAEL,piRNA/Tudor germline,0.0
+B_Plasma.cells,HPV-,2011,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.001
+B_Plasma.cells,HPV-,2011,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+B_Plasma.cells,HPV-,2011,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.001
+B_Plasma.cells,HPV-,2011,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0035
+B_Plasma.cells,HPV-,2011,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0129
+B_Plasma.cells,HPV-,2011,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.003
+B_Plasma.cells,HPV-,2011,MAJIN,Synaptonemal complex,0.0005
+B_Plasma.cells,HPV-,2011,MCMDC2,Meiotic recombination/DSB,0.0025
+B_Plasma.cells,HPV-,2011,MEI1,Meiotic recombination/DSB,0.4217
+B_Plasma.cells,HPV-,2011,MEIOB,Meiotic recombination/DSB,0.0
+B_Plasma.cells,HPV-,2011,MLH3,Meiotic recombination/DSB,0.0269
+B_Plasma.cells,HPV-,2011,MND1,Meiotic recombination/DSB,0.0109
+B_Plasma.cells,HPV-,2011,MOV10L1,piRNA/Tudor germline,0.0005
+B_Plasma.cells,HPV-,2011,MSH5,Meiotic recombination/DSB,0.0025
+B_Plasma.cells,HPV-,2011,OIP5,Cell-cycle meiosis,0.0129
+B_Plasma.cells,HPV-,2011,PIWIL1,piRNA/Tudor germline,0.0035
+B_Plasma.cells,HPV-,2011,PIWIL2,piRNA/Tudor germline,0.0015
+B_Plasma.cells,HPV-,2011,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0035
+B_Plasma.cells,HPV-,2011,PSMC3IP,Meiotic recombination/DSB,0.0209
+B_Plasma.cells,HPV-,2011,RAD9B,Meiotic recombination/DSB,0.001
+B_Plasma.cells,HPV-,2011,REC8,Meiotic cohesin,0.0428
+B_Plasma.cells,HPV-,2011,RNF212,Meiotic recombination/DSB,0.0045
+B_Plasma.cells,HPV-,2011,SHCBP1L,Meiotic recombination/DSB,0.0
+B_Plasma.cells,HPV-,2011,SMC1B,Meiotic cohesin,0.0
+B_Plasma.cells,HPV-,2011,STAG3,Meiotic cohesin,0.088
+B_Plasma.cells,HPV-,2011,SYCE1,Synaptonemal complex,0.002
+B_Plasma.cells,HPV-,2011,SYCE2,Synaptonemal complex,0.005
+B_Plasma.cells,HPV-,2011,SYCE3,Synaptonemal complex,0.005
+B_Plasma.cells,HPV-,2011,SYCP2,Synaptonemal complex,0.0025
+B_Plasma.cells,HPV-,2011,SYCP2L,Synaptonemal complex,0.001
+B_Plasma.cells,HPV-,2011,SYCP3,Synaptonemal complex,0.0065
+B_Plasma.cells,HPV-,2011,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.001
+B_Plasma.cells,HPV-,2011,TDRD1,piRNA/Tudor germline,0.0
+B_Plasma.cells,HPV-,2011,TDRD10,piRNA/Tudor germline,0.0005
+B_Plasma.cells,HPV-,2011,TDRD12,piRNA/Tudor germline,0.0005
+B_Plasma.cells,HPV-,2011,TDRD5,piRNA/Tudor germline,0.0015
+B_Plasma.cells,HPV-,2011,TDRD6,piRNA/Tudor germline,0.0005
+B_Plasma.cells,HPV-,2011,TDRD9,piRNA/Tudor germline,0.0005
+B_Plasma.cells,HPV-,2011,TDRKH,Cell-cycle meiosis,0.0124
+B_Plasma.cells,HPV-,2011,TEX12,Synaptonemal complex,0.0035
+B_Plasma.cells,HPV-,2011,TEX14,Other germ-cell,0.0448
+B_Plasma.cells,HPV-,2011,ZFR2,Other germ-cell,0.0005
+B_Plasma.cells,HPV-,2011,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.1596
+B_Plasma.cells,HPV-,2011,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0005
+Macrophages,HPV+,517,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0754
+Macrophages,HPV+,517,ANKRD31,Meiotic recombination/DSB,0.0
+Macrophages,HPV+,517,AURKC,Cell-cycle meiosis,0.0774
+Macrophages,HPV+,517,CCDC36,Meiotic recombination/DSB,0.0019
+Macrophages,HPV+,517,CDC20B,Cell-cycle meiosis,0.0039
+Macrophages,HPV+,517,CNTD1,Meiotic recombination/DSB,0.0077
+Macrophages,HPV+,517,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV+,517,DMC1,Meiotic recombination/DSB,0.0135
+Macrophages,HPV+,517,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0097
+Macrophages,HPV+,517,GRIN2C,Other germ-cell,0.0019
+Macrophages,HPV+,517,GTSF1,Other germ-cell,0.0619
+Macrophages,HPV+,517,HENMT1,piRNA/Tudor germline,0.1103
+Macrophages,HPV+,517,HORMAD1,Meiotic recombination/DSB,0.0039
+Macrophages,HPV+,517,MAEL,piRNA/Tudor germline,0.0
+Macrophages,HPV+,517,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0039
+Macrophages,HPV+,517,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV+,517,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV+,517,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV+,517,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV+,517,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV+,517,MAJIN,Synaptonemal complex,0.0019
+Macrophages,HPV+,517,MCMDC2,Meiotic recombination/DSB,0.0058
+Macrophages,HPV+,517,MEI1,Meiotic recombination/DSB,0.1509
+Macrophages,HPV+,517,MEIOB,Meiotic recombination/DSB,0.0
+Macrophages,HPV+,517,MLH3,Meiotic recombination/DSB,0.0561
+Macrophages,HPV+,517,MND1,Meiotic recombination/DSB,0.0213
+Macrophages,HPV+,517,MOV10L1,piRNA/Tudor germline,0.0039
+Macrophages,HPV+,517,MSH5,Meiotic recombination/DSB,0.0058
+Macrophages,HPV+,517,OIP5,Cell-cycle meiosis,0.0271
+Macrophages,HPV+,517,PIWIL1,piRNA/Tudor germline,0.0058
+Macrophages,HPV+,517,PIWIL2,piRNA/Tudor germline,0.0039
+Macrophages,HPV+,517,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0019
+Macrophages,HPV+,517,PSMC3IP,Meiotic recombination/DSB,0.0329
+Macrophages,HPV+,517,RAD9B,Meiotic recombination/DSB,0.0155
+Macrophages,HPV+,517,REC8,Meiotic cohesin,0.0735
+Macrophages,HPV+,517,RNF212,Meiotic recombination/DSB,0.0097
+Macrophages,HPV+,517,SHCBP1L,Meiotic recombination/DSB,0.0
+Macrophages,HPV+,517,SMC1B,Meiotic cohesin,0.0097
+Macrophages,HPV+,517,STAG3,Meiotic cohesin,0.0561
+Macrophages,HPV+,517,SYCE1,Synaptonemal complex,0.0039
+Macrophages,HPV+,517,SYCE2,Synaptonemal complex,0.0
+Macrophages,HPV+,517,SYCE3,Synaptonemal complex,0.0058
+Macrophages,HPV+,517,SYCP2,Synaptonemal complex,0.0155
+Macrophages,HPV+,517,SYCP2L,Synaptonemal complex,0.0077
+Macrophages,HPV+,517,SYCP3,Synaptonemal complex,0.0077
+Macrophages,HPV+,517,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.029
+Macrophages,HPV+,517,TDRD1,piRNA/Tudor germline,0.0
+Macrophages,HPV+,517,TDRD10,piRNA/Tudor germline,0.0058
+Macrophages,HPV+,517,TDRD12,piRNA/Tudor germline,0.0
+Macrophages,HPV+,517,TDRD5,piRNA/Tudor germline,0.0
+Macrophages,HPV+,517,TDRD6,piRNA/Tudor germline,0.0
+Macrophages,HPV+,517,TDRD9,piRNA/Tudor germline,0.0135
+Macrophages,HPV+,517,TDRKH,Cell-cycle meiosis,0.0329
+Macrophages,HPV+,517,TEX12,Synaptonemal complex,0.0
+Macrophages,HPV+,517,TEX14,Other germ-cell,0.0213
+Macrophages,HPV+,517,ZFR2,Other germ-cell,0.0058
+Macrophages,HPV+,517,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0329
+Macrophages,HPV+,517,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV-,2652,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0483
+Macrophages,HPV-,2652,ANKRD31,Meiotic recombination/DSB,0.0008
+Macrophages,HPV-,2652,AURKC,Cell-cycle meiosis,0.0317
+Macrophages,HPV-,2652,CCDC36,Meiotic recombination/DSB,0.0015
+Macrophages,HPV-,2652,CDC20B,Cell-cycle meiosis,0.0008
+Macrophages,HPV-,2652,CNTD1,Meiotic recombination/DSB,0.003
+Macrophages,HPV-,2652,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0004
+Macrophages,HPV-,2652,DMC1,Meiotic recombination/DSB,0.0041
+Macrophages,HPV-,2652,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Macrophages,HPV-,2652,GRIN2C,Other germ-cell,0.0008
+Macrophages,HPV-,2652,GTSF1,Other germ-cell,0.0769
+Macrophages,HPV-,2652,HENMT1,piRNA/Tudor germline,0.083
+Macrophages,HPV-,2652,HORMAD1,Meiotic recombination/DSB,0.0049
+Macrophages,HPV-,2652,MAEL,piRNA/Tudor germline,0.0008
+Macrophages,HPV-,2652,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0019
+Macrophages,HPV-,2652,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0004
+Macrophages,HPV-,2652,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0004
+Macrophages,HPV-,2652,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0023
+Macrophages,HPV-,2652,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0109
+Macrophages,HPV-,2652,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0015
+Macrophages,HPV-,2652,MAJIN,Synaptonemal complex,0.0
+Macrophages,HPV-,2652,MCMDC2,Meiotic recombination/DSB,0.0015
+Macrophages,HPV-,2652,MEI1,Meiotic recombination/DSB,0.1761
+Macrophages,HPV-,2652,MEIOB,Meiotic recombination/DSB,0.0
+Macrophages,HPV-,2652,MLH3,Meiotic recombination/DSB,0.0354
+Macrophages,HPV-,2652,MND1,Meiotic recombination/DSB,0.0222
+Macrophages,HPV-,2652,MOV10L1,piRNA/Tudor germline,0.0026
+Macrophages,HPV-,2652,MSH5,Meiotic recombination/DSB,0.003
+Macrophages,HPV-,2652,OIP5,Cell-cycle meiosis,0.0215
+Macrophages,HPV-,2652,PIWIL1,piRNA/Tudor germline,0.0034
+Macrophages,HPV-,2652,PIWIL2,piRNA/Tudor germline,0.0004
+Macrophages,HPV-,2652,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0004
+Macrophages,HPV-,2652,PSMC3IP,Meiotic recombination/DSB,0.0287
+Macrophages,HPV-,2652,RAD9B,Meiotic recombination/DSB,0.0075
+Macrophages,HPV-,2652,REC8,Meiotic cohesin,0.0513
+Macrophages,HPV-,2652,RNF212,Meiotic recombination/DSB,0.0053
+Macrophages,HPV-,2652,SHCBP1L,Meiotic recombination/DSB,0.0
+Macrophages,HPV-,2652,SMC1B,Meiotic cohesin,0.0026
+Macrophages,HPV-,2652,STAG3,Meiotic cohesin,0.0415
+Macrophages,HPV-,2652,SYCE1,Synaptonemal complex,0.0015
+Macrophages,HPV-,2652,SYCE2,Synaptonemal complex,0.0064
+Macrophages,HPV-,2652,SYCE3,Synaptonemal complex,0.0106
+Macrophages,HPV-,2652,SYCP2,Synaptonemal complex,0.006
+Macrophages,HPV-,2652,SYCP2L,Synaptonemal complex,0.003
+Macrophages,HPV-,2652,SYCP3,Synaptonemal complex,0.0098
+Macrophages,HPV-,2652,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0041
+Macrophages,HPV-,2652,TDRD1,piRNA/Tudor germline,0.0008
+Macrophages,HPV-,2652,TDRD10,piRNA/Tudor germline,0.0026
+Macrophages,HPV-,2652,TDRD12,piRNA/Tudor germline,0.0015
+Macrophages,HPV-,2652,TDRD5,piRNA/Tudor germline,0.0004
+Macrophages,HPV-,2652,TDRD6,piRNA/Tudor germline,0.0011
+Macrophages,HPV-,2652,TDRD9,piRNA/Tudor germline,0.014
+Macrophages,HPV-,2652,TDRKH,Cell-cycle meiosis,0.0351
+Macrophages,HPV-,2652,TEX12,Synaptonemal complex,0.0026
+Macrophages,HPV-,2652,TEX14,Other germ-cell,0.0166
+Macrophages,HPV-,2652,ZFR2,Other germ-cell,0.0023
+Macrophages,HPV-,2652,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0196
+Macrophages,HPV-,2652,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0173
+Dendritic.cells,HPV+,173,ANKRD31,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,AURKC,Cell-cycle meiosis,0.0173
+Dendritic.cells,HPV+,173,CCDC36,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,CDC20B,Cell-cycle meiosis,0.0116
+Dendritic.cells,HPV+,173,CNTD1,Meiotic recombination/DSB,0.0058
+Dendritic.cells,HPV+,173,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,DMC1,Meiotic recombination/DSB,0.0058
+Dendritic.cells,HPV+,173,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,GRIN2C,Other germ-cell,0.0
+Dendritic.cells,HPV+,173,GTSF1,Other germ-cell,0.0867
+Dendritic.cells,HPV+,173,HENMT1,piRNA/Tudor germline,0.0925
+Dendritic.cells,HPV+,173,HORMAD1,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,MAEL,piRNA/Tudor germline,0.0116
+Dendritic.cells,HPV+,173,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV+,173,MAJIN,Synaptonemal complex,0.0058
+Dendritic.cells,HPV+,173,MCMDC2,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,MEI1,Meiotic recombination/DSB,0.0405
+Dendritic.cells,HPV+,173,MEIOB,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,MLH3,Meiotic recombination/DSB,0.0289
+Dendritic.cells,HPV+,173,MND1,Meiotic recombination/DSB,0.0289
+Dendritic.cells,HPV+,173,MOV10L1,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,MSH5,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,OIP5,Cell-cycle meiosis,0.0116
+Dendritic.cells,HPV+,173,PIWIL1,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,PIWIL2,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0173
+Dendritic.cells,HPV+,173,PSMC3IP,Meiotic recombination/DSB,0.0405
+Dendritic.cells,HPV+,173,RAD9B,Meiotic recombination/DSB,0.0116
+Dendritic.cells,HPV+,173,REC8,Meiotic cohesin,0.1561
+Dendritic.cells,HPV+,173,RNF212,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,SHCBP1L,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV+,173,SMC1B,Meiotic cohesin,0.0058
+Dendritic.cells,HPV+,173,STAG3,Meiotic cohesin,0.0636
+Dendritic.cells,HPV+,173,SYCE1,Synaptonemal complex,0.0058
+Dendritic.cells,HPV+,173,SYCE2,Synaptonemal complex,0.0058
+Dendritic.cells,HPV+,173,SYCE3,Synaptonemal complex,0.0058
+Dendritic.cells,HPV+,173,SYCP2,Synaptonemal complex,0.0116
+Dendritic.cells,HPV+,173,SYCP2L,Synaptonemal complex,0.0231
+Dendritic.cells,HPV+,173,SYCP3,Synaptonemal complex,0.0058
+Dendritic.cells,HPV+,173,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0058
+Dendritic.cells,HPV+,173,TDRD1,piRNA/Tudor germline,0.0173
+Dendritic.cells,HPV+,173,TDRD10,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,TDRD12,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,TDRD5,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,TDRD6,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,TDRD9,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV+,173,TDRKH,Cell-cycle meiosis,0.0173
+Dendritic.cells,HPV+,173,TEX12,Synaptonemal complex,0.0
+Dendritic.cells,HPV+,173,TEX14,Other germ-cell,0.0116
+Dendritic.cells,HPV+,173,ZFR2,Other germ-cell,0.0
+Dendritic.cells,HPV+,173,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.1329
+Dendritic.cells,HPV+,173,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0058
+Dendritic.cells,HPV-,787,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0191
+Dendritic.cells,HPV-,787,ANKRD31,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV-,787,AURKC,Cell-cycle meiosis,0.0089
+Dendritic.cells,HPV-,787,CCDC36,Meiotic recombination/DSB,0.0013
+Dendritic.cells,HPV-,787,CDC20B,Cell-cycle meiosis,0.0038
+Dendritic.cells,HPV-,787,CNTD1,Meiotic recombination/DSB,0.0025
+Dendritic.cells,HPV-,787,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0013
+Dendritic.cells,HPV-,787,DMC1,Meiotic recombination/DSB,0.0089
+Dendritic.cells,HPV-,787,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV-,787,GRIN2C,Other germ-cell,0.0
+Dendritic.cells,HPV-,787,GTSF1,Other germ-cell,0.0724
+Dendritic.cells,HPV-,787,HENMT1,piRNA/Tudor germline,0.0788
+Dendritic.cells,HPV-,787,HORMAD1,Meiotic recombination/DSB,0.0013
+Dendritic.cells,HPV-,787,MAEL,piRNA/Tudor germline,0.0025
+Dendritic.cells,HPV-,787,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0013
+Dendritic.cells,HPV-,787,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0013
+Dendritic.cells,HPV-,787,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV-,787,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV-,787,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0051
+Dendritic.cells,HPV-,787,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Dendritic.cells,HPV-,787,MAJIN,Synaptonemal complex,0.0
+Dendritic.cells,HPV-,787,MCMDC2,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV-,787,MEI1,Meiotic recombination/DSB,0.0673
+Dendritic.cells,HPV-,787,MEIOB,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV-,787,MLH3,Meiotic recombination/DSB,0.0305
+Dendritic.cells,HPV-,787,MND1,Meiotic recombination/DSB,0.0191
+Dendritic.cells,HPV-,787,MOV10L1,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV-,787,MSH5,Meiotic recombination/DSB,0.0025
+Dendritic.cells,HPV-,787,OIP5,Cell-cycle meiosis,0.0178
+Dendritic.cells,HPV-,787,PIWIL1,piRNA/Tudor germline,0.0038
+Dendritic.cells,HPV-,787,PIWIL2,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV-,787,PRAME,Cancer-testis antigen (MAGE/CTAG),0.014
+Dendritic.cells,HPV-,787,PSMC3IP,Meiotic recombination/DSB,0.0394
+Dendritic.cells,HPV-,787,RAD9B,Meiotic recombination/DSB,0.0013
+Dendritic.cells,HPV-,787,REC8,Meiotic cohesin,0.1182
+Dendritic.cells,HPV-,787,RNF212,Meiotic recombination/DSB,0.0064
+Dendritic.cells,HPV-,787,SHCBP1L,Meiotic recombination/DSB,0.0
+Dendritic.cells,HPV-,787,SMC1B,Meiotic cohesin,0.0025
+Dendritic.cells,HPV-,787,STAG3,Meiotic cohesin,0.047
+Dendritic.cells,HPV-,787,SYCE1,Synaptonemal complex,0.0064
+Dendritic.cells,HPV-,787,SYCE2,Synaptonemal complex,0.0025
+Dendritic.cells,HPV-,787,SYCE3,Synaptonemal complex,0.0025
+Dendritic.cells,HPV-,787,SYCP2,Synaptonemal complex,0.0038
+Dendritic.cells,HPV-,787,SYCP2L,Synaptonemal complex,0.0318
+Dendritic.cells,HPV-,787,SYCP3,Synaptonemal complex,0.0025
+Dendritic.cells,HPV-,787,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0013
+Dendritic.cells,HPV-,787,TDRD1,piRNA/Tudor germline,0.0496
+Dendritic.cells,HPV-,787,TDRD10,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV-,787,TDRD12,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV-,787,TDRD5,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV-,787,TDRD6,piRNA/Tudor germline,0.0
+Dendritic.cells,HPV-,787,TDRD9,piRNA/Tudor germline,0.0013
+Dendritic.cells,HPV-,787,TDRKH,Cell-cycle meiosis,0.0114
+Dendritic.cells,HPV-,787,TEX12,Synaptonemal complex,0.0025
+Dendritic.cells,HPV-,787,TEX14,Other germ-cell,0.0229
+Dendritic.cells,HPV-,787,ZFR2,Other germ-cell,0.0013
+Dendritic.cells,HPV-,787,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0762
+Dendritic.cells,HPV-,787,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0013
+Mast.cells,HPV+,17,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0588
+Mast.cells,HPV+,17,ANKRD31,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,AURKC,Cell-cycle meiosis,0.0
+Mast.cells,HPV+,17,CCDC36,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,CDC20B,Cell-cycle meiosis,0.0
+Mast.cells,HPV+,17,CNTD1,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,DMC1,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,GRIN2C,Other germ-cell,0.0
+Mast.cells,HPV+,17,GTSF1,Other germ-cell,0.0588
+Mast.cells,HPV+,17,HENMT1,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,HORMAD1,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,MAEL,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,MAJIN,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,MCMDC2,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,MEI1,Meiotic recombination/DSB,0.2353
+Mast.cells,HPV+,17,MEIOB,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,MLH3,Meiotic recombination/DSB,0.1176
+Mast.cells,HPV+,17,MND1,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,MOV10L1,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,MSH5,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,OIP5,Cell-cycle meiosis,0.0
+Mast.cells,HPV+,17,PIWIL1,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,PIWIL2,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,PSMC3IP,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,RAD9B,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,REC8,Meiotic cohesin,0.1176
+Mast.cells,HPV+,17,RNF212,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,SHCBP1L,Meiotic recombination/DSB,0.0
+Mast.cells,HPV+,17,SMC1B,Meiotic cohesin,0.0
+Mast.cells,HPV+,17,STAG3,Meiotic cohesin,0.0
+Mast.cells,HPV+,17,SYCE1,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,SYCE2,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,SYCE3,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,SYCP2,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,SYCP2L,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,SYCP3,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,TDRD1,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,TDRD10,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,TDRD12,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,TDRD5,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,TDRD6,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,TDRD9,piRNA/Tudor germline,0.0
+Mast.cells,HPV+,17,TDRKH,Cell-cycle meiosis,0.0
+Mast.cells,HPV+,17,TEX12,Synaptonemal complex,0.0
+Mast.cells,HPV+,17,TEX14,Other germ-cell,0.0
+Mast.cells,HPV+,17,ZFR2,Other germ-cell,0.0
+Mast.cells,HPV+,17,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV+,17,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0259
+Mast.cells,HPV-,193,ANKRD31,Meiotic recombination/DSB,0.0104
+Mast.cells,HPV-,193,AURKC,Cell-cycle meiosis,0.0104
+Mast.cells,HPV-,193,CCDC36,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,CDC20B,Cell-cycle meiosis,0.0
+Mast.cells,HPV-,193,CNTD1,Meiotic recombination/DSB,0.0052
+Mast.cells,HPV-,193,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,DMC1,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,GRIN2C,Other germ-cell,0.0
+Mast.cells,HPV-,193,GTSF1,Other germ-cell,0.0674
+Mast.cells,HPV-,193,HENMT1,piRNA/Tudor germline,0.0363
+Mast.cells,HPV-,193,HORMAD1,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,MAEL,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0052
+Mast.cells,HPV-,193,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0155
+Mast.cells,HPV-,193,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0104
+Mast.cells,HPV-,193,MAJIN,Synaptonemal complex,0.0
+Mast.cells,HPV-,193,MCMDC2,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,MEI1,Meiotic recombination/DSB,0.1244
+Mast.cells,HPV-,193,MEIOB,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,MLH3,Meiotic recombination/DSB,0.0466
+Mast.cells,HPV-,193,MND1,Meiotic recombination/DSB,0.0415
+Mast.cells,HPV-,193,MOV10L1,piRNA/Tudor germline,0.0052
+Mast.cells,HPV-,193,MSH5,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,OIP5,Cell-cycle meiosis,0.0311
+Mast.cells,HPV-,193,PIWIL1,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,PIWIL2,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,PSMC3IP,Meiotic recombination/DSB,0.0311
+Mast.cells,HPV-,193,RAD9B,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,REC8,Meiotic cohesin,0.1399
+Mast.cells,HPV-,193,RNF212,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,SHCBP1L,Meiotic recombination/DSB,0.0
+Mast.cells,HPV-,193,SMC1B,Meiotic cohesin,0.0
+Mast.cells,HPV-,193,STAG3,Meiotic cohesin,0.0155
+Mast.cells,HPV-,193,SYCE1,Synaptonemal complex,0.0052
+Mast.cells,HPV-,193,SYCE2,Synaptonemal complex,0.0052
+Mast.cells,HPV-,193,SYCE3,Synaptonemal complex,0.0
+Mast.cells,HPV-,193,SYCP2,Synaptonemal complex,0.0052
+Mast.cells,HPV-,193,SYCP2L,Synaptonemal complex,0.0311
+Mast.cells,HPV-,193,SYCP3,Synaptonemal complex,0.0259
+Mast.cells,HPV-,193,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0
+Mast.cells,HPV-,193,TDRD1,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,TDRD10,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,TDRD12,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,TDRD5,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,TDRD6,piRNA/Tudor germline,0.0
+Mast.cells,HPV-,193,TDRD9,piRNA/Tudor germline,0.0052
+Mast.cells,HPV-,193,TDRKH,Cell-cycle meiosis,0.0155
+Mast.cells,HPV-,193,TEX12,Synaptonemal complex,0.0052
+Mast.cells,HPV-,193,TEX14,Other germ-cell,0.0104
+Mast.cells,HPV-,193,ZFR2,Other germ-cell,0.0052
+Mast.cells,HPV-,193,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0363
+Mast.cells,HPV-,193,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0128
+Fibroblasts,HPV+,78,ANKRD31,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV+,78,AURKC,Cell-cycle meiosis,0.0128
+Fibroblasts,HPV+,78,CCDC36,Meiotic recombination/DSB,0.0256
+Fibroblasts,HPV+,78,CDC20B,Cell-cycle meiosis,0.0
+Fibroblasts,HPV+,78,CNTD1,Meiotic recombination/DSB,0.0128
+Fibroblasts,HPV+,78,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,DMC1,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV+,78,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,GRIN2C,Other germ-cell,0.0
+Fibroblasts,HPV+,78,GTSF1,Other germ-cell,0.0
+Fibroblasts,HPV+,78,HENMT1,piRNA/Tudor germline,0.0897
+Fibroblasts,HPV+,78,HORMAD1,Meiotic recombination/DSB,0.0256
+Fibroblasts,HPV+,78,MAEL,piRNA/Tudor germline,0.0
+Fibroblasts,HPV+,78,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,MAJIN,Synaptonemal complex,0.0
+Fibroblasts,HPV+,78,MCMDC2,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV+,78,MEI1,Meiotic recombination/DSB,0.0769
+Fibroblasts,HPV+,78,MEIOB,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV+,78,MLH3,Meiotic recombination/DSB,0.1154
+Fibroblasts,HPV+,78,MND1,Meiotic recombination/DSB,0.0256
+Fibroblasts,HPV+,78,MOV10L1,piRNA/Tudor germline,0.0256
+Fibroblasts,HPV+,78,MSH5,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV+,78,OIP5,Cell-cycle meiosis,0.0
+Fibroblasts,HPV+,78,PIWIL1,piRNA/Tudor germline,0.0128
+Fibroblasts,HPV+,78,PIWIL2,piRNA/Tudor germline,0.0128
+Fibroblasts,HPV+,78,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,PSMC3IP,Meiotic recombination/DSB,0.0513
+Fibroblasts,HPV+,78,RAD9B,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV+,78,REC8,Meiotic cohesin,0.0513
+Fibroblasts,HPV+,78,RNF212,Meiotic recombination/DSB,0.141
+Fibroblasts,HPV+,78,SHCBP1L,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV+,78,SMC1B,Meiotic cohesin,0.0
+Fibroblasts,HPV+,78,STAG3,Meiotic cohesin,0.0385
+Fibroblasts,HPV+,78,SYCE1,Synaptonemal complex,0.0
+Fibroblasts,HPV+,78,SYCE2,Synaptonemal complex,0.0
+Fibroblasts,HPV+,78,SYCE3,Synaptonemal complex,0.0
+Fibroblasts,HPV+,78,SYCP2,Synaptonemal complex,0.0256
+Fibroblasts,HPV+,78,SYCP2L,Synaptonemal complex,0.0
+Fibroblasts,HPV+,78,SYCP3,Synaptonemal complex,0.0
+Fibroblasts,HPV+,78,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,TDRD1,piRNA/Tudor germline,0.0
+Fibroblasts,HPV+,78,TDRD10,piRNA/Tudor germline,0.0128
+Fibroblasts,HPV+,78,TDRD12,piRNA/Tudor germline,0.0
+Fibroblasts,HPV+,78,TDRD5,piRNA/Tudor germline,0.0
+Fibroblasts,HPV+,78,TDRD6,piRNA/Tudor germline,0.0
+Fibroblasts,HPV+,78,TDRD9,piRNA/Tudor germline,0.0
+Fibroblasts,HPV+,78,TDRKH,Cell-cycle meiosis,0.0128
+Fibroblasts,HPV+,78,TEX12,Synaptonemal complex,0.0
+Fibroblasts,HPV+,78,TEX14,Other germ-cell,0.0513
+Fibroblasts,HPV+,78,ZFR2,Other germ-cell,0.0128
+Fibroblasts,HPV+,78,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV+,78,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV-,1750,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0017
+Fibroblasts,HPV-,1750,ANKRD31,Meiotic recombination/DSB,0.0023
+Fibroblasts,HPV-,1750,AURKC,Cell-cycle meiosis,0.0189
+Fibroblasts,HPV-,1750,CCDC36,Meiotic recombination/DSB,0.0194
+Fibroblasts,HPV-,1750,CDC20B,Cell-cycle meiosis,0.0017
+Fibroblasts,HPV-,1750,CNTD1,Meiotic recombination/DSB,0.0046
+Fibroblasts,HPV-,1750,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0006
+Fibroblasts,HPV-,1750,DMC1,Meiotic recombination/DSB,0.0149
+Fibroblasts,HPV-,1750,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0006
+Fibroblasts,HPV-,1750,GRIN2C,Other germ-cell,0.0006
+Fibroblasts,HPV-,1750,GTSF1,Other germ-cell,0.0097
+Fibroblasts,HPV-,1750,HENMT1,piRNA/Tudor germline,0.0731
+Fibroblasts,HPV-,1750,HORMAD1,Meiotic recombination/DSB,0.0029
+Fibroblasts,HPV-,1750,MAEL,piRNA/Tudor germline,0.0017
+Fibroblasts,HPV-,1750,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Fibroblasts,HPV-,1750,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0011
+Fibroblasts,HPV-,1750,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0017
+Fibroblasts,HPV-,1750,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.004
+Fibroblasts,HPV-,1750,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0069
+Fibroblasts,HPV-,1750,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0046
+Fibroblasts,HPV-,1750,MAJIN,Synaptonemal complex,0.0011
+Fibroblasts,HPV-,1750,MCMDC2,Meiotic recombination/DSB,0.0023
+Fibroblasts,HPV-,1750,MEI1,Meiotic recombination/DSB,0.0491
+Fibroblasts,HPV-,1750,MEIOB,Meiotic recombination/DSB,0.0
+Fibroblasts,HPV-,1750,MLH3,Meiotic recombination/DSB,0.0731
+Fibroblasts,HPV-,1750,MND1,Meiotic recombination/DSB,0.0497
+Fibroblasts,HPV-,1750,MOV10L1,piRNA/Tudor germline,0.032
+Fibroblasts,HPV-,1750,MSH5,Meiotic recombination/DSB,0.0006
+Fibroblasts,HPV-,1750,OIP5,Cell-cycle meiosis,0.028
+Fibroblasts,HPV-,1750,PIWIL1,piRNA/Tudor germline,0.0166
+Fibroblasts,HPV-,1750,PIWIL2,piRNA/Tudor germline,0.008
+Fibroblasts,HPV-,1750,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0023
+Fibroblasts,HPV-,1750,PSMC3IP,Meiotic recombination/DSB,0.1
+Fibroblasts,HPV-,1750,RAD9B,Meiotic recombination/DSB,0.0011
+Fibroblasts,HPV-,1750,REC8,Meiotic cohesin,0.0491
+Fibroblasts,HPV-,1750,RNF212,Meiotic recombination/DSB,0.1269
+Fibroblasts,HPV-,1750,SHCBP1L,Meiotic recombination/DSB,0.0046
+Fibroblasts,HPV-,1750,SMC1B,Meiotic cohesin,0.0011
+Fibroblasts,HPV-,1750,STAG3,Meiotic cohesin,0.0234
+Fibroblasts,HPV-,1750,SYCE1,Synaptonemal complex,0.0109
+Fibroblasts,HPV-,1750,SYCE2,Synaptonemal complex,0.0069
+Fibroblasts,HPV-,1750,SYCE3,Synaptonemal complex,0.0057
+Fibroblasts,HPV-,1750,SYCP2,Synaptonemal complex,0.0126
+Fibroblasts,HPV-,1750,SYCP2L,Synaptonemal complex,0.0011
+Fibroblasts,HPV-,1750,SYCP3,Synaptonemal complex,0.0086
+Fibroblasts,HPV-,1750,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0017
+Fibroblasts,HPV-,1750,TDRD1,piRNA/Tudor germline,0.0074
+Fibroblasts,HPV-,1750,TDRD10,piRNA/Tudor germline,0.0023
+Fibroblasts,HPV-,1750,TDRD12,piRNA/Tudor germline,0.0046
+Fibroblasts,HPV-,1750,TDRD5,piRNA/Tudor germline,0.0006
+Fibroblasts,HPV-,1750,TDRD6,piRNA/Tudor germline,0.0069
+Fibroblasts,HPV-,1750,TDRD9,piRNA/Tudor germline,0.0046
+Fibroblasts,HPV-,1750,TDRKH,Cell-cycle meiosis,0.0051
+Fibroblasts,HPV-,1750,TEX12,Synaptonemal complex,0.0023
+Fibroblasts,HPV-,1750,TEX14,Other germ-cell,0.0114
+Fibroblasts,HPV-,1750,ZFR2,Other germ-cell,0.0
+Fibroblasts,HPV-,1750,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0126
+Fibroblasts,HPV-,1750,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,ANKRD31,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,AURKC,Cell-cycle meiosis,0.0444
+Endothelial.cells,HPV+,45,CCDC36,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,CDC20B,Cell-cycle meiosis,0.0222
+Endothelial.cells,HPV+,45,CNTD1,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,DMC1,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,GRIN2C,Other germ-cell,0.0
+Endothelial.cells,HPV+,45,GTSF1,Other germ-cell,0.0
+Endothelial.cells,HPV+,45,HENMT1,piRNA/Tudor germline,0.0667
+Endothelial.cells,HPV+,45,HORMAD1,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,MAEL,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV+,45,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0889
+Endothelial.cells,HPV+,45,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,MAJIN,Synaptonemal complex,0.0222
+Endothelial.cells,HPV+,45,MCMDC2,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,MEI1,Meiotic recombination/DSB,0.0444
+Endothelial.cells,HPV+,45,MEIOB,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,MLH3,Meiotic recombination/DSB,0.0667
+Endothelial.cells,HPV+,45,MND1,Meiotic recombination/DSB,0.0667
+Endothelial.cells,HPV+,45,MOV10L1,piRNA/Tudor germline,0.0222
+Endothelial.cells,HPV+,45,MSH5,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,OIP5,Cell-cycle meiosis,0.0222
+Endothelial.cells,HPV+,45,PIWIL1,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV+,45,PIWIL2,piRNA/Tudor germline,0.0444
+Endothelial.cells,HPV+,45,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0444
+Endothelial.cells,HPV+,45,PSMC3IP,Meiotic recombination/DSB,0.1111
+Endothelial.cells,HPV+,45,RAD9B,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV+,45,REC8,Meiotic cohesin,0.0222
+Endothelial.cells,HPV+,45,RNF212,Meiotic recombination/DSB,0.0222
+Endothelial.cells,HPV+,45,SHCBP1L,Meiotic recombination/DSB,0.0222
+Endothelial.cells,HPV+,45,SMC1B,Meiotic cohesin,0.0222
+Endothelial.cells,HPV+,45,STAG3,Meiotic cohesin,0.1111
+Endothelial.cells,HPV+,45,SYCE1,Synaptonemal complex,0.0
+Endothelial.cells,HPV+,45,SYCE2,Synaptonemal complex,0.0222
+Endothelial.cells,HPV+,45,SYCE3,Synaptonemal complex,0.0
+Endothelial.cells,HPV+,45,SYCP2,Synaptonemal complex,0.0667
+Endothelial.cells,HPV+,45,SYCP2L,Synaptonemal complex,0.0
+Endothelial.cells,HPV+,45,SYCP3,Synaptonemal complex,0.0
+Endothelial.cells,HPV+,45,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0222
+Endothelial.cells,HPV+,45,TDRD1,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV+,45,TDRD10,piRNA/Tudor germline,0.0667
+Endothelial.cells,HPV+,45,TDRD12,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV+,45,TDRD5,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV+,45,TDRD6,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV+,45,TDRD9,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV+,45,TDRKH,Cell-cycle meiosis,0.0222
+Endothelial.cells,HPV+,45,TEX12,Synaptonemal complex,0.0
+Endothelial.cells,HPV+,45,TEX14,Other germ-cell,0.0
+Endothelial.cells,HPV+,45,ZFR2,Other germ-cell,0.0444
+Endothelial.cells,HPV+,45,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV+,45,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0029
+Endothelial.cells,HPV-,347,ANKRD31,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV-,347,AURKC,Cell-cycle meiosis,0.0202
+Endothelial.cells,HPV-,347,CCDC36,Meiotic recombination/DSB,0.0058
+Endothelial.cells,HPV-,347,CDC20B,Cell-cycle meiosis,0.0029
+Endothelial.cells,HPV-,347,CNTD1,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV-,347,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,DMC1,Meiotic recombination/DSB,0.0115
+Endothelial.cells,HPV-,347,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,GRIN2C,Other germ-cell,0.0
+Endothelial.cells,HPV-,347,GTSF1,Other germ-cell,0.0173
+Endothelial.cells,HPV-,347,HENMT1,piRNA/Tudor germline,0.0692
+Endothelial.cells,HPV-,347,HORMAD1,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV-,347,MAEL,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV-,347,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0029
+Endothelial.cells,HPV-,347,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0086
+Endothelial.cells,HPV-,347,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,MAJIN,Synaptonemal complex,0.0029
+Endothelial.cells,HPV-,347,MCMDC2,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV-,347,MEI1,Meiotic recombination/DSB,0.0836
+Endothelial.cells,HPV-,347,MEIOB,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV-,347,MLH3,Meiotic recombination/DSB,0.0663
+Endothelial.cells,HPV-,347,MND1,Meiotic recombination/DSB,0.0288
+Endothelial.cells,HPV-,347,MOV10L1,piRNA/Tudor germline,0.0576
+Endothelial.cells,HPV-,347,MSH5,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV-,347,OIP5,Cell-cycle meiosis,0.0288
+Endothelial.cells,HPV-,347,PIWIL1,piRNA/Tudor germline,0.0375
+Endothelial.cells,HPV-,347,PIWIL2,piRNA/Tudor germline,0.0058
+Endothelial.cells,HPV-,347,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,PSMC3IP,Meiotic recombination/DSB,0.098
+Endothelial.cells,HPV-,347,RAD9B,Meiotic recombination/DSB,0.0
+Endothelial.cells,HPV-,347,REC8,Meiotic cohesin,0.0893
+Endothelial.cells,HPV-,347,RNF212,Meiotic recombination/DSB,0.0144
+Endothelial.cells,HPV-,347,SHCBP1L,Meiotic recombination/DSB,0.0086
+Endothelial.cells,HPV-,347,SMC1B,Meiotic cohesin,0.0
+Endothelial.cells,HPV-,347,STAG3,Meiotic cohesin,0.0288
+Endothelial.cells,HPV-,347,SYCE1,Synaptonemal complex,0.0029
+Endothelial.cells,HPV-,347,SYCE2,Synaptonemal complex,0.0058
+Endothelial.cells,HPV-,347,SYCE3,Synaptonemal complex,0.0
+Endothelial.cells,HPV-,347,SYCP2,Synaptonemal complex,0.0086
+Endothelial.cells,HPV-,347,SYCP2L,Synaptonemal complex,0.0
+Endothelial.cells,HPV-,347,SYCP3,Synaptonemal complex,0.0029
+Endothelial.cells,HPV-,347,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0
+Endothelial.cells,HPV-,347,TDRD1,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV-,347,TDRD10,piRNA/Tudor germline,0.0461
+Endothelial.cells,HPV-,347,TDRD12,piRNA/Tudor germline,0.0029
+Endothelial.cells,HPV-,347,TDRD5,piRNA/Tudor germline,0.0
+Endothelial.cells,HPV-,347,TDRD6,piRNA/Tudor germline,0.0086
+Endothelial.cells,HPV-,347,TDRD9,piRNA/Tudor germline,0.0086
+Endothelial.cells,HPV-,347,TDRKH,Cell-cycle meiosis,0.0144
+Endothelial.cells,HPV-,347,TEX12,Synaptonemal complex,0.0058
+Endothelial.cells,HPV-,347,TEX14,Other germ-cell,0.0086
+Endothelial.cells,HPV-,347,ZFR2,Other germ-cell,0.0144
+Endothelial.cells,HPV-,347,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0029
+Endothelial.cells,HPV-,347,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,ANKRD31,Meiotic recombination/DSB,0.0
+Myocytes,HPV+,9,AURKC,Cell-cycle meiosis,0.0
+Myocytes,HPV+,9,CCDC36,Meiotic recombination/DSB,0.0
+Myocytes,HPV+,9,CDC20B,Cell-cycle meiosis,0.0
+Myocytes,HPV+,9,CNTD1,Meiotic recombination/DSB,0.1111
+Myocytes,HPV+,9,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,DMC1,Meiotic recombination/DSB,0.4444
+Myocytes,HPV+,9,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,GRIN2C,Other germ-cell,0.1111
+Myocytes,HPV+,9,GTSF1,Other germ-cell,0.0
+Myocytes,HPV+,9,HENMT1,piRNA/Tudor germline,0.5556
+Myocytes,HPV+,9,HORMAD1,Meiotic recombination/DSB,0.5556
+Myocytes,HPV+,9,MAEL,piRNA/Tudor germline,0.4444
+Myocytes,HPV+,9,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,MAJIN,Synaptonemal complex,0.3333
+Myocytes,HPV+,9,MCMDC2,Meiotic recombination/DSB,0.1111
+Myocytes,HPV+,9,MEI1,Meiotic recombination/DSB,0.7778
+Myocytes,HPV+,9,MEIOB,Meiotic recombination/DSB,0.2222
+Myocytes,HPV+,9,MLH3,Meiotic recombination/DSB,0.2222
+Myocytes,HPV+,9,MND1,Meiotic recombination/DSB,0.7778
+Myocytes,HPV+,9,MOV10L1,piRNA/Tudor germline,0.5556
+Myocytes,HPV+,9,MSH5,Meiotic recombination/DSB,0.0
+Myocytes,HPV+,9,OIP5,Cell-cycle meiosis,0.7778
+Myocytes,HPV+,9,PIWIL1,piRNA/Tudor germline,0.0
+Myocytes,HPV+,9,PIWIL2,piRNA/Tudor germline,0.3333
+Myocytes,HPV+,9,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV+,9,PSMC3IP,Meiotic recombination/DSB,0.6667
+Myocytes,HPV+,9,RAD9B,Meiotic recombination/DSB,0.0
+Myocytes,HPV+,9,REC8,Meiotic cohesin,0.6667
+Myocytes,HPV+,9,RNF212,Meiotic recombination/DSB,1.0
+Myocytes,HPV+,9,SHCBP1L,Meiotic recombination/DSB,0.0
+Myocytes,HPV+,9,SMC1B,Meiotic cohesin,0.8889
+Myocytes,HPV+,9,STAG3,Meiotic cohesin,0.4444
+Myocytes,HPV+,9,SYCE1,Synaptonemal complex,0.0
+Myocytes,HPV+,9,SYCE2,Synaptonemal complex,0.2222
+Myocytes,HPV+,9,SYCE3,Synaptonemal complex,0.1111
+Myocytes,HPV+,9,SYCP2,Synaptonemal complex,0.6667
+Myocytes,HPV+,9,SYCP2L,Synaptonemal complex,0.0
+Myocytes,HPV+,9,SYCP3,Synaptonemal complex,0.3333
+Myocytes,HPV+,9,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.5556
+Myocytes,HPV+,9,TDRD1,piRNA/Tudor germline,0.0
+Myocytes,HPV+,9,TDRD10,piRNA/Tudor germline,0.0
+Myocytes,HPV+,9,TDRD12,piRNA/Tudor germline,0.0
+Myocytes,HPV+,9,TDRD5,piRNA/Tudor germline,0.0
+Myocytes,HPV+,9,TDRD6,piRNA/Tudor germline,0.1111
+Myocytes,HPV+,9,TDRD9,piRNA/Tudor germline,0.2222
+Myocytes,HPV+,9,TDRKH,Cell-cycle meiosis,0.1111
+Myocytes,HPV+,9,TEX12,Synaptonemal complex,0.0
+Myocytes,HPV+,9,TEX14,Other germ-cell,0.0
+Myocytes,HPV+,9,ZFR2,Other germ-cell,0.8889
+Myocytes,HPV+,9,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.2222
+Myocytes,HPV+,9,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.3333
+Myocytes,HPV-,6,ACRBP,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,ANKRD31,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,AURKC,Cell-cycle meiosis,0.0
+Myocytes,HPV-,6,CCDC36,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,CDC20B,Cell-cycle meiosis,0.0
+Myocytes,HPV-,6,CNTD1,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,CTCFL,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,DMC1,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,GAGE2A,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,GRIN2C,Other germ-cell,0.0
+Myocytes,HPV-,6,GTSF1,Other germ-cell,0.0
+Myocytes,HPV-,6,HENMT1,piRNA/Tudor germline,0.1667
+Myocytes,HPV-,6,HORMAD1,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,MAEL,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,MAGEA1,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,MAGEA10,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,MAGEA11,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,MAGEA3,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,MAGEA4,Cancer-testis antigen (MAGE/CTAG),0.1667
+Myocytes,HPV-,6,MAGEA6,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,MAJIN,Synaptonemal complex,0.0
+Myocytes,HPV-,6,MCMDC2,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,MEI1,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,MEIOB,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,MLH3,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,MND1,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,MOV10L1,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,MSH5,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,OIP5,Cell-cycle meiosis,0.0
+Myocytes,HPV-,6,PIWIL1,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,PIWIL2,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,PRAME,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,PSMC3IP,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,RAD9B,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,REC8,Meiotic cohesin,0.0
+Myocytes,HPV-,6,RNF212,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,SHCBP1L,Meiotic recombination/DSB,0.0
+Myocytes,HPV-,6,SMC1B,Meiotic cohesin,0.0
+Myocytes,HPV-,6,STAG3,Meiotic cohesin,0.0
+Myocytes,HPV-,6,SYCE1,Synaptonemal complex,0.0
+Myocytes,HPV-,6,SYCE2,Synaptonemal complex,0.0
+Myocytes,HPV-,6,SYCE3,Synaptonemal complex,0.0
+Myocytes,HPV-,6,SYCP2,Synaptonemal complex,0.0
+Myocytes,HPV-,6,SYCP2L,Synaptonemal complex,0.0
+Myocytes,HPV-,6,SYCP3,Synaptonemal complex,0.0
+Myocytes,HPV-,6,TAF7L,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,TDRD1,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,TDRD10,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,TDRD12,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,TDRD5,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,TDRD6,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,TDRD9,piRNA/Tudor germline,0.0
+Myocytes,HPV-,6,TDRKH,Cell-cycle meiosis,0.0
+Myocytes,HPV-,6,TEX12,Synaptonemal complex,0.0
+Myocytes,HPV-,6,TEX14,Other germ-cell,0.0
+Myocytes,HPV-,6,ZFR2,Other germ-cell,0.0
+Myocytes,HPV-,6,ZNF165,Cancer-testis antigen (MAGE/CTAG),0.0
+Myocytes,HPV-,6,ZPBP2,Cancer-testis antigen (MAGE/CTAG),0.0
