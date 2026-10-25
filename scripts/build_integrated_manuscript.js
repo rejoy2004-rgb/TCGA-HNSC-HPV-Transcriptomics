@@ -330,6 +330,14 @@ add(H1("Code availability"));
 add(P("The R and Python scripts for the differential expression, enrichment, methylation, deconvolution, confounder, sensitivity and single-cell analyses (scripts/meiotic_programme and scripts/review_analyses), together with the scripts that build the figures, tables and this manuscript, are available at https://github.com/rejoy2004-rgb/TCGA-HNSC-HPV-Transcriptomics."));
 add(H1("Ethics statement"));
 add(P("This study used only publicly available, de-identified data. No new patient samples were collected and no additional ethical approval was required."));
+add(H1("Author contributions"));
+add(P("Rejoy Besra performed the TCGA-HNSC transcriptomic, immune-deconvolution, survival and sensitivity analyses and integrated the manuscript. Suganth developed and performed the meiotic-programme, methylation, external-cohort and single-cell analyses. Chitra reviewed the manuscript and supervised its revision. All authors read and approved the final manuscript."));
+add(H1("Funding"));
+add(P("This work was supported by the authors’ institutions; no external funding was received."));
+add(H1("Competing interests"));
+add(P("The authors declare no competing interests."));
+add(H1("Acknowledgements"));
+add(P("We thank the TCGA Research Network, the investigators who deposited GSE65858, GSE38266, GSE181919 and GSE182227 in the Gene Expression Omnibus, and the teams behind cBioPortal and the NCI Genomic Data Commons for making these data publicly available."));
 
 // ---------------- REFERENCES ----------------
 add(H1("7. References"));
