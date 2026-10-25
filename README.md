@@ -11,7 +11,7 @@ Code, processed data, results, figures and the manuscript for the study **“Tra
 - **Keratinisation.** Keratinisation and epithelial-differentiation programmes are reduced in HPV+ tumours.
 - **Survival (exploratory).** Univariable Cox models link higher expression of leading HPV-associated genes to longer overall survival. These models are unadjusted for HPV status or other covariates.
 
-The TCGA analyses (differential expression, enrichment, immune deconvolution, survival) are fully reproducible from this repository. The panel, methylation, external-cohort and single-cell analyses (GSE65858, GSE38266, GSE181919, GSE182227) are included as their results and 600 dpi figure panels.
+The TCGA analyses (differential expression, enrichment, immune deconvolution, survival) are fully reproducible from this repository. The panel, methylation, external-cohort and single-cell analyses (GSE65858, GSE38266, GSE181919, GSE182227) are reproducible with `scripts/meiotic_programme/` (section 5).
 
 ## Repository structure
 
@@ -33,10 +33,12 @@ The TCGA analyses (differential expression, enrichment, immune deconvolution, su
 │   ├── validate_deconvolution_markers.py  deconvolution marker validation
 │   ├── build_integrated_manuscript.js     builds the manuscript .docx
 │   ├── export_tables.py                   exports manuscript tables to CSV
+│   ├── meiotic_programme/                 panel, methylation, GSE65858, GSE38266, GSE181919, GSE182227 (section 5)
 │   ├── review_analyses/                   review sensitivity analyses (CIs, nulls, promoter definition, B/plasma, HPV definition)
 │   └── figures/                           figure assembly and export scripts
 ├── data_raw/                              cBioPortal clinical files and GDC manifest
 ├── data_processed/                        HPV status, CIBERSORTx input and Job14 results
+│   └── meiotic_programme/                 95-gene panel (cta_geneset.csv) and frozen enrichment inputs
 ├── results/                               analysis outputs (review_sensitivity/ for the review analyses)
 ├── figures/
 │   ├── source_panels_600dpi/              600 dpi panels for Figures 1–3, 5, 6 and Supplementary Figs S2, S4
@@ -111,7 +113,32 @@ node scripts/build_integrated_manuscript.js        # requires: npm install docx
 python scripts/export_tables.py                   # Tables 1–6 and S1–S11 as CSV
 ```
 
-### 5. Review sensitivity analyses
+### 5. Meiotic programme: panel, methylation, external cohorts and single cell
+
+```bash
+pip install -r scripts/meiotic_programme/requirements.txt
+python scripts/meiotic_programme/make_figure1_deg.py --panels                  # Figure 1 (volcano, lollipop, GO bars)
+python scripts/meiotic_programme/run_meiotic_analysis.py --data DATA/meiotic --panels
+python scripts/meiotic_programme/tcga_purity_regression.py                       # purity / proliferation models
+python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --panels
+```
+
+`run_meiotic_analysis.py` runs, in order: origin of the hypothesis (GSEA ranking, panel-category enrichment, panel/DEG overlap) → TCGA-HNSC promoter hypomethylation and methylation–expression coupling → GSE65858 validation (viral activity, per-gene and per-category AUC, module coherence with permutation nulls, confounder controls) → GSE38266 methylation replication → GSE181919 malignant-cell localisation. Public data are downloaded into `DATA/meiotic` (outside the repository; GSE181919 is ~1.2 GB, use `--skip-singlecell` to omit it). Outputs go to `results/meiotic_programme/`; `--panels` rewrites the 600 dpi panels in `figures/source_panels_600dpi/`.
+
+| Module (`scripts/meiotic_programme/meiotic/`) | Content |
+|---|---|
+| `config.py` | 95-gene panel (7 categories), core-6 module, constants, seed |
+| `data_tcga.py`, `data_geo.py` | cBioPortal and GEO loaders |
+| `enrichment_provenance.py` | GSEA / GO / panel-overlap re-test (Supp. Fig. S2) |
+| `tcga_discovery.py` | TCGA promoter methylation (Fig. 2a, b) |
+| `gse65858_validation.py` | viral activity, specificity, coherence, confounders (Fig. 3, Supp. Fig. S4) |
+| `gse38266_replication.py` | independent methylation replication (Fig. 2c) |
+| `gse181919_singlecell.py`, `sc_scoring.py` | single-cell analysis and Tirosh module scoring (Fig. 5) |
+| `figures.py`, `fig_gse182227.py`, `panel_export.py` | figure builders and 600 dpi per-panel export |
+
+`gse182227_singlecell.py` annotates GSE182227 from scratch (Leiden clustering, marker lineages, inferred-CNV malignant calls), scores malignant cells and fits the pooled two-cohort per-tumour models with proliferation adjustment (Fig. 6). The enrichment inputs in `data_processed/meiotic_programme/` are frozen copies of the outputs the manuscript numbers were computed from; regenerated GO/GSEA outputs in `results/` can differ slightly.
+
+### 6. Review sensitivity analyses
 
 These analyses download public data (GEO, cBioPortal, GDC) into a working folder `DATA` (outside the repository) and write their results to `results/review_sensitivity/`. Place `GSE65858_series_matrix.txt.gz`, `GPL10558.annot.gz`, `GSE38266_series_matrix.txt.gz` (GEO) and `HM450.hg38.manifest.gencode.v36.tsv.gz` (zhou-lab/InfiniumAnnotationV1) in `DATA/geo` first.
 
@@ -129,7 +156,7 @@ python scripts/review_analyses/gse182227_auc_ci.py results/review_sensitivity/GS
 
 R 4.6.0 with Bioconductor 3.23: DESeq2 1.52.0, clusterProfiler 4.20.0, enrichplot 1.32.0, org.Hs.eg.db 3.23.1, TCGAbiolinks 2.40.0 and survival 3.8.6. Full versions are in `results/sessionInfo.txt` and `results/package_versions.csv`.
 
-Python 3.11: pandas, numpy, scipy, matplotlib, Pillow and python-docx. Node.js: `docx`.
+Python 3.11: pandas, numpy, scipy, matplotlib, Pillow and python-docx; for `scripts/meiotic_programme/` also statsmodels, scikit-learn, requests, python-igraph, leidenalg and umap-learn (`scripts/meiotic_programme/requirements.txt`). Node.js: `docx`.
 
 ## Data sources
 
