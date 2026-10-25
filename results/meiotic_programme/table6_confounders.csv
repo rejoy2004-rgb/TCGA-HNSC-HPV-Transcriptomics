@@ -1,0 +1,5 @@
+test,n,statistic,p
+within oropharynx only,28 vs 47,AUC=0.960,3.302953674970172e-11
+"logistic, meiotic alone",231,"beta=4.45, model AUC=0.959",7.565577288216917e-09
+"logistic, + proliferation",231,"beta=4.52, model AUC=0.961",9.10590255542805e-09
+"logistic, + proliferation + p16",231,"beta=4.64, model AUC=0.969",2.1059670677932547e-06

@@ -1,0 +1,10 @@
+cell_type,n_cells,marker_mean_in,marker_mean_out,enrichment,median_umi,median_genes,label_confirmed
+Malignant.cells,4829,2.5232,0.2826,8.9,21880,3885,True
+T.cells,7996,1.7848,0.1542,11.6,5214,1670,True
+B_Plasma.cells,3689,1.4713,0.0946,15.6,8242,1570,True
+Macrophages,3169,2.0717,0.1217,17.0,11788,2520,True
+Dendritic.cells,960,0.4093,0.0154,26.6,9429,2143,True
+Mast.cells,210,3.5392,0.0102,345.4,6952,1820,True
+Fibroblasts,1828,3.6912,0.1116,33.1,12855,3056,True
+Endothelial.cells,392,1.5618,0.0443,35.3,9626,2884,True
+Myocytes,15,0.6207,0.0077,80.2,45343,6242,True

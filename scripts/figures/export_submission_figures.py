@@ -17,7 +17,7 @@ SUPP = [("Supplementary_Figure_S1_PCA", "figures/HNSC_HPV_PCA.png", 300),
         ("Supplementary_Figure_S4_module_coherence", f"{I}/composed/SuppFig_S4.png", 600),
         ("Supplementary_Figure_S5_CD8_validation", f"{I}/SuppFig_CD8_Validation.png", 300),
         ("Supplementary_Figure_S6_Cox_forest", f"{I}/SuppFig_Cox_forest_600dpi.png", 600),
-        ("Supplementary_Figure_S7_ZFR2_Kaplan_Meier", "figures/HNSC_BestGene_KM.png", 300)]
+        ("Supplementary_Figure_S7_ZFR2_Kaplan_Meier", "figures/HNSC_BestGene_KM.png", 600)]
 
 out = "manuscript/submission_figures"
 if os.path.isdir(out):
@@ -32,6 +32,6 @@ def save(name, src, dpi, dests):
     print(f"{name:48s} {im.width:>5d}x{im.height:<5d} {dpi} dpi, {im.width / dpi * 25.4:.0f} mm wide")
 
 for n, s in MAIN:
-    save(n, s, 300 if n == "Figure5" else 600, [out])  # Figure 5 (six-gene) is available at 300 dpi only
+    save(n, s, 600, [out])
 for n, s, dpi in SUPP:
     save(n, s, dpi, ["supplementary/figures"])

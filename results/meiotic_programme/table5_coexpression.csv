@@ -1,0 +1,10 @@
+group,module,n_samples,n_genes,mean_rho
+HPV+ active,core meiotic,35,6,0.556
+HPV+ active,all meiotic,35,25,0.083
+HPV+ active,classic CTA,35,29,0.081
+HPV+ silent,core meiotic,25,6,0.541
+HPV+ silent,all meiotic,25,25,0.092
+HPV+ silent,classic CTA,25,29,0.067
+HPV-,core meiotic,196,6,0.149
+HPV-,all meiotic,196,25,0.027
+HPV-,classic CTA,196,29,0.104

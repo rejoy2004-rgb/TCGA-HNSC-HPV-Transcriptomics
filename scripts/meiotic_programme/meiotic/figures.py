@@ -412,7 +412,7 @@ def make_singlecell_figures(scores, qct, hpvc, pt, pbm, pg, mm, summary, outdir)
     ax_e.set_title("The contrast is meiotic,\nnot generic germline de-repression",
                    loc="left")
     for i, (m, v) in enumerate(zip(mods, vals)):
-        pv = float(cmp_df.loc[m, "pt_p_onesided"])
+        pv = float(cmp_df.loc[m, "pt_p"])
         txt = "n.s." if pv > 0.05 else f"P = {pv:.1e}".replace("e-0", "e\u2212")
         ax_e.text(i, v + (0.004 if v >= 0 else -0.008), txt, ha="center",
                   va="bottom" if v >= 0 else "top", fontsize=6)

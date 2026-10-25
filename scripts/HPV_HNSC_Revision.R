@@ -763,8 +763,8 @@ if (!is.na(zfr2_id) && zfr2_id %in% rownames(surv_counts)) {
   
   km_fit <- survfit(Surv(time, status) ~ ZFR2, data = km_data)
   
-  # number at risk (months 0-120 every 24) and log-rank P, drawn under the curves
-  at_times <- seq(0, 120, by = 24)
+  # number at risk (months 0-200 every 50) and log-rank P, drawn under the curves
+  at_times <- seq(0, 200, by = 50)
   risk <- summary(km_fit, times = at_times, extend = TRUE)
   n_risk <- matrix(risk$n.risk, nrow = length(at_times))   # columns follow the strata: High ZFR2, Low ZFR2
   lr_p <- 1 - pchisq(survdiff(Surv(time, status) ~ ZFR2, data = km_data)$chisq, df = 1)
@@ -776,7 +776,7 @@ if (!is.na(zfr2_id) && zfr2_id %in% rownames(surv_counts)) {
     km_fit,
     col = cols,
     lwd = 2,
-    xlim = c(0, 120),
+    xlim = c(0, 215),
     xaxt = "n",
     xlab = "",
     ylab = "Survival Probability",

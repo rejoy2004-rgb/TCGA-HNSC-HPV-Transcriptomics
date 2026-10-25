@@ -1,0 +1,5 @@
+cohort,platform,n_HPVpos,n_HPVneg,role
+TCGA-HNSC (discovery),Illumina RNA-seq (RSEM),41,80,expression discovery
+TCGA-HNSC (discovery),Illumina HM450,44,81,methylation discovery
+GSE65858 (validation),Illumina HT-12 v4 microarray,60,196,independent expression validation
+GSE38266 (replication),Illumina HM450,21,21,independent methylation replication

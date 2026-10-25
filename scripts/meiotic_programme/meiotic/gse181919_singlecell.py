@@ -28,6 +28,10 @@ def analysis_singlecell(cache: Path, outdir: Path) -> dict | None:
     A = ad.AnnData(sp_sparse.csr_matrix(X.T.astype(np.float32)))
     A.var_names = pd.Index(genes).astype(str)
     A.var_names_make_unique()
+    # MAJIN is deposited under its former symbol C11orf85: query it under the current symbol
+    from .sc_scoring import ALIASES
+    ren = {alias: g for g, al in ALIASES.items() if g not in set(A.var_names) for alias in al if alias in set(A.var_names)}
+    A.var_names = pd.Index([ren.get(v, v) for v in A.var_names])
     A.obs = meta.set_index("barcode")
     hcol = next(c for c in A.obs.columns if c.lower() == "hpv")
     A.obs["hpv"] = np.where(
@@ -105,11 +109,11 @@ def analysis_singlecell(cache: Path, outdir: Path) -> dict | None:
         b = mal.loc[mal.hpv == "HPV-", f"score_{k}"].values
         U, p = stats.mannwhitneyu(a, b, alternative="two-sided")
         # Patient-level repeat: cells within a tumour are not independent, so the
-        # cell-level P is pseudoreplicated. One value per tumour, one-sided.
+        # cell-level P is pseudoreplicated. One value per tumour, two-sided.
         ppt = mal.groupby(["patient.id", "hpv"])[f"score_{k}"].mean().reset_index()
         pa_, pb2 = (ppt.loc[ppt.hpv == "HPV+", f"score_{k}"].values,
                     ppt.loc[ppt.hpv == "HPV-", f"score_{k}"].values)
-        _, ppv = stats.mannwhitneyu(pa_, pb2, alternative="greater")
+        _, ppv = stats.mannwhitneyu(pa_, pb2, alternative="two-sided", method="exact")
         mrows.append(dict(module=k, n_genes=len(sets[k]),
                           cell_mean_pos=round(float(a.mean()), 4),
                           cell_mean_neg=round(float(b.mean()), 4),
@@ -117,7 +121,7 @@ def analysis_singlecell(cache: Path, outdir: Path) -> dict | None:
                           cell_auc=round(float(U / (len(a) * len(b))), 3), cell_p=p,
                           pt_mean_pos=round(float(pa_.mean()), 4),
                           pt_mean_neg=round(float(pb2.mean()), 4),
-                          pt_p_onesided=round(float(ppv), 6),
+                          pt_p=round(float(ppv), 6),
                           pts_pos_above_zero=f"{int((pa_ > 0).sum())}/{len(pa_)}"))
     pd.DataFrame(mrows).to_csv(outdir / "sc_module_comparison.csv", index=False)
 
@@ -151,8 +155,8 @@ def analysis_singlecell(cache: Path, outdir: Path) -> dict | None:
     pt.to_csv(outdir / "sc_per_patient.csv", index=False)
     pa = pt.loc[pt.hpv == "HPV+", "mean_core"].values
     pb_ = pt.loc[pt.hpv == "HPV-", "mean_core"].values
-    _, pt_p = stats.mannwhitneyu(pa, pb_, alternative="greater")
-    loo = [stats.mannwhitneyu(np.delete(pa, i), pb_, alternative="greater")[1]
+    _, pt_p = stats.mannwhitneyu(pa, pb_, alternative="two-sided", method="exact")
+    loo = [stats.mannwhitneyu(np.delete(pa, i), pb_, alternative="two-sided", method="exact")[1]
            for i in range(len(pa))]
 
     # --- pseudobulk: CPM per patient x cell type, independent of scoring ----
@@ -182,7 +186,7 @@ def analysis_singlecell(cache: Path, outdir: Path) -> dict | None:
     for k in ("core", "meiotic", "cta"):
         a = pbm.loc[pbm.hpv == "HPV+", f"log_{k}"].values
         b = pbm.loc[pbm.hpv == "HPV-", f"log_{k}"].values
-        _, p = stats.mannwhitneyu(a, b, alternative="greater")
+        _, p = stats.mannwhitneyu(a, b, alternative="two-sided", method="exact")
         pb_stats[k] = (float(2 ** (a.mean() - b.mean())), float(p))
 
     # --- per-gene detection rates -------------------------------------------
