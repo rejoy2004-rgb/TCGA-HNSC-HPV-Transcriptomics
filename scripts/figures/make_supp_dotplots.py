@@ -37,4 +37,5 @@ cb.set_label(r"$-\log_{10}$ FDR", fontsize=8.5); cb.ax.tick_params(labelsize=8)
 hs = [Line2D([], [], marker="o", ls="", mfc="#999", mec="#333", ms=np.sqrt(size(c)), label=str(c)) for c in (25, 50, 100)]
 axes[1].legend(handles=hs, title="Gene count", fontsize=8, title_fontsize=8, frameon=False, loc="lower right")
 fig.savefig("figures/integrated/SuppFig_Down_GO_KEGG.png", dpi=600, bbox_inches="tight")
+fig.savefig("figures/integrated/SuppFig_Down_GO_KEGG.pdf", bbox_inches="tight")  # vector copy for submission
 print("ok", go.Count.max(), kg.Count.max())

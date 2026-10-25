@@ -1,4 +1,4 @@
-"""Export every manuscript figure as LZW TIFF + PNG, numbered as in the integrated manuscript.
+"""Export every manuscript figure as LZW TIFF + PNG (+ vector PDF where one exists), numbered as in the integrated manuscript.
 Main figures and the graphical abstract go to manuscript/submission_figures/; supplementary figures go to
 supplementary/figures/. dpi metadata is 600 for 600 dpi sources; legacy 300 dpi
 supplementary plots keep their true resolution."""
@@ -29,6 +29,9 @@ def save(name, src, dpi, dests):
     for d in dests:
         im.save(f"{d}/{name}.tif", compression="tiff_lzw", dpi=(dpi, dpi))
         im.save(f"{d}/{name}.png", dpi=(dpi, dpi))
+        pdf = os.path.splitext(src)[0] + ".pdf"            # vector version, when one exists (see compose_figures_vector.py)
+        if os.path.exists(pdf):
+            shutil.copy(pdf, f"{d}/{name}.pdf")
     print(f"{name:48s} {im.width:>5d}x{im.height:<5d} {dpi} dpi, {im.width / dpi * 25.4:.0f} mm wide")
 
 for n, s in MAIN:

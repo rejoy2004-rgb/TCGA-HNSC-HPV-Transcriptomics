@@ -23,4 +23,5 @@ for s in ("top", "right"): ax.spines[s].set_visible(False)
 ax.text(1.115, len(d) - 0.1, "HR (95% CI)   nominal P", fontsize=7.2, fontweight="bold", va="bottom")
 fig.subplots_adjust(left=0.16, right=0.62, bottom=0.14, top=0.92)
 fig.savefig("figures/integrated/SuppFig_Cox_forest_600dpi.png", dpi=600, facecolor="white")
+fig.savefig("figures/integrated/SuppFig_Cox_forest_600dpi.pdf", facecolor="white")  # vector copy for submission
 print("ok", len(d), "genes;", int(sig.sum()), "nominally significant")

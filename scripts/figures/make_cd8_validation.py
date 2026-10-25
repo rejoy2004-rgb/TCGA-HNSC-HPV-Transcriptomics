@@ -22,3 +22,5 @@ for ax, g, letter in zip(axes, ("CD8A", "CD8B"), "ab"):
     ax.text(-0.02, 1.10, letter, transform=ax.transAxes, fontsize=12, fontweight="bold", va="bottom", ha="right")
     print(g, round(rho, 4), p)
 fig.savefig("figures/integrated/SuppFig_CD8_Validation.png", dpi=600)
+
+fig.savefig("figures/integrated/SuppFig_CD8_Validation.pdf")  # vector copy for submission

@@ -50,4 +50,5 @@ for ax, (col, title), letter in zip(axes.flat, panels, "abcdef"):
     for s in ("top", "right"): ax.spines[s].set_visible(False)
 fig.tight_layout()
 fig.savefig("figures/integrated/Figure4_TME_CIBERSORTx_Job14.png", dpi=600)
+fig.savefig("figures/integrated/Figure4_TME_CIBERSORTx_Job14.pdf")  # vector copy for submission
 print("ok", n.to_dict())

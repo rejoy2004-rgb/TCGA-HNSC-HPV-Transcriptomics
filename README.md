@@ -107,6 +107,7 @@ Run from the repository root:
 python scripts/figures/make_enrichment_panels.py   # Figure 1a, 1c and Supplementary Fig. S2a panels (volcano and enrichment re-run)
 python scripts/figures/make_tme_figure.py          # Figure 4
 python scripts/figures/compose_figures.py          # Figures 1–3, 5, 6; Supplementary Figs S2, S4
+python scripts/figures/compose_figures_vector.py   # vector PDF versions of the composed figures
 python scripts/figures/make_supp_dotplots.py       # Supplementary Fig. S3 (downregulated GO and KEGG)
 python scripts/figures/make_cd8_validation.py      # Supplementary Fig. S5 (CD8A/CD8B vs CIBERSORTx)
 python scripts/figures/make_forest_plot.py         # Supplementary Fig. S6

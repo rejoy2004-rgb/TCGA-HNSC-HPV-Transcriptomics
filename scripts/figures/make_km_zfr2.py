@@ -35,4 +35,5 @@ for row, g in enumerate(("High ZFR2", "Low ZFR2")):
     tab.text(-14, y, g.split()[0], color=COL[g], fontsize=8, ha="right", va="center")
     for t, n in zip(at, risk[g]): tab.text(t, y, str(n), color=COL[g], fontsize=8, ha="center", va="center")
 fig.savefig("figures/HNSC_BestGene_KM.png", dpi=600)
+fig.savefig("figures/HNSC_BestGene_KM.pdf")  # vector copy for submission
 print("P", p, risk)

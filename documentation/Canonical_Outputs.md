@@ -3,6 +3,7 @@
 This maps every figure and table in `manuscript/FINAL_INTEGRATED_MANUSCRIPT.docx` to its file and its source.
 
 - **Figure exports:** main figures in `manuscript/submission_figures/`, supplementary figures in `supplementary/figures/` (LZW TIFF + PNG), produced by `scripts/figures/export_submission_figures.py`.
+- **Vector PDFs:** every figure also has a vector `.pdf` next to its TIFF and PNG, except Supplementary Fig. S1 (R plot, raster only) and Figure 6, whose PDF holds the 600 dpi raster because the deposited GSE182227 panels have no vector source. Composed figures are built by `scripts/figures/compose_figures_vector.py` (same layout as the raster composites, placing the vector panel PDFs); the other figures are saved as PDF by their own scripts.
 - **Table exports:** main tables in `manuscript/tables/`; supplementary tables in `supplementary/tables/`. These CSVs are exported from the built manuscript, so they match it exactly.
 - **Rebuilding the manuscript:** `scripts/build_integrated_manuscript.js` (requires the `docx` npm package).
 

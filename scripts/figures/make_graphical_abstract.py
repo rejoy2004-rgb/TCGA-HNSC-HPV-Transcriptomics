@@ -63,4 +63,6 @@ t(50, 2.6, "Consistent with a directed meiotic programme rather than stochastic 
   size=6.4, c=INK, ha="center", style="italic")
 
 fig.savefig("figures/integrated/Graphical_Abstract.png", dpi=600, facecolor="white")
+
+fig.savefig("figures/integrated/Graphical_Abstract.pdf", facecolor="white")  # vector copy for submission
 print("ok")
