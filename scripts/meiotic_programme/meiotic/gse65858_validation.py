@@ -116,11 +116,11 @@ def analysis_validation(expr: pd.DataFrame, clin: pd.DataFrame, outdir: Path) ->
     log("  module coherence:\n" + coh_df.to_string(index=False))
 
     # permutation control: is coherence just a sample-size artefact?
-    rng = np.random.default_rng(RANDOM_SEED)
+    rng = np.random.default_rng(123)                 # same seed and number of draws as scripts/review_analyses/gse65858_stats.py
     n_act = int((grp == A).sum())
     neg_ids = grp[grp == N].index
     null = [mean_pairwise_rho(gz.loc[core, rng.choice(neg_ids, n_act, replace=False)])
-            for _ in range(500)]
+            for _ in range(1000)]
     obs = mean_pairwise_rho(gz.loc[core, grp[grp == A].index])
     perm_p = (np.sum(np.asarray(null) >= obs) + 1) / (len(null) + 1)
     log(f"  coherence permutation (equal n): observed={obs:.3f}, "
