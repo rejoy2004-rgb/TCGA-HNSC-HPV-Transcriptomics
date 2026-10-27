@@ -19,7 +19,7 @@ The TCGA analyses (differential expression, enrichment, immune deconvolution, su
 ├── requirements.txt                       Python dependencies
 ├── manuscript/
 │   ├── FINAL_INTEGRATED_MANUSCRIPT.docx   integrated manuscript
-│   ├── submission_figures/                Figures 1–7 (TIFF + PNG + PDF; Figure 1 is the study overview)
+│   ├── submission_figures/                Figures 1–7 and the unnumbered graphical abstract (TIFF + PNG; PDF where a vector source exists; Figure 1 is the authors' study overview)
 │   └── tables/                            Tables 1–6 (CSV)
 ├── supplementary/
 │   ├── figures/                           Supplementary Figures S1–S7 (TIFF + PNG)
