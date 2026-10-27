@@ -1,5 +1,5 @@
 """Export every manuscript figure as LZW TIFF + PNG (+ vector PDF where one exists), numbered as in the integrated manuscript.
-Main figures and the graphical abstract go to manuscript/submission_figures/; supplementary figures go to
+Main figures (Figure 1 = study overview) go to manuscript/submission_figures/; supplementary figures go to
 supplementary/figures/. dpi metadata is 600 for 600 dpi sources; legacy 300 dpi
 supplementary plots keep their true resolution."""
 import os
@@ -7,10 +7,10 @@ import shutil
 from PIL import Image
 
 I = "figures/integrated"
-MAIN = [("Figure1", f"{I}/composed/Figure1.png"), ("Figure2", f"{I}/composed/Figure2.png"),
-        ("Figure3", f"{I}/composed/Figure3.png"), ("Figure4", f"{I}/Figure4_TME_CIBERSORTx_Job14.png"),
-        ("Figure5", f"{I}/composed/Figure5.png"), ("Figure6", f"{I}/composed/Figure6.png"),
-        ("Graphical_Abstract", f"{I}/Graphical_Abstract.png")]
+MAIN = [("Figure1", f"{I}/Graphical_Abstract.png"), ("Figure2", f"{I}/composed/Figure1.png"),
+        ("Figure3", f"{I}/composed/Figure2.png"), ("Figure4", f"{I}/composed/Figure3.png"),
+        ("Figure5", f"{I}/Figure4_TME_CIBERSORTx_Job14.png"), ("Figure6", f"{I}/composed/Figure5.png"),
+        ("Figure7", f"{I}/composed/Figure6.png")]   # manuscript Figure 1 is the overview; the composed/ file names are the older internal numbers
 SUPP = [("Supplementary_Figure_S1_PCA", "figures/HNSC_HPV_PCA.png", 300),
         ("Supplementary_Figure_S2_enrichment_origin", f"{I}/composed/SuppFig_S2.png", 600),
         ("Supplementary_Figure_S3_downregulated_GO_KEGG", f"{I}/SuppFig_Down_GO_KEGG.png", 600),

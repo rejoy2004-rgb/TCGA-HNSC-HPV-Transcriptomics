@@ -1,7 +1,7 @@
 """Spearman correlation of CIBERSORTx (Job14) fractions with marker-gene expression in the
 279-tumour cohort, using the TPM mixture that was supplied to CIBERSORTx
 (data_processed/HNSC_CIBERSORT_Input_Final.txt). Only markers present in that matrix
-are tested. CD8A/CD8B correlations on variance-stabilised expression come from
+are tested. CD8A/CD8B correlations (rank-based, so the same for any monotone transform; labelled log2 normalised count + 1 to match Supplementary Fig. S5) come from
 scripts/HPV_HNSC_Revision.R (Part 4) and are added here as reported by that script.
 P values follow R's cor.test for tied data (t approximation)."""
 import numpy as np
@@ -23,8 +23,8 @@ rows = []
 for gene, cell in [("IGHM", "Plasma cells"), ("MS4A1", "Plasma cells")]:
     r = stats.spearmanr(x.loc[gene, s].astype(float), j.loc[s, cell]).statistic
     rows.append([cell, gene, "TPM (CIBERSORTx input)", round(r, 3), t_approx_p(r, len(s))])
-for gene, r in [("CD8A", 0.735), ("CD8B", 0.689)]:   # from HPV_HNSC_Revision.R (VST)
-    rows.append(["T cells CD8", gene, "VST (DESeq2)", r, t_approx_p(r, len(s))])
+for gene, r in [("CD8A", 0.735), ("CD8B", 0.689)]:   # from HPV_HNSC_Revision.R (rank-based, so identical for VST and log2 normalised counts)
+    rows.append(["T cells CD8", gene, "log2(DESeq2-normalised count + 1)", r, t_approx_p(r, len(s))])
 out = pd.DataFrame(rows, columns=["CellType", "Marker", "Expression", "Spearman_rho", "Pvalue"])
 out.to_csv("results/Deconvolution_Marker_Validation.csv", index=False)
 print(out.to_string(index=False))

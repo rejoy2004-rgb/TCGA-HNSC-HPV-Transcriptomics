@@ -2,7 +2,7 @@
 
 This maps every figure and table in `manuscript/FINAL_INTEGRATED_MANUSCRIPT.docx` to its file and its source.
 
-- **Figure exports:** main figures in `manuscript/submission_figures/`, supplementary figures in `supplementary/figures/` (LZW TIFF + PNG), produced by `scripts/figures/export_submission_figures.py`.
+- **Figure exports:** main figures in `manuscript/submission_figures/` (Figure1–Figure7; the internal names `composed/Figure1–6.png` are the older numbering, shifted by one), supplementary figures in `supplementary/figures/` (LZW TIFF + PNG), produced by `scripts/figures/export_submission_figures.py`.
 - **Vector PDFs:** every figure also has a vector `.pdf` next to its TIFF and PNG, except Supplementary Fig. S1 (R plot, raster only) and Figure 6, whose PDF holds the 600 dpi raster because the deposited GSE182227 panels have no vector source. Composed figures are built by `scripts/figures/compose_figures_vector.py` (same layout as the raster composites, placing the vector panel PDFs); the other figures are saved as PDF by their own scripts.
 - **Table exports:** main tables in `manuscript/tables/`; supplementary tables in `supplementary/tables/`. These CSVs are exported from the built manuscript, so they match it exactly.
 - **Rebuilding the manuscript:** `scripts/build_integrated_manuscript.js` (requires the `docx` npm package).
@@ -11,13 +11,13 @@ This maps every figure and table in `manuscript/FINAL_INTEGRATED_MANUSCRIPT.docx
 
 | Figure | Content | Source / script |
 |---|---|---|
-| Figure 1 | Differential expression (volcano, meiotic panel genes, GO terms) | 600 dpi panels in `figures/source_panels_600dpi/Figure 1/` (panels a and c redrawn by `scripts/figures/make_enrichment_panels.py` from `results/HNSC_DESeq2_All_Results.csv` and `results/HNSC_HPV_GO_Upregulated.csv`) → `scripts/figures/compose_figures.py` |
-| Figure 2 | Promoter hypomethylation and replication (GSE38266) | `figures/source_panels_600dpi/Figure 3/` (written by `scripts/meiotic_programme/run_meiotic_analysis.py --panels`) → `compose_figures.py` |
-| Figure 3 | Viral-activity dependence and specificity (GSE65858) | `figures/source_panels_600dpi/Figure 4/` (written by `run_meiotic_analysis.py --panels`) → `compose_figures.py` |
-| Figure 4 | Immune microenvironment (CIBERSORTx) | `scripts/figures/make_tme_figure.py` from `data_processed/CIBERSORTx_Job14_Results.csv` |
-| Figure 5 | Malignant-cell localisation (GSE181919) | `figures/source_panels_600dpi/Figure 6/` → `compose_figures.py` |
-| Figure 6 | Single-cell replication (GSE182227) | `figures/source_panels_600dpi/Figure 7/` → `compose_figures.py` |
-| Graphical abstract | Study summary | `scripts/figures/make_graphical_abstract.py` |
+| Figure 1 | Study overview (approved redraw; also the graphical abstract) | `scripts/figures/make_graphical_abstract.py` |
+| Figure 2 | Differential expression (volcano, meiotic panel genes, GO terms) | 600 dpi panels in `figures/source_panels_600dpi/Figure 1/` (panels a and c redrawn by `scripts/figures/make_enrichment_panels.py` from `results/HNSC_DESeq2_All_Results.csv` and `results/HNSC_HPV_GO_Upregulated.csv`) → `scripts/figures/compose_figures.py` |
+| Figure 3 | Promoter hypomethylation and replication (GSE38266) | `figures/source_panels_600dpi/Figure 3/` (written by `scripts/meiotic_programme/run_meiotic_analysis.py --panels`) → `compose_figures.py` |
+| Figure 4 | Viral-activity dependence and specificity (GSE65858) | `figures/source_panels_600dpi/Figure 4/` (written by `run_meiotic_analysis.py --panels`) → `compose_figures.py` |
+| Figure 5 | Immune microenvironment (CIBERSORTx) | `scripts/figures/make_tme_figure.py` from `data_processed/CIBERSORTx_Job14_Results.csv` |
+| Figure 6 | Malignant-cell localisation (GSE181919) | `figures/source_panels_600dpi/Figure 6/` → `compose_figures.py` |
+| Figure 7 | Single-cell replication (GSE182227) | `figures/source_panels_600dpi/Figure 7/` → `compose_figures.py` |
 
 ## Main tables
 
