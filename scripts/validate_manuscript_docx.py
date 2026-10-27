@@ -11,10 +11,12 @@ text = "\n".join(paras); fails = []
 def check(ok, msg):
     print(("PASS " if ok else "FAIL ") + msg); (None if ok else fails.append(msg))
 ia = next(i for i, p in enumerate(paras) if p.startswith("Keywords:"))
-check(not any(p.startswith("Graphical abstract.") for p in paras), "no separate unnumbered graphical abstract (the overview is Figure 1)")
-check(any(p.startswith("Figure 1. Overview of the study design") for p in paras), "Figure 1 is the overview")
+check(any(p.startswith("Graphical abstract.") for p in paras[ia + 1:ia + 4]), "unnumbered graphical abstract follows the Abstract keywords")
+check(not re.search(r"Figure \d+\. Graphical abstract", text), "graphical abstract is not numbered")
+check(any(p.startswith("Figure 1. Overview of the study design") for p in paras), "Figure 1 is the authors' overview")
+check(next(p for p in paras if p.startswith("Figure 2.")).startswith("Figure 2. Differential expression"), "Figure 2 is the differential-expression figure")
 check(paras.index(next(p for p in paras if p.startswith("Figure 1. Overview"))) < paras.index("2. Materials and Methods"), "Figure 1 sits before Methods")
-check(len(root.findall(f".//{W}drawing")) >= 1, "drawing present")
+check(len(root.findall(f".//{W}drawing")) >= 2, "both overview images present")
 figs = sorted(set(int(n) for n in re.findall(r"^Figure (\d+)\. ", text, re.M)))
 check(figs == [1, 2, 3, 4, 5, 6, 7], f"main figure captions {figs}")
 check(sorted(set(re.findall(r"^Table (\d)\. ", text, re.M))) == list("123456"), "main table captions 1-6")
@@ -32,6 +34,7 @@ if len(sys.argv) > 1:
     short = [i + 1 for i, p in enumerate(d) if len(p.get_text().strip()) < 250]
     check(not short, f"{n} pages, no near-empty pages (found {short})")
     for i, p in enumerate(d):
-        if "Figure 1. Overview" in p.get_text(): check(i <= 4, f"Figure 1 on page {i + 1}")
+        if "Graphical abstract." in p.get_text(): check(i <= 2, f"graphical abstract on page {i + 1}")
+        if "Figure 1. Overview" in p.get_text(): check(i <= 6, f"Figure 1 on page {i + 1}")
 print("FAILED:" if fails else "ALL CHECKS PASSED", *fails)
 sys.exit(bool(fails))

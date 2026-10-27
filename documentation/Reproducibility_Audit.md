@@ -29,6 +29,19 @@ Audit date 2026-10-27, Windows 11, Python 3.11. Everything below was run in a sc
 | TCGA, GSE65858 and GSE38266 analyses | `run_meiotic_analysis.py --skip-singlecell` (downloaded the GEO data) | Ran to completion; all 115 values in `headline_values.json` and every regenerated CSV match the archived ones |
 | Spearman check of S5/S8 | recomputed from `CD8_validation_input.csv` | 0.7347 and 0.6892 |
 
+## Finding: GSE182227 numbers in the manuscript do not match the stored outputs
+
+`results/meiotic_programme/gse182227/` (files dated 2026-10-25; this folder is not on GitHub) was recomputed from `per_tumour_*.csv` and `regression_adjusted.csv`. GSE181919 agrees with the manuscript (four-gene beta 0.112 to 0.105). GSE182227 and the pooled model do not:
+
+| Quantity | Manuscript, Doc 1 and Table S10 | Stored outputs (25 Oct) |
+|---|---|---|
+| GSE182227 four-gene HPV difference (per tumour) | 0.176 | 0.141 |
+| GSE182227 four-gene AUC (11 HPV+ vs 5 HPV−) | 0.945 (DeLong 0.84-1.00; `GSE182227_AUC_CI.json`, 8 Oct) | 0.836, P = 0.038 |
+| GSE182227 beta after proliferation adjustment | 0.115 (P = 0.01) | 0.077 (P = 0.11) |
+| Pooled four-gene beta, unadjusted to adjusted | 0.141 to 0.109 (22% attenuation) | 0.125 to 0.089 (28.5%, with dataset term); 0.105 to 0.073 (30%, without) |
+
+The manuscript values match the earlier 8 October analysis; the 25 October outputs appear to come from a later re-run. Which set is correct has **not** been established and the manuscript numbers were not changed. Until the authors reconcile them, the Abstract does not quote the 22% figure (the qualitative statement, that the pooled association stays significant after proliferation adjustment, holds in both sets). The single-cell GSE182227 stage was not re-run here.
+
 ## Not run (blockers)
 
 - **All R scripts**: R is not installed on the audit machine, and `HNSC_data.rds` is absent. DESeq2, enrichment, immune comparisons and Cox models were therefore not re-derived; their archived CSVs were only read.

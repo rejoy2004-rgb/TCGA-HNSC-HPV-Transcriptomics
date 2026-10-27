@@ -20,5 +20,8 @@ Not yet verified: all R scripts, the GSE181919 / GSE182227 single-cell stages, t
 5. Not yet run: `run_meiotic_analysis.py` without `--skip-singlecell`, `gse182227_singlecell.py`, `tcga_purity_regression.py`, and the `scripts/review_analyses/` commands in README section 6.
 6. Compare each regenerated file in `results/` with the archived version and record any difference (small differences in GO/GSEA output are expected per the README).
 
+## GSE182227 discrepancy (needs the authors)
+- [ ] Re-run `python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --panels` (needs the GSE182227 download) and `python scripts/review_analyses/gse182227_auc_ci.py ...`, then compare with the manuscript values (see `Reproducibility_Audit.md`, "Finding: GSE182227 numbers ..."). Decide which analysis version is final before editing the Results, Table 6, Table S10, Figure 7 and the Limitations.
+
 ## Cannot be done locally
 - [ ] CIBERSORTx: needs a CIBERSORTx account and the web server (settings in `documentation/CIBERSORTx_Provenance.md`). The archived Job 14 output stays the reference.

@@ -11,7 +11,8 @@ This maps every figure and table in `manuscript/FINAL_INTEGRATED_MANUSCRIPT.docx
 
 | Figure | Content | Source / script |
 |---|---|---|
-| Figure 1 | Study overview (approved redraw; also the graphical abstract) | `scripts/figures/make_graphical_abstract.py` |
+| Figure 1 | Study overview (the authors' BioRender-style figure, recovered from their Google Doc "HPV Manuscript"; 2046 px wide, so about 300 dpi at print width) | `figures/integrated/Figure1_overview_original.png`; a 600 dpi export from the authors is still needed |
+| Graphical abstract (unnumbered, after the Abstract) | Redrawn summary | `scripts/figures/make_graphical_abstract.py` |
 | Figure 2 | Differential expression (volcano, meiotic panel genes, GO terms) | 600 dpi panels in `figures/source_panels_600dpi/Figure 1/` (panels a and c redrawn by `scripts/figures/make_enrichment_panels.py` from `results/HNSC_DESeq2_All_Results.csv` and `results/HNSC_HPV_GO_Upregulated.csv`) → `scripts/figures/compose_figures.py` |
 | Figure 3 | Promoter hypomethylation and replication (GSE38266) | `figures/source_panels_600dpi/Figure 3/` (written by `scripts/meiotic_programme/run_meiotic_analysis.py --panels`) → `compose_figures.py` |
 | Figure 4 | Viral-activity dependence and specificity (GSE65858) | `figures/source_panels_600dpi/Figure 4/` (written by `run_meiotic_analysis.py --panels`) → `compose_figures.py` |

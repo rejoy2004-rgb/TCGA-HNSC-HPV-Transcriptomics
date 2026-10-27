@@ -1,5 +1,5 @@
 """Export every manuscript figure as LZW TIFF + PNG (+ vector PDF where one exists), numbered as in the integrated manuscript.
-Main figures (Figure 1 = study overview) go to manuscript/submission_figures/; supplementary figures go to
+Main figures and the graphical abstract go to manuscript/submission_figures/; supplementary figures go to
 supplementary/figures/. dpi metadata is 600 for 600 dpi sources; legacy 300 dpi
 supplementary plots keep their true resolution."""
 import os
@@ -7,10 +7,11 @@ import shutil
 from PIL import Image
 
 I = "figures/integrated"
-MAIN = [("Figure1", f"{I}/Graphical_Abstract.png"), ("Figure2", f"{I}/composed/Figure1.png"),
+MAIN = [("Figure1", f"{I}/Figure1_overview_original.png"), ("Figure2", f"{I}/composed/Figure1.png"),
         ("Figure3", f"{I}/composed/Figure2.png"), ("Figure4", f"{I}/composed/Figure3.png"),
         ("Figure5", f"{I}/Figure4_TME_CIBERSORTx_Job14.png"), ("Figure6", f"{I}/composed/Figure5.png"),
-        ("Figure7", f"{I}/composed/Figure6.png")]   # manuscript Figure 1 is the overview; the composed/ file names are the older internal numbers
+        ("Figure7", f"{I}/composed/Figure6.png"),
+        ("Graphical_Abstract", f"{I}/Graphical_Abstract.png")]   # Figure 1 = authors' overview (as embedded in their Google Doc, 2046 px wide, about 300 dpi at print width); the composed/ file names are the older internal numbers; the graphical abstract is unnumbered
 SUPP = [("Supplementary_Figure_S1_PCA", "figures/HNSC_HPV_PCA.png", 300),
         ("Supplementary_Figure_S2_enrichment_origin", f"{I}/composed/SuppFig_S2.png", 600),
         ("Supplementary_Figure_S3_downregulated_GO_KEGG", f"{I}/SuppFig_Down_GO_KEGG.png", 600),
@@ -35,6 +36,6 @@ def save(name, src, dpi, dests):
     print(f"{name:48s} {im.width:>5d}x{im.height:<5d} {dpi} dpi, {im.width / dpi * 25.4:.0f} mm wide")
 
 for n, s in MAIN:
-    save(n, s, 600, [out])
+    save(n, s, 300 if n == "Figure1" else 600, [out])   # Figure 1 source is only 2046 px wide, so do not label it 600 dpi
 for n, s, dpi in SUPP:
     save(n, s, dpi, ["supplementary/figures"])
