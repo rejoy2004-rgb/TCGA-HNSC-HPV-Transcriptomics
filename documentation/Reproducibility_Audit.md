@@ -45,7 +45,7 @@ The manuscript values match the earlier 8 October analysis; the 25 October outpu
 ## Not run (blockers)
 
 - **All R scripts**: R is not installed on the audit machine, and `HNSC_data.rds` is absent. DESeq2, enrichment, immune comparisons and Cox models were therefore not re-derived; their archived CSVs were only read.
-- **GSE181919 / GSE182227 single-cell stages**, GDC downloads (`gdc_fetch.py`, `km_zfr2_counts.py`), `tcga_purity_regression.py`, and the other `review_analyses/` scripts: not run (size, time).
+- **GSE181919 / GSE182227 single-cell stages**, GDC downloads (`gdc_fetch.py`, `km_zfr2_counts.py`), `tcga_purity_regression.py`, and the other `sensitivity_analyses/` scripts: not run (size, time).
 - **CIBERSORTx**: external web service.
 
 End-to-end reproducibility has **not** been verified.

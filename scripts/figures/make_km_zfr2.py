@@ -1,5 +1,5 @@
 """Exploratory ZFR2 Kaplan-Meier plot (Supplementary Fig. S7) with number-at-risk table, group sizes and log-rank P.
-Input: results/review_sensitivity/ZFR2_KM_input.csv (made by scripts/review_analyses/km_zfr2_counts.py; groups = median split
+Input: results/review_sensitivity/ZFR2_KM_input.csv (made by scripts/sensitivity_analyses/km_zfr2_counts.py; groups = median split
 of DESeq2-normalised ZFR2 counts, equivalent to a median split of VST values)."""
 import numpy as np, pandas as pd
 import matplotlib

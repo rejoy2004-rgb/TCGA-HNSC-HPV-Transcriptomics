@@ -17,11 +17,11 @@ Not yet verified: all R scripts, the GSE181919 / GSE182227 single-cell stages, t
 2. `Rscript scripts/prepare_hpv_metadata.R`, then `prepare_cibersort_input.R`, then `validate_cibersort_input.R`.
 3. `Rscript scripts/HPV_HNSC_Revision.R` (DESeq2, GO/KEGG/GSEA, immune comparison, Cox). Needs steps 1-2, `data_processed/HNSC_HPV_status.csv` and `data_processed/CIBERSORTx_Job14_Results.csv`.
 4. Python stages already reproduced: `calculate_demographics.py`, `validate_deconvolution_markers.py`, the figure scripts, `run_meiotic_analysis.py --skip-singlecell`.
-5. Not yet run: `run_meiotic_analysis.py` without `--skip-singlecell`, `gse182227_singlecell.py`, `tcga_purity_regression.py`, and the `scripts/review_analyses/` commands in README section 6.
+5. Not yet run: `run_meiotic_analysis.py` without `--skip-singlecell`, `gse182227_singlecell.py`, `tcga_purity_regression.py`, and the `scripts/sensitivity_analyses/` commands in README section 6.
 6. Compare each regenerated file in `results/` with the archived version and record any difference (small differences in GO/GSEA output are expected per the README).
 
 ## GSE182227 discrepancy (needs the authors)
-- [ ] Re-run `python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --panels` (needs the GSE182227 download) and `python scripts/review_analyses/gse182227_auc_ci.py ...`, then compare with the manuscript values (see `Reproducibility_Audit.md`, "Finding: GSE182227 numbers ..."). Decide which analysis version is final before editing the Results, Table 6, Table S10, Figure 7 and the Limitations.
+- [ ] Re-run `python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --panels` (needs the GSE182227 download) and `python scripts/sensitivity_analyses/gse182227_auc_ci.py ...`, then compare with the manuscript values (see `Reproducibility_Audit.md`, "Finding: GSE182227 numbers ..."). Decide which analysis version is final before editing the Results, Table 6, Table S10, Figure 7 and the Limitations.
 
 ## Cannot be done locally
 - [ ] CIBERSORTx: needs a CIBERSORTx account and the web server (settings in `documentation/CIBERSORTx_Provenance.md`). The archived Job 14 output stays the reference.
