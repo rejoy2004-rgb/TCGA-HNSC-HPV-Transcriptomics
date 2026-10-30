@@ -35,7 +35,7 @@ The TCGA analyses (differential expression, enrichment, immune deconvolution, su
 │   ├── build_integrated_manuscript.js     builds the manuscript .docx
 │   ├── export_tables.py                   exports manuscript tables to CSV
 │   ├── meiotic_programme/                 panel, methylation, GSE65858, GSE38266, GSE181919, GSE182227 (section 5)
-│   ├── review_analyses/                   review sensitivity analyses (CIs, nulls, promoter definition, B/plasma, HPV definition)
+│   ├── sensitivity_analyses/                   review sensitivity analyses (CIs, nulls, promoter definition, B/plasma, HPV definition)
 │   └── figures/                           figure assembly and export scripts
 ├── data_raw/                              cBioPortal clinical files and GDC manifest
 ├── data_processed/                        HPV status, CIBERSORTx input and Job14 results
@@ -123,7 +123,7 @@ python scripts/audit_references.py                # Crossref check of the refere
 Notes on the figure scripts:
 
 - `make_enrichment_panels.py` draws Figure 2a (volcano from `results/HNSC_DESeq2_All_Results.csv`), Figure 2c and Supplementary Fig. S2a from the deposited DESeq2, GO and GSEA outputs, so figures and text share one source. Run `compose_figures.py` afterwards (the panel folders of Figures 3, 4 and 6 are written by `scripts/meiotic_programme/run_meiotic_analysis.py --panels` and `gse182227_singlecell.py --panels`; do not re-run the full composer unless those folders are current).
-- `make_km_zfr2.py` reads `results/review_sensitivity/ZFR2_KM_input.csv`: DESeq2-normalised ZFR2 counts and overall survival for the 279 tumours, built by `scripts/review_analyses/km_zfr2_counts.py` from GDC STAR counts. The groups are a median split; a median split on normalised counts equals one on VST values. The base-R Kaplan–Meier block in `HPV_HNSC_Revision.R` writes `figures/HNSC_BestGene_KM_R.png` and does not overwrite the manuscript figure.
+- `make_km_zfr2.py` reads `results/review_sensitivity/ZFR2_KM_input.csv`: DESeq2-normalised ZFR2 counts and overall survival for the 279 tumours, built by `scripts/sensitivity_analyses/km_zfr2_counts.py` from GDC STAR counts. The groups are a median split; a median split on normalised counts equals one on VST values. The base-R Kaplan–Meier block in `HPV_HNSC_Revision.R` writes `figures/HNSC_BestGene_KM_R.png` and does not overwrite the manuscript figure.
 - `make_cd8_validation.py` reads `results/review_sensitivity/CD8_validation_input.csv`; Spearman ρ is rank-based, so it is the same for normalised-count and variance-stabilised expression.
 - Figure text sizes: `meiotic_programme/run_meiotic_analysis.py` rescales the text of the figures that are reduced to page width (`FONT_SCALE` in that file).
 
@@ -150,7 +150,7 @@ python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --p
 | `gse181919_singlecell.py`, `sc_scoring.py` | single-cell analysis and Tirosh module scoring (Fig. 6) |
 | `figures.py`, `fig_gse182227.py`, `panel_export.py` | figure builders and 600 dpi per-panel export |
 
-`tcga_purity_regression.py` repeats the purity and proliferation models of Supplementary Table S5 and Section 3.9 with ABSOLUTE purity calls (`data_raw/TCGA_mastercalls.abs_tables_JSedit.fixed.txt`, the public PanCancer Atlas file from the GDC; the script gives the download address) and writes `results/meiotic_programme/purity/`. The GSE65858 coherence permutation nulls use 1,000 size-matched draws with seed 123 in both `gse65858_validation.py` and `scripts/review_analyses/gse65858_stats.py`, so both give P = 0.001 (95% null interval 0.027–0.273). In the single-cell stage MAJIN is resolved to its deposited symbol C11orf85, and all Mann–Whitney tests are two-sided (exact at tumour level).
+`tcga_purity_regression.py` repeats the purity and proliferation models of Supplementary Table S5 and Section 3.9 with ABSOLUTE purity calls (`data_raw/TCGA_mastercalls.abs_tables_JSedit.fixed.txt`, the public PanCancer Atlas file from the GDC; the script gives the download address) and writes `results/meiotic_programme/purity/`. The GSE65858 coherence permutation nulls use 1,000 size-matched draws with seed 123 in both `gse65858_validation.py` and `scripts/sensitivity_analyses/gse65858_stats.py`, so both give P = 0.001 (95% null interval 0.027–0.273). In the single-cell stage MAJIN is resolved to its deposited symbol C11orf85, and all Mann–Whitney tests are two-sided (exact at tumour level).
 
 `gse182227_singlecell.py` annotates GSE182227 from scratch (Leiden clustering, marker lineages, inferred-CNV malignant calls), scores malignant cells and fits the pooled two-cohort per-tumour models with proliferation adjustment (Fig. 6). The enrichment inputs in `data_processed/meiotic_programme/` are frozen copies of the outputs the manuscript numbers were computed from; regenerated GO/GSEA outputs in `results/` can differ slightly.
 
@@ -159,14 +159,14 @@ python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --p
 These analyses download public data (GEO, cBioPortal, GDC) into a working folder `DATA` (outside the repository) and write their results to `results/review_sensitivity/`. Place `GSE65858_series_matrix.txt.gz`, `GPL10558.annot.gz`, `GSE38266_series_matrix.txt.gz` (GEO) and `HM450.hg38.manifest.gencode.v36.tsv.gz` (zhou-lab/InfiniumAnnotationV1) in `DATA/geo` first.
 
 ```bash
-python scripts/review_analyses/gse65858_prep.py DATA/geo
-python scripts/review_analyses/gse65858_stats.py DATA/geo results/review_sensitivity/GSE65858_core_module_CIs_and_nulls.json
-python scripts/review_analyses/tcga_fetch.py DATA
-python scripts/review_analyses/core_probes_and_gse38266.py DATA
-python scripts/review_analyses/gdc_fetch.py DATA data_raw          # about 1.6 GB of GDC HM450 files
-python scripts/review_analyses/tcga_methylation_sensitivity.py DATA .
-python scripts/review_analyses/gse182227_auc_ci.py results/review_sensitivity/GSE182227_AUC_CI.json
-python scripts/review_analyses/km_zfr2_counts.py . DATA/km   # GDC STAR counts -> ZFR2 survival and CD8 validation inputs (about 1 GB)
+python scripts/sensitivity_analyses/gse65858_prep.py DATA/geo
+python scripts/sensitivity_analyses/gse65858_stats.py DATA/geo results/review_sensitivity/GSE65858_core_module_CIs_and_nulls.json
+python scripts/sensitivity_analyses/tcga_fetch.py DATA
+python scripts/sensitivity_analyses/core_probes_and_gse38266.py DATA
+python scripts/sensitivity_analyses/gdc_fetch.py DATA data_raw          # about 1.6 GB of GDC HM450 files
+python scripts/sensitivity_analyses/tcga_methylation_sensitivity.py DATA .
+python scripts/sensitivity_analyses/gse182227_auc_ci.py results/review_sensitivity/GSE182227_AUC_CI.json
+python scripts/sensitivity_analyses/km_zfr2_counts.py . DATA/km   # GDC STAR counts -> ZFR2 survival and CD8 validation inputs (about 1 GB)
 ```
 
 ## Software
@@ -184,3 +184,7 @@ Python 3.11: install everything with `pip install -r requirements.txt` (PyMuPDF,
 ## Reproducibility status
 
 See `documentation/Reproducibility_Audit.md` for what has and has not been re-run. In short: the Python stages that use shipped or small public inputs were re-run and reproduce the archived outputs; the R stages and the 1.2 GB GSE181919 single-cell stage were not re-run in the audit environment.
+
+## Licence
+
+Code is released under the MIT licence (see `LICENSE`).
