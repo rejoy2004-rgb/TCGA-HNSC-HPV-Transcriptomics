@@ -45,15 +45,14 @@ cat("SummarizedExperiment loaded. Dimensions:", paste(dim(hnsc_data), collapse =
 # (primary tumor), and HPV_STATUS (HPV+/HPV-) mapped to positive/negative.
 #
 # Samples lacking a definitive HPV annotation were excluded from
-# downstream analyses. For full details see documentation/HPV_status_provenance.md
+# downstream analyses (see prepare_hpv_metadata.R).
 #
 # The final analyzed cohort contains:
 #   - 243 HPV-negative cases
 #   - 36 HPV-positive cases
 # ------------------------------------------------------------------
 # HPV status annotations were derived from the original TCGA HNSC clinical metadata 
-# from the Nature 2015 cohort. The preprocessing workflow is fully documented in:
-#   documentation/HPV_status_provenance.md
+# from the Nature 2015 cohort (see prepare_hpv_metadata.R), regenerated using:
 # and can be programmatically regenerated using:
 #   scripts/prepare_hpv_metadata.R
 hpv_status_path <- "data_processed/HNSC_HPV_status.csv"
@@ -292,8 +291,7 @@ cat("PCA and Volcano plots generated.\n")
 # Output:
 # CIBERSORTx_Job14_Results.csv
 #
-# Full details:
-# documentation/CIBERSORTx_Provenance.md
+# Settings: LM22, relative mode, 100 permutations, quantile normalisation off, no batch correction.
 # -------------------------------------------------------------
 cat("\n--- Running Immune Deconvolution Analysis ---\n")
 cibersort_path <- "data_processed/CIBERSORTx_Job14_Results.csv"
@@ -770,8 +768,7 @@ if (!is.na(zfr2_id) && zfr2_id %in% rownames(surv_counts)) {
   lr_p <- 1 - pchisq(survdiff(Surv(time, status) ~ ZFR2, data = km_data)$chisq, df = 1)
   cols <- c("#E41A1C", "#377EB8")
 
-  # The manuscript's Supplementary Fig. S7 (figures/HNSC_BestGene_KM.png) is drawn by scripts/figures/make_km_zfr2.py from
-  # results/review_sensitivity/ZFR2_KM_input.csv; this base-R version is written to a separate file so it does not overwrite it.
+  # Base-R Kaplan-Meier version (the Kaplan-Meier figure used in the paper is drawn separately).
   png("figures/HNSC_BestGene_KM_R.png", width = 1800, height = 1700, res = 300)
   par(mar = c(9, 5, 3, 1))
   plot(
