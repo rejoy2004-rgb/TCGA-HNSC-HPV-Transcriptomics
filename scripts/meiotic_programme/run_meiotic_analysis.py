@@ -17,7 +17,7 @@ Usage (from the repository root):
 Public inputs are downloaded into --data on first use and re-used afterwards.
 Outputs go to results/meiotic_programme/ (tables, JSON, 600 dpi PNG + PDF figures).
 With --panels, every figure is also split into 600 dpi per-panel files in
-figures/source_panels_600dpi/ (the folders compose_figures.py reads).
+figures/source_panels_600dpi/.
 """
 import argparse, json, sys, time
 from pathlib import Path
