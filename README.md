@@ -1,12 +1,12 @@
-# Transcriptionally active HPV-positive HNSCC: meiotic gene programme, promoter hypomethylation and immune context
+﻿# Transcriptionally active HPV-positive HNSCC: meiotic gene programme, promoter hypomethylation and immune context
 
-Code, processed data and results for the study **“Transcriptionally active HPV-positive head and neck squamous cell carcinoma is associated with a coordinated meiotic gene programme and promoter hypomethylation.”**
+Code, processed data and results for the study **â€œTranscriptionally active HPV-positive head and neck squamous cell carcinoma is associated with a coordinated meiotic gene programme and promoter hypomethylation.â€**
 
 ## Summary of findings
 
-- **Meiotic programme.** Of 4,744 genes differentially expressed between HPV+ (n = 36) and HPV− (n = 243) TCGA-HNSC primary tumours, six of the twelve most significant are meiotic. Meiotic gene categories, but not the classic MAGE/CTAG cancer–testis antigens, are enriched among HPV+-upregulated genes.
-- **Methylation and viral activity.** Meiotic promoters are hypomethylated in HPV+ tumours, in step with expression. A six-gene core score (MEI1, SMC1B, STAG3, SYCP2, SYCE2, MAJIN) separates transcriptionally active HPV+ tumours from HPV− tumours (AUC 0.959), whereas HPV DNA-positive, transcriptionally silent tumours do not differ.
-- **Immune microenvironment.** CIBERSORTx (LM22; Benjamini–Hochberg across all 22 populations) shows higher plasma-cell and CD8+ T-cell fractions and lower M0 macrophage, resting NK-cell and resting CD4+ memory T-cell fractions in HPV+ tumours.
+- **Meiotic programme.** Of 4,744 genes differentially expressed between HPV+ (n = 36) and HPVâˆ’ (n = 243) TCGA-HNSC primary tumours, six of the twelve most significant are meiotic. Meiotic gene categories, but not the classic MAGE/CTAG cancerâ€“testis antigens, are enriched among HPV+-upregulated genes.
+- **Methylation and viral activity.** Meiotic promoters are hypomethylated in HPV+ tumours, in step with expression. A six-gene core score (MEI1, SMC1B, STAG3, SYCP2, SYCE2, MAJIN) separates transcriptionally active HPV+ tumours from HPVâˆ’ tumours (AUC 0.959), whereas HPV DNA-positive, transcriptionally silent tumours do not differ.
+- **Immune microenvironment.** CIBERSORTx (LM22; Benjaminiâ€“Hochberg across all 22 populations) shows higher plasma-cell and CD8+ T-cell fractions and lower M0 macrophage, resting NK-cell and resting CD4+ memory T-cell fractions in HPV+ tumours.
 - **Malignant-cell localisation.** In two single-cell cohorts, the meiotic signal is confined to malignant cells.
 - **Keratinisation.** Keratinisation and epithelial-differentiation programmes are reduced in HPV+ tumours.
 - **Survival (exploratory).** Univariable Cox models link higher expression of leading HPV-associated genes to longer overall survival. These models are unadjusted for HPV status or other covariates.
@@ -16,22 +16,22 @@ The TCGA analyses (differential expression, enrichment, immune deconvolution, su
 ## Repository structure
 
 ```text
-├── LICENSE                                MIT licence
-├── requirements.txt                       Python dependencies
-├── scripts/
-│   ├── prepare_hpv_metadata.R             cohort definition and HPV status (279 tumours)
-│   ├── prepare_cibersort_input.R          TPM mixture matrix for CIBERSORTx
-│   ├── validate_cibersort_input.R         checks on the mixture matrix
-│   ├── HPV_HNSC_Revision.R                DESeq2, GO/KEGG/GSEA, immune comparison, survival
-│   ├── calculate_demographics.py          clinical characteristics (Table 1)
-│   ├── download_data.py                   cBioPortal clinical files
-│   ├── validate_deconvolution_markers.py  deconvolution marker validation
-│   ├── meiotic_programme/                 panel, methylation, GSE65858, GSE38266, GSE181919, GSE182227 (section 4)
-│   └── sensitivity_analyses/              sensitivity analyses (CIs, nulls, promoter definition, B/plasma, HPV definition)
-├── data_raw/                              cBioPortal clinical files and GDC manifest
-├── data_processed/                        HPV status, CIBERSORTx input and Job14 results
-│   └── meiotic_programme/                 95-gene panel (cta_geneset.csv) and frozen enrichment inputs
-└── results/                               analysis outputs
+â”œâ”€â”€ LICENSE                                MIT licence
+â”œâ”€â”€ requirements.txt                       Python dependencies
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ prepare_hpv_metadata.R             cohort definition and HPV status (279 tumours)
+â”‚   â”œâ”€â”€ prepare_cibersort_input.R          TPM mixture matrix for CIBERSORTx
+â”‚   â”œâ”€â”€ validate_cibersort_input.R         checks on the mixture matrix
+â”‚   â”œâ”€â”€ HPV_HNSC_Revision.R                DESeq2, GO/KEGG/GSEA, immune comparison, survival
+â”‚   â”œâ”€â”€ calculate_demographics.py          clinical characteristics (Table 1)
+â”‚   â”œâ”€â”€ download_data.py                   cBioPortal clinical files
+â”‚   â”œâ”€â”€ validate_deconvolution_markers.py  deconvolution marker validation
+â”‚   â”œâ”€â”€ meiotic_programme/                 panel, methylation, GSE65858, GSE38266, GSE181919, GSE182227 (section 4)
+â”‚   â””â”€â”€ sensitivity_analyses/              sensitivity analyses (CIs, nulls, promoter definition, B/plasma, HPV definition)
+â”œâ”€â”€ data_raw/                              cBioPortal clinical files and GDC manifest
+â”œâ”€â”€ data_processed/                        HPV status, CIBERSORTx input and Job14 results
+â”‚   â””â”€â”€ meiotic_programme/                 95-gene panel (cta_geneset.csv) and frozen enrichment inputs
+â””â”€â”€ results/                               analysis outputs
 ```
 
 ## Reproducing the analyses
@@ -44,7 +44,7 @@ Clinical annotations (cBioPortal, `hnsc_tcga_pub` and `hnsc_tcga`):
 python scripts/download_data.py
 ```
 
-**Required input that is not in the repository:** the RNA-seq count object `data_raw/HNSC_data.rds` (GDC, TCGA-HNSC, STAR – Counts). It is too large to deposit and must be rebuilt with the code below before `prepare_hpv_metadata.R`, `prepare_cibersort_input.R`, `validate_cibersort_input.R` and `HPV_HNSC_Revision.R` can run. Everything downstream of those R scripts that is archived (`data_processed/`, `results/`) can be used without it:
+**Required input that is not in the repository:** the RNA-seq count object `data_raw/HNSC_data.rds` (GDC, TCGA-HNSC, STAR â€“ Counts). It is too large to deposit and must be rebuilt with the code below before `prepare_hpv_metadata.R`, `prepare_cibersort_input.R`, `validate_cibersort_input.R` and `HPV_HNSC_Revision.R` can run. Everything downstream of those R scripts that is archived (`data_processed/`, `results/`) can be used without it:
 
 ```r
 library(TCGAbiolinks)
@@ -57,7 +57,7 @@ saveRDS(GDCprepare(query), "data_raw/HNSC_data.rds")
 ### 2. Cohort and immune deconvolution
 
 ```r
-source("scripts/prepare_hpv_metadata.R")      # 279 primary tumours: 36 HPV+, 243 HPV−
+source("scripts/prepare_hpv_metadata.R")      # 279 primary tumours: 36 HPV+, 243 HPVâˆ’
 source("scripts/prepare_cibersort_input.R")   # data_processed/HNSC_CIBERSORT_Input_Final.txt
 source("scripts/validate_cibersort_input.R")
 ```
@@ -92,7 +92,7 @@ python scripts/meiotic_programme/tcga_purity_regression.py                      
 python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --panels
 ```
 
-`run_meiotic_analysis.py` runs, in order: origin of the hypothesis (GSEA ranking, panel-category enrichment, panel/DEG overlap) → TCGA-HNSC promoter hypomethylation and methylation–expression coupling → GSE65858 validation (viral activity, per-gene and per-category AUC, module coherence with permutation nulls, confounder controls) → GSE38266 methylation replication → GSE181919 malignant-cell localisation. Public data are downloaded into `DATA/meiotic` (outside the repository; GSE181919 is ~1.2 GB, use `--skip-singlecell` to omit it). Outputs go to `results/meiotic_programme/`; `--panels` rewrites the 600 dpi panels in `figures/source_panels_600dpi/`.
+`run_meiotic_analysis.py` runs, in order: origin of the hypothesis (GSEA ranking, panel-category enrichment, panel/DEG overlap) â†’ TCGA-HNSC promoter hypomethylation and methylationâ€“expression coupling â†’ GSE65858 validation (viral activity, per-gene and per-category AUC, module coherence with permutation nulls, confounder controls) â†’ GSE38266 methylation replication â†’ GSE181919 malignant-cell localisation. Public data are downloaded into `DATA/meiotic` (outside the repository; GSE181919 is ~1.2 GB, use `--skip-singlecell` to omit it). Outputs go to `results/meiotic_programme/`; `--panels` rewrites the 600 dpi panels in `figures/source_panels_600dpi/`.
 
 | Module (`scripts/meiotic_programme/meiotic/`) | Content |
 |---|---|
@@ -105,7 +105,7 @@ python scripts/meiotic_programme/gse182227_singlecell.py --data DATA/meiotic --p
 | `gse181919_singlecell.py`, `sc_scoring.py` | single-cell analysis and Tirosh module scoring (Fig. 6) |
 | `figures.py`, `fig_gse182227.py`, `panel_export.py` | figure builders and 600 dpi per-panel export |
 
-`tcga_purity_regression.py` repeats the purity and proliferation models of Supplementary Table S5 and Section 3.9 with ABSOLUTE purity calls (`data_raw/TCGA_mastercalls.abs_tables_JSedit.fixed.txt`, the public PanCancer Atlas file from the GDC; the script gives the download address) and writes `results/meiotic_programme/purity/`. The GSE65858 coherence permutation nulls use 1,000 size-matched draws with seed 123 in both `gse65858_validation.py` and `scripts/sensitivity_analyses/gse65858_stats.py`, so both give P = 0.001 (95% null interval 0.027–0.273). In the single-cell stage MAJIN is resolved to its deposited symbol C11orf85, and all Mann–Whitney tests are two-sided (exact at tumour level).
+`tcga_purity_regression.py` repeats the purity and proliferation models of Supplementary Table S5 and Section 3.9 with ABSOLUTE purity calls (`data_raw/TCGA_mastercalls.abs_tables_JSedit.fixed.txt`, the public PanCancer Atlas file from the GDC; the script gives the download address) and writes `results/meiotic_programme/purity/`. The GSE65858 coherence permutation nulls use 1,000 size-matched draws with seed 123 in both `gse65858_validation.py` and `scripts/sensitivity_analyses/gse65858_stats.py`, so both give P = 0.001 (95% null interval 0.027â€“0.273). In the single-cell stage MAJIN is resolved to its deposited symbol C11orf85, and all Mannâ€“Whitney tests are two-sided (exact at tumour level).
 
 `gse182227_singlecell.py` annotates GSE182227 from scratch (Leiden clustering, marker lineages, inferred-CNV malignant calls), scores malignant cells and fits the pooled two-cohort per-tumour models with proliferation adjustment (Fig. 6). The enrichment inputs in `data_processed/meiotic_programme/` are frozen copies of the outputs the manuscript numbers were computed from; regenerated GO/GSEA outputs in `results/` can differ slightly.
 
@@ -136,6 +136,6 @@ Python 3.11: install everything with `pip install -r requirements.txt` (pandas, 
 - Clinical and HPV annotations: [cBioPortal](https://www.cbioportal.org/) (`hnsc_tcga_pub`, `hnsc_tcga`)
 - GEO: GSE65858, GSE38266, GSE181919, GSE182227
 
-## Licence
+## License
 
 Code is released under the MIT licence (see `LICENSE`).
